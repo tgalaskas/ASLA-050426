@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BD Intelligence — ASLA Business Development Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --g: #81BC00; --gd: #5A8A00;
+  --bk: #111111; --md: #555555; --lt: #999999;
+  --bd: #E6E6E6; --wh: #FFFFFF; --off: #F8F8F8;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--wh); color: var(--bk); -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--bd);
+  padding: 0 64px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bk); }
+.nav-logo span { color: var(--g); }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-size: 12px; color: var(--lt); text-decoration: none; transition: color 0.15s; }
+.nav-links a:hover { color: var(--bk); }
+.nav-enter { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wh); background: var(--bk); padding: 9px 22px; border-radius: 2px; text-decoration: none; transition: background 0.15s; }
+.nav-enter:hover { background: var(--g); }
+
+/* HERO */
+.hero {
+  padding: 160px 64px 120px;
+  display: grid; grid-template-columns: 7fr 5fr;
+  gap: 100px; align-items: end;
+  border-bottom: 1px solid var(--bd);
+}
+.hero-kicker { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--g); margin-bottom: 28px; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.5vw, 70px); font-weight: 700; line-height: 1.06; letter-spacing: -0.025em; color: var(--bk); margin-bottom: 32px; }
+.hero-title em { font-style: italic; color: var(--g); }
+.hero-body { font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--md); max-width: 480px; margin-bottom: 44px; }
+.hero-actions { display: flex; align-items: center; gap: 28px; }
+.btn { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 28px; border-radius: 2px; text-decoration: none; transition: background 0.15s; display: inline-block; }
+.btn-dark { color: var(--wh); background: var(--bk); }
+.btn-dark:hover { background: var(--g); }
+.btn-ghost { color: var(--lt); font-size: 12px; padding: 0; border-radius: 0; background: none; font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: 0; border-bottom: 1px solid transparent; }
+.btn-ghost:hover { color: var(--bk); border-bottom-color: var(--bk); }
+
+/* HERO RIGHT */
+.hero-right { padding-bottom: 8px; }
+.case-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lt); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--bd); }
+.case-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--bk); line-height: 1.25; margin-bottom: 22px; }
+.cm-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--bd); font-size: 12px; }
+.cm-row:last-of-type { border-bottom: none; margin-bottom: 24px; }
+.cm-key { color: var(--lt); }
+.cm-val { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--bk); font-weight: 500; text-align: right; }
+.cm-val.green { color: var(--g); }
+.case-note { font-size: 11px; font-weight: 300; color: var(--lt); line-height: 1.7; font-style: italic; border-left: 2px solid var(--g); padding-left: 14px; }
+
+/* STATS */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--bd); }
+.stat { padding: 56px 64px; border-right: 1px solid var(--bd); }
+.stat:last-child { border-right: none; }
+.stat-val { font-family: 'Playfair Display', serif; font-size: 50px; font-weight: 700; color: var(--bk); line-height: 1; margin-bottom: 10px; letter-spacing: -0.02em; }
+.stat-val span { color: var(--g); }
+.stat-desc { font-size: 12px; color: var(--lt); line-height: 1.6; font-weight: 300; max-width: 160px; }
+
+/* TOOLS */
+.tools { padding: 100px 64px; border-bottom: 1px solid var(--bd); }
+.section-hdr { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 56px; }
+.section-kicker { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--g); margin-bottom: 20px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 2.6vw, 36px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--bk); }
+.section-desc { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--md); }
+
+.tools-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bd); border: 1px solid var(--bd); border-radius: 4px; overflow: hidden; }
+.tool-item { background: var(--wh); padding: 36px 30px; text-decoration: none; display: block; transition: background 0.15s; }
+.tool-item:hover { background: var(--off); }
+.tool-item:hover .t-arrow { transform: translateX(5px); }
+.t-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--g); margin-bottom: 18px; display: block; }
+.t-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--bk); line-height: 1.25; margin-bottom: 10px; }
+.t-desc { font-size: 12px; font-weight: 300; color: var(--lt); line-height: 1.7; margin-bottom: 22px; }
+.t-arrow { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--g); transition: transform 0.2s; display: inline-block; }
+
+/* CASE SECTION */
+.case-section { padding: 100px 64px; border-bottom: 1px solid var(--bd); display: grid; grid-template-columns: 4fr 6fr; gap: 100px; align-items: start; }
+.case-big-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 2.6vw, 36px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--bk); margin-bottom: 22px; margin-top: 20px; }
+.case-body { font-size: 14px; font-weight: 300; color: var(--md); line-height: 1.85; margin-bottom: 32px; }
+.ct { width: 100%; border-collapse: collapse; }
+.ct tr { border-bottom: 1px solid var(--bd); }
+.ct td { padding: 14px 0; font-size: 12px; vertical-align: top; }
+.ct-k { color: var(--lt); width: 36%; line-height: 1.5; }
+.ct-v { color: var(--bk); line-height: 1.65; }
+.ct-v strong { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--g); font-weight: 500; display: block; margin-bottom: 1px; }
+
+/* PHASES */
+.phases { padding: 100px 64px; border-bottom: 1px solid var(--bd); }
+.phases-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--bd); border: 1px solid var(--bd); border-radius: 4px; overflow: hidden; margin-top: 52px; }
+.phase-col { padding: 32px 24px; background: var(--wh); border-bottom: 3px solid transparent; }
+.phase-col.active { background: var(--bk); border-bottom-color: var(--g); }
+.p-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--g); margin-bottom: 14px; display: block; }
+.p-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--bk); margin-bottom: 10px; }
+.phase-col.active .p-name { color: var(--wh); }
+.p-q { font-size: 11px; font-weight: 300; color: var(--lt); line-height: 1.65; font-style: italic; }
+.phase-col.active .p-q { color: rgba(255,255,255,0.45); }
+
+/* MARKET */
+.market { padding: 100px 64px; border-bottom: 1px solid var(--bd); display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+.market-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 2.6vw, 36px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--bk); margin-bottom: 22px; margin-top: 20px; }
+.market-body { font-size: 14px; font-weight: 300; color: var(--md); line-height: 1.85; }
+.mt-row { display: grid; grid-template-columns: 72px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--bd); align-items: baseline; }
+.mt-row:last-child { border-bottom: none; }
+.mt-yr { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; }
+.mt-yr.dn { color: #C0392B; } .mt-yr.fl { color: #E67E22; } .mt-yr.up { color: var(--g); }
+.mt-h { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--bk); margin-bottom: 5px; }
+.mt-d { font-size: 12px; font-weight: 300; color: var(--lt); line-height: 1.7; }
+.mt-sd { font-size: 11px; color: var(--g); font-weight: 500; margin-top: 4px; }
+
+/* CTA */
+.cta { padding: 120px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; border-bottom: 1px solid var(--bd); }
+.cta-title { font-family: 'Playfair Display', serif; font-size: clamp(30px, 3.5vw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--bk); }
+.cta-title em { font-style: italic; color: var(--g); }
+.cta-body { font-size: 14px; font-weight: 300; color: var(--md); line-height: 1.85; margin-bottom: 32px; }
+.cta-actions { display: flex; align-items: center; gap: 24px; }
+
+/* FOOTER */
+footer { padding: 36px 64px; display: flex; align-items: center; justify-content: space-between; }
+.ft-l { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lt); }
+.ft-l span { color: var(--g); }
+.ft-r { font-size: 11px; color: var(--lt); font-weight: 300; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.hero-kicker { animation: fadeUp 0.5s ease both; }
+.hero-title   { animation: fadeUp 0.5s 0.08s ease both; }
+.hero-body    { animation: fadeUp 0.5s 0.16s ease both; }
+.hero-actions { animation: fadeUp 0.5s 0.24s ease both; }
+.hero-right   { animation: fadeUp 0.5s 0.12s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: 1fr; gap: 56px; padding: 140px 40px 80px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--bd); }
+  .stat:nth-child(3) { border-right: 1px solid var(--bd); }
+  .tools-list { grid-template-columns: 1fr 1fr; }
+  .case-section, .market, .cta { grid-template-columns: 1fr; gap: 48px; }
+  .phases-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .section-hdr { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 700px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero, .tools, .case-section, .phases, .market, .cta { padding-left: 24px; padding-right: 24px; }
+  .stat { padding: 36px 24px; }
+  .tools-list, .phases-grid { grid-template-columns: 1fr; }
+  footer { padding: 28px 24px; flex-direction: column; gap: 10px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">ASLA BD<span>.</span>2026</div>
+  <ul class="nav-links">
+    <li><a href="#tools">Tools</a></li>
+  </ul>
+
+</nav>
+
+
+<!-- TOOLS -->
+<div class="tools" id="tools">
+  <div class="section-hdr">
+    <div>
+      <div class="section-kicker">Session Tools</div>
+      <h2 class="section-title">Three sections. Built for a 5-person Southern California LA firm.</h2>
+    </div>
+  </div>
+
+
+    <!-- SECTION 1 -->
+  <div style="padding:12px 0 8px;border-bottom:2px solid var(--g);margin-bottom:1px;">
+    <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--g);font-weight:700;">Section 1 — Planning &amp; Goals</span>
+  </div>
+  <div class="tools-list" style="margin-bottom:32px;">
+    <a href="ASLA — SWOT Analysis.html" class="tool-item">
+      <span class="t-num">01 — SWOT Analysis</span>
+      <div class="t-name">Strengths · Weaknesses · Opportunities · Threats</div>
+      <p class="t-desc">A structured self-assessment of your firm's position in the current market — what you can leverage now and where you need to build.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="ASLA — 4-Year Pipeline Projection.html" class="tool-item">
+      <span class="t-num">02 — Pipeline Projection</span>
+      <div class="t-name">4-Year Revenue &amp; Growth Model</div>
+      <p class="t-desc">Conservative and optimistic scenarios, life science sector included, staffing curve, and fee targets for a 5-person Southern California LA firm.</p>
+      <span class="t-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div style="padding:12px 0 8px;border-bottom:2px solid var(--g);margin-bottom:1px;">
+    <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--g);font-weight:700;">Section 2 — Understanding the Market &amp; Pursuing Life Sciences</span>
+  </div>
+  <div class="tools-list" style="margin-bottom:32px;">
+    <a href="ASLA Market Intelligence — Local Client Potential.html" class="tool-item">
+      <span class="t-num">Market Research</span>
+      <div class="t-name">Sector Priority Analysis</div>
+      <p class="t-desc">Local market sector priorities by revenue potential, competition level, and strategic fit — calibrated for a 5-person Southern California LA firm.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="LS-Market.html" class="tool-item">
+      <span class="t-num">Life Sciences Market</span>
+      <div class="t-name">Understanding the Market</div>
+      <p class="t-desc">National headwinds, San Diego tailwinds, developer landscape, and the 2026–2028 window for Southern California landscape architects.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="LS-ARE-Profile.html" class="tool-item">
+      <span class="t-num">ARE Profile</span>
+      <div class="t-name">Identifying Potential Clients</div>
+      <p class="t-desc">Complete ARE client intelligence — who they are, strategic priorities, tenant mix, active pipeline, risks, and BD opportunity map.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="LS-Scout.html" class="tool-item">
+      <span class="t-num">Phase 1</span>
+      <div class="t-name">Scout</div>
+      <p class="t-desc">Is the opportunity real? Go/No-Go checklist, key players, competitive landscape, and timing analysis for Campus Point.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="LS-Engage.html" class="tool-item">
+      <span class="t-num">Phase 2</span>
+      <div class="t-name">Engage</div>
+      <p class="t-desc">How ARE is organized, social media intelligence, events calendar, conversation starters, and relationship-building strategy.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="LS-Position.html" class="tool-item">
+      <span class="t-num">Phase 3</span>
+      <div class="t-name">Position</div>
+      <p class="t-desc">Win statement, competitive analysis vs. Spurlock and SWA, AEC partner strategy, procurement sequence, and BD opportunity map.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="LS-Capture.html" class="tool-item">
+      <span class="t-num">Phase 4</span>
+      <div class="t-name">Capture</div>
+      <p class="t-desc">ARE's own language, LEED &amp; Fitwel credits to name, fee strategy, and pre-submission proposal checklist.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="LS-Retain.html" class="tool-item">
+      <span class="t-num">Phase 5</span>
+      <div class="t-name">Retain</div>
+      <p class="t-desc">Annual engagement calendar, San Diego relationship map, and the long-term network strategy for compounding BD returns.</p>
+      <span class="t-arrow">→</span>
+    </a>
+    <a href="BD_Lead_Tracker_2026.html" class="tool-item">
+      <span class="t-num">Tracking Tool</span>
+      <div class="t-name">BD Lead Tracker 2026</div>
+      <p class="t-desc">Track active pursuits, pipeline health, stage, fee estimates, probability, and next actions across all live opportunities.</p>
+      <span class="t-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div style="padding:12px 0 8px;border-bottom:2px solid var(--g);margin-bottom:1px;">
+    <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--g);font-weight:700;">Section 3 — Priming a Proposal</span>
+  </div>
+  <div class="tools-list">
+    <a href="Priming a Proposal.html" class="tool-item">
+      <span class="t-num">Step-by-Step Guide</span>
+      <div class="t-name">Priming a Proposal</div>
+      <p class="t-desc">Know your client · Proposal schedule · Outline · Proposal intake form · Submit and win. A complete walkthrough for landscape architects pursuing prime contracts.</p>
+      <span class="t-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+
+<footer>
+  <div class="ft-l">ASLA BD<span>.</span>2026 — ASLA Workshop 2026</div>
+  <div class="ft-r">All data sourced from public filings, press releases, and industry records.</div>
+</footer>
+
+
+
+</body></html>
