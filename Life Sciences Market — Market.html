@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)file:///C:/Users/tgala/Downloads/LS-Market%20(2).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Sciences Market — Market</title>
+<link href="file:///C:/Users/tgala/Downloads/Life%20Sciences%20Market%20%E2%80%94%20Market_files/css2" rel="stylesheet">
+<style>
+
+:root {
+  --green: #81BC00;
+  --green-mid: #6A9C00;
+  --green-dark: #4A7A00;
+  --green-pale: #EBF5D0;
+  --black: #1A1A1A;
+  --mid: #3D3D3D;
+  --light: #6B6B6B;
+  --border: #DDDDDD;
+  --bg: #FFFFFF;
+  --surface: #F7F7F7;
+  --navy: #1A3A5C;
+  --red: #C0392B;
+  --amber: #E67E22;
+  --blue: #2471A3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--black); }
+
+/* ── HEADER ── */
+header {
+  background: var(--green);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--black);
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+}
+header h1 em { font-style: normal; color: #fff; }
+.h-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--black);
+  padding: 0 48px;
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab:hover { color: rgba(255,255,255,0.7); }
+.tab.on { color: #fff; border-bottom-color: var(--green); }
+.tab-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.tab.on .tab-num { background: var(--green); color: var(--black); }
+
+/* ── MAIN ── */
+main { padding: 28px 48px 64px; max-width: 1380px; margin: 0 auto; }
+.pnl { display: none; }
+.pnl.on { display: block; }
+.pnl.on { display: block; }
+
+/* ── SECTION LABEL ── */
+.seclbl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 16px;
+}
+.seclbl:first-child { margin-top: 0; }
+.seclbl h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
+}
+.seclbl .ln { flex: 1; height: 1px; background: var(--border); }
+
+/* ── PHASE HERO ── */
+.phero {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.phero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.phero-desc {
+  font-size: 12px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+/* ── KPI STRIP ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.kpi-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.kpi-box.hi { border-color: var(--green); background: var(--green-pale); }
+.kpi-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+}
+.kpi-v.g { color: var(--green-dark); }
+.kpi-v.r { color: var(--red); }
+.kpi-l { font-size: 10px; color: var(--light); margin-top: 5px; line-height: 1.4; }
+
+/* ── GRID ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.card-hdr {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ch-green { background: var(--green); }
+.ch-black { background: var(--black); }
+.ch-navy { background: var(--navy); }
+.ch-red { background: var(--red); }
+.ch-amber { background: var(--amber); }
+.ch-mid { background: var(--mid); }
+.ch-blue { background: var(--blue); }
+.ch-icon { font-size: 15px; }
+.ch-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #fff; }
+.card-body { padding: 18px; }
+
+/* ── TIMELINE ── */
+.timeline { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.tl-card { border-radius: 7px; padding: 16px 18px; border: 1px solid var(--border); }
+.tl-card.dn { border-left: 4px solid var(--red); background: #FDF4F4; }
+.tl-card.md { border-left: 4px solid var(--amber); background: #FEF9E7; }
+.tl-card.up { border-left: 4px solid var(--green); background: var(--green-pale); }
+.tl-yr { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.tl-card.dn .tl-yr { color: var(--red); }
+.tl-card.md .tl-yr { color: var(--amber); }
+.tl-card.up .tl-yr { color: var(--green-dark); }
+.tl-h { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+.tl-b { font-size: 11px; color: var(--mid); line-height: 1.7; }
+
+/* ── REVENUE CHART ── */
+.rchart { padding: 16px 18px; }
+.rchart-lbl { font-size: 11px; color: var(--light); margin-bottom: 12px; }
+.rbars { display: flex; align-items: flex-end; gap: 8px; height: 120px; }
+.rbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.rbar-val { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
+.rbar-val.dv { color: var(--red); }
+.rbar-val.fl { color: var(--amber); }
+.rbar-val.pj { color: var(--green-dark); }
+.rbar { width: 100%; border-radius: 3px 3px 0 0; }
+.rbar.curr { background: var(--green); }
+.rbar.dw { background: var(--red); }
+.rbar.fl { background: var(--amber); }
+.rbar.pj { background: var(--green); opacity: 0.6; }
+.rbar-yr { font-size: 9px; color: var(--light); text-align: center; line-height: 1.4; margin-top: 4px; }
+.rleg { display: flex; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+.rleg-i { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--light); }
+.rleg-d { width: 10px; height: 10px; border-radius: 2px; }
+
+/* ── DEVELOPER TABLE ── */
+.dev-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.dev-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.dev-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.dev-table tr:hover td { background: var(--surface); }
+.dev-table tr:last-child td { border-bottom: none; }
+.dev-pri { font-weight: 600; color: var(--black); }
+.status-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.06em; }
+.sb-hi { background: var(--green-pale); color: var(--green-dark); }
+.sb-med { background: #FEF9E7; color: #7D5010; }
+.sb-lo { background: var(--surface); color: var(--light); }
+
+/* ── CALLOUT ── */
+.callout {
+  background: var(--surface);
+  border-left: 3px solid var(--green);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.callout strong { color: var(--black); }
+
+/* ── INSIGHT BOX ── */
+.insight {
+  background: var(--black);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.insight-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.insight-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 10px;
+}
+.insight-item:last-child { border-bottom: none; }
+.insight-item::before { content: '→'; color: var(--green); flex-shrink: 0; }
+
+/* ── CONTACT CARDS ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cc-name { font-weight: 600; font-size: 13px; color: var(--black); margin-bottom: 3px; }
+.cc-role { font-size: 10px; color: var(--green-dark); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; margin-bottom: 8px; }
+.cc-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+.cc-tags { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+.cc-tag { font-family: 'DM Mono', monospace; font-size: 9px; background: var(--green-pale); color: var(--green-dark); padding: 2px 7px; border-radius: 2px; }
+
+/* ── RISK ITEMS ── */
+.risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.risk-item { border-radius: 6px; padding: 13px 15px; }
+.risk-item.hi { background: #FDF4F4; border: 1px solid #E8D0D0; border-left: 4px solid var(--red); }
+.risk-item.am { background: #FEF9E7; border: 1px solid #E8D5B0; border-left: 4px solid var(--amber); }
+.risk-item.bl { background: #EBF5FB; border: 1px solid #B0CADF; border-left: 4px solid var(--blue); }
+.risk-item.gn { background: var(--green-pale); border: 1px solid var(--border); border-left: 4px solid var(--green); }
+.ri-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 2px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+.rb-hi { background: #FDEDEC; color: var(--red); }
+.rb-am { background: #FEF9E7; color: var(--amber); }
+.rb-bl { background: #EBF5FB; color: var(--blue); }
+.rb-gn { background: var(--green-pale); color: var(--green-dark); }
+.ri-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.ri-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── TENANT GRID ── */
+.tenant-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.tenant-card { background: var(--surface); border-radius: 5px; padding: 10px 12px; border: 1px solid var(--border); }
+.tc-name { font-size: 11px; font-weight: 600; color: var(--black); margin-bottom: 3px; line-height: 1.3; }
+.tc-pct { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--green-dark); font-weight: 600; }
+.tc-rating { font-size: 10px; color: var(--light); margin-top: 2px; }
+
+/* ── OPP CARDS ── */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+/* ── PIPELINE TABLE ── */
+.pip-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.pip-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.pip-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); vertical-align: middle; color: var(--mid); }
+.pip-table tr:last-child td { border-bottom: none; }
+.pip-stage { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.05em; }
+.stg-now { background: var(--green-pale); color: var(--green-dark); }
+.stg-next { background: #FEF9E7; color: #7D5010; }
+.stg-fut { background: var(--surface); color: var(--light); }
+
+/* ── MARKET OCC TABLE ── */
+.mkt-table { width: 100%; border-collapse: collapse; }
+.mkt-table th { padding: 8px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-align: left; background: var(--green-pale); color: var(--green-dark); border-bottom: 1px solid var(--border); font-family: 'DM Mono', monospace; }
+.mkt-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); font-size: 12px; vertical-align: middle; }
+.mkt-table tr:last-child td { border-bottom: none; font-weight: 600; background: var(--green-pale); }
+.occ-bar { display: flex; align-items: center; gap: 8px; }
+.occ-track { flex: 1; height: 7px; background: var(--surface); border-radius: 4px; overflow: hidden; min-width: 60px; }
+.occ-fill { height: 100%; background: var(--green); border-radius: 4px; }
+.occ-fill.lo { background: var(--amber); }
+.occ-fill.vlo { background: var(--red); }
+.occ-txt { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--light); width: 38px; flex-shrink: 0; }
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li input[type="checkbox"] { margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+
+/* ── SOCIAL MEDIA CARDS ── */
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.sc-platform { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.sc-type { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.sc-quote { font-size: 11px; color: var(--mid); line-height: 1.6; font-style: italic; margin-bottom: 8px; padding: 8px 12px; background: var(--bg); border-radius: 4px; border-left: 3px solid var(--green); }
+.sc-action { font-size: 11px; color: var(--light); line-height: 1.6; }
+.sc-action strong { color: var(--green-dark); }
+
+/* ── EVENTS TABLE ── */
+.evt-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.evt-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.evt-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.evt-table tr:last-child td { border-bottom: none; }
+.evt-pri { font-size: 10px; font-weight: 700; }
+.pri-hi { color: var(--red); }
+.pri-med { color: var(--amber); }
+.pri-lo { color: var(--green-dark); }
+
+/* ── COMPETITIVE TABLE ── */
+.comp-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.comp-table th { padding: 8px 12px; text-align: left; background: var(--black); color: rgba(255,255,255,0.55); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.comp-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.comp-table tr:hover td { background: var(--surface); }
+.comp-table tr:last-child td { border-bottom: none; }
+
+/* ── WIN STATEMENT ── */
+.win-stmt { background: var(--black); border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; }
+.win-stmt-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+.win-stmt-txt { font-family: 'Playfair Display', serif; font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; font-style: italic; }
+
+/* ── LANG CARD ── */
+.lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.lang-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.lang-quote { font-size: 12px; color: var(--black); line-height: 1.65; padding: 14px 16px; font-style: italic; border-left: 3px solid var(--green); background: var(--bg); }
+.lang-src { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); padding: 6px 16px; background: var(--green-pale); display: block; }
+.lang-use { padding: 12px 16px; font-size: 11px; color: var(--mid); line-height: 1.65; }
+.lang-use strong { color: var(--black); display: block; margin-bottom: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); }
+
+/* ── LEED GRID ── */
+.leed-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.leed-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.leed-credit { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+.leed-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.leed-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── CALENDAR ── */
+.cal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.cal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cal-month { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.cal-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.cal-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+
+/* ── TAKEAWAY ── */
+.takeaway {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 20px;
+}
+.tka-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(0,0,0,0.45); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.tka-txt { font-size: 13px; color: var(--black); line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  padding: 14px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer div { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+@media(max-width:900px){
+  header, main, footer, nav { padding-left: 20px; padding-right: 20px; }
+  .g2,.g3,.kpi-strip,.timeline,.opp-grid,.lang-grid,.leed-grid,.risk-grid,.contact-grid,.social-grid,.cal-grid { grid-template-columns: 1fr; }
+  .tenant-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-strip { grid-template-columns: 1fr 1fr; }
+}
+
+/* Numbered list items */
+.tpi-list { list-style: none; padding: 0; margin: 0; }
+.tpi { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.tpi:last-child { border-bottom: none; }
+.tpn { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.tpt { font-size: 12px; color: var(--mid); line-height: 1.7; }
+.tpt strong { color: var(--black); }
+/* Insight items with arrow */
+.sn-body-i { display: flex; gap: 10px; font-size: 12px; color: var(--mid); line-height: 1.7; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.sn-body-i:last-child { border-bottom: none; }
+/* Transition cue - remove display */
+.tr-cue { display: none; }
+/* Note content blocks - remove display */  
+.ncb { display: none; }
+/* Old chart classes compatibility */
+.rw { padding: 16px 18px; }
+
+
+/* Developer table */
+.dtbl { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
+.dtbl th { padding: 9px 14px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid var(--border); font-weight: 600; }
+.dtbl td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 12px; color: var(--mid); line-height: 1.6; }
+.dtbl td strong { font-size: 12px; color: var(--black); font-weight: 600; display: inline; }
+.dtbl tr:last-child td { border-bottom: none; }
+.dtbl tr:hover td { background: var(--surface); }
+/* Activity bar */
+.abr { display: flex; flex-direction: column; gap: 4px; }
+.abt { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.abf { height: 100%; border-radius: 3px; }
+.abf.h { background: var(--green); }
+.abf.m { background: var(--amber); }
+.abf.l { background: var(--border); }
+/* Developer badges */
+.dbadge { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 3px; font-weight: 500; }
+.db-act { background: var(--green-pale); color: var(--green-dark); }
+.db-sel { background: #FEF9E7; color: #7D5010; }
+.db-pau { background: var(--surface); color: var(--light); }
+
+
+/* LA Opportunity Box */
+.la-box { background: var(--black); border-radius: 8px; padding: 22px 24px; margin-bottom: 20px; }
+.la-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.la-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 18px; line-height: 1.6; }
+.la-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.la-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 14px 16px; }
+.la-item-title { font-size: 12px; font-weight: 600; color: var(--green); margin-bottom: 6px; }
+.la-item-body { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+/* Contractual precedent cards */
+.prec-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.prec-card { background: var(--navy); border-radius: 8px; padding: 16px 18px; }
+.pc-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.pc-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 7px; }
+.pc-body { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.pc-firm { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.9); background: rgba(129,188,0,0.2); border: 1px solid rgba(129,188,0,0.3); padding: 2px 7px; border-radius: 2px; }
+
+/* Opp grid for engage section */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+
+/* Scout Q&A lists */
+.ql { list-style: none; padding: 0; margin: 0; }
+.qi { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.qi:last-child { border-bottom: none; }
+.qdot { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.qi:not(.ans) .qdot { background: #FEF9E7; color: var(--amber); }
+.qt { flex: 1; font-size: 12px; color: var(--black); line-height: 1.6; }
+.qt strong { display: block; margin-bottom: 3px; }
+.qa { font-size: 11px; color: var(--mid); line-height: 1.65; margin-top: 3px; }
+.qa.amber { color: #7D5010; }
+
+/* Card header pale variant */
+.ch-pale { background: var(--surface); border-bottom: 1px solid var(--border); }
+.ch-pale .ch-title { color: var(--black); }
+.ch-pale .ch-sub { color: var(--light); }
+.ch-pale .ch-icon { font-size: 15px; }
+
+/* Checklist */
+.ckl { list-style: none; padding: 0; margin: 0; }
+.cki { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; cursor: pointer; }
+.cki:last-child { border-bottom: none; }
+.ckb { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; margin-top: 1px; transition: all 0.15s; }
+.cki.done .ckb { background: var(--green); border-color: var(--green); }
+.cki.done .ckb::after { content: '✓'; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.cki.done { color: var(--light); text-decoration: line-through; }
+.ck-t { flex: 1; }
+.ckbg { font-family: 'DM Mono', monospace; font-size: 9px; padding: 1px 6px; border-radius: 2px; margin-left: 6px; white-space: nowrap; }
+.ckbg-ok { background: var(--green-pale); color: var(--green-dark); }
+.ckbg-gap { background: #FEF9E7; color: #7D5010; }
+.ckbg-risk { background: #FDEDEC; color: var(--red); }
+
+/* Assessment go/no-go */
+.gnogo { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.gnogo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.gnogo-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.gnogo-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.gnogo-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+
+
+/* Nav links */
+nav a { text-decoration: none; color: inherit; }
+.tab { cursor: pointer; }
+
+.sub-bullets { list-style: none; padding: 0; margin: 6px 0 0 0; }
+.sub-bullets li { font-size: 11px; color: var(--mid); line-height: 1.65; padding: 3px 0; padding-left: 12px; position: relative; }
+.sub-bullets li::before { content: "·"; position: absolute; left: 0; color: var(--green-dark); font-weight: 700; }
+.tpt { font-size: 12px; }
+.tpt strong { font-size: 12px; display: block; color: var(--black); margin-bottom: 2px; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;color:rgba(0,0,0,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">ASLA BD Workshop · 2026</div>
+    <h1>Life Sciences <em>Market</em></h1>
+  </div>
+  <div class="h-meta">
+    National Lab Vacancy &nbsp;·&nbsp; 21.4% (CBRE Q1 2026)<br>
+    San Diego Occupancy &nbsp;·&nbsp; 97.2% &nbsp;·&nbsp; Strongest Market Nationally<br>
+    Live Case Study &nbsp;·&nbsp; Alexandria Real Estate Equities
+  </div>
+</header>
+
+<nav>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Market.html" class="tab on"><span class="tab-num">⊕</span>Market</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-ARE-Profile.html" class="tab"><span class="tab-num">★</span>ARE Profile</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Scout.html" class="tab"><span class="tab-num">1</span>Scout</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Engage.html" class="tab"><span class="tab-num">2</span>Engage</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Position.html" class="tab"><span class="tab-num">3</span>Position</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Capture.html" class="tab"><span class="tab-num">4</span>Capture</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Retain.html" class="tab"><span class="tab-num">5</span>Retain</a>
+</nav>
+
+
+<main>
+<div class="phero">
+    <div style="flex:1">
+      <div class="phero-title">The 2026–2028 Window</div>
+      <div class="phero-desc">National lab vacancy sits at 21.4% and most developers have paused speculative starts. But San Diego did not follow that script — occupancy held at 97.2% and committed pipelines are proceeding. The firms that build relationships during a headwind market are the ones positioned to win when the recovery arrives in 2028.</div>
+    </div>
+  </div>
+
+  <!-- KPI STRIP -->
+  <div class="kpi-strip">
+    <div class="kpi-box">
+      <div class="kpi-v r">21.4%</div>
+      <div class="kpi-l">National Lab Vacancy · CBRE Q1 2026</div>
+    </div>
+    <div class="kpi-box hi">
+      <div class="kpi-v g">97.2%</div>
+      <div class="kpi-l">San Diego Occupancy · Strongest Market Nationally</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-v">$1.7B</div>
+      <div class="kpi-l">IQHQ RaDD District · Active San Diego Pipeline</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-v">5</div>
+      <div class="kpi-l">Active Life Science Developers in San Diego Market</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-v g">2028</div>
+      <div class="kpi-l">Recovery Window · Relationship-Building Starts Now</div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <div class="tl-card dn">
+      <div class="tl-yr">⬇ 2026 — Headwind Year</div>
+      <div class="tl-h">Contraction</div>
+      <div class="tl-b">NIH grant freezes stall early-stage biotech. National lab vacancy at 21.4%. ARE Boston fell to 86.4% occupancy. Developers pausing speculative starts. <strong>BUT San Diego at 97.2% is expanding.</strong> Campus Point BMS groundbreaking 2026. Most competitors go quiet. Maximum relationship-building window — use it.</div>
+    </div>
+    <div class="tl-card md">
+      <div class="tl-yr">→ 2027 — Transition Year</div>
+      <div class="tl-h">Stabilization</div>
+      <div class="tl-b">Vacancy absorbs nationally. Pipeline deliveries taper — few projects started in 2025–26 deliver in 2027. VC funding steady. Pharma M&amp;A picks up ("M&amp;A is the lifeblood of this industry" — Hallie Kuhn, ARE). <strong>Teams positioned in 2026 start receiving calls</strong> as developers re-engage architects for 2028 pipeline. Pre-construction typically starts 18–24 months before groundbreaking.</div>
+    </div>
+    <div class="tl-card up">
+      <div class="tl-yr">⬆ 2028 — Uptick Year</div>
+      <div class="tl-h">Recovery</div>
+      <div class="tl-b">Campus Point BMS delivers (466K RSF). ARE's 19.9M RSF future pipeline activates. New ground-up starts accelerate in strongest markets. <strong>Firms with ARE relationships built in 2026 win this work.</strong> Firms that waited in 2026 start from zero against firms who've been showing up for two years. The gap is real and it compounds.</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <!-- REVENUE CHART -->
+    <div class="card">
+      <div class="card-hdr ch-black"><span class="ch-icon">📊</span><div><div class="ch-title">Life Science Revenue Projection</div><div class="ch-sub">Illustrative · 5-person SoCal LA firm targeting ARE San Diego</div></div></div>
+      <div class="card-body">
+        <div class="rchart">
+          <div class="rchart-lbl">Annual Life Science Revenue (Illustrative Range)</div>
+          <div class="rbars">
+            <div class="rbar-col"><div class="rbar-val">$320K</div><div class="rbar curr" style="height:80%;"></div><div class="rbar-yr">2025<br>Baseline</div></div>
+            <div class="rbar-col"><div class="rbar-val dv">$240K</div><div class="rbar dw" style="height:60%;"></div><div class="rbar-yr">2026<br>Headwind</div></div>
+            <div class="rbar-col"><div class="rbar-val fl">$310K</div><div class="rbar fl" style="height:77%;"></div><div class="rbar-yr">2027<br>Stabilize</div></div>
+            <div class="rbar-col"><div class="rbar-val pj">$520K</div><div class="rbar pj" style="height:100%;"></div><div class="rbar-yr">2028<br>Uptick</div></div>
+            <div class="rbar-col"><div class="rbar-val pj">$740K</div><div class="rbar pj" style="height:100%;opacity:0.38;"></div><div class="rbar-yr">2029<br>Growth</div></div>
+          </div>
+          <div class="rleg">
+            <div class="rleg-i"><div class="rleg-d" style="background:var(--g);"></div>Current/Growth</div>
+            <div class="rleg-i"><div class="rleg-d" style="background:var(--red);"></div>Contraction</div>
+            <div class="rleg-i"><div class="rleg-d" style="background:var(--amber);"></div>Stabilization</div>
+            <div class="rleg-i"><div class="rleg-d" style="background:var(--g);opacity:0.45;"></div>Projected (relationship-dependent)</div>
+          </div>
+        </div>
+        <div style="font-size:10px;color:var(--light);font-style:italic;line-height:1.6;margin-top:6px;">2028–29 recovery is entirely contingent on BD investment made in 2026. Firms that reduce BD effort during headwinds typically miss the recovery window entirely. San Diego's market strength means your 2026 contraction should be shallower than the national average — but only if you're still investing.</div>
+      </div>
+    </div>
+
+    <!-- DEVELOPER LANDSCAPE -->
+    <div class="card">
+      <div class="card-hdr ch-black"><span class="ch-icon">🏢</span><div><div class="ch-title">Life Science Developer Landscape — San Diego</div><div class="ch-sub">Who's building, who's pausing — and why ARE is the primary target</div></div></div>
+      <div class="card-body" style="padding:0;">
+        <div style="overflow-x:auto;">
+          <table class="dtbl">
+            <thead><tr><th>Developer</th><th>SD Activity</th><th>Status</th><th>LA Opportunity</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Alexandria Real Estate</strong><br><span style="font-size:10px;color:var(--light);">NYSE: ARE · Pasadena HQ · 2 hrs</span></td>
+                <td><div class="abr"><div class="abt"><div class="abf h" style="width:100%;"></div></div><span style="font-size:10px;font-family:&#39;DM Mono&#39;,monospace;">Very High</span></div></td>
+                <td><span class="dbadge db-act">Active &amp; Expanding</span></td>
+                <td style="font-size:10px;color:var(--green-dark);"><strong>Primary Target.</strong> 97.2% occ · BMS build-to-suit breaking ground · No confirmed LA on any SD project · $6.35B committed pipeline · Pasadena HQ accessible</td>
+              </tr>
+              <tr>
+                <td><strong>IQHQ</strong><br><span style="font-size:10px;color:var(--light);">Private · San Diego-based</span></td>
+                <td><div class="abr"><div class="abt"><div class="abf h" style="width:80%;"></div></div><span style="font-size:10px;font-family:&#39;DM Mono&#39;,monospace;">High</span></div></td>
+                <td><span class="dbadge db-act">Active</span></td>
+                <td style="font-size:10px;color:var(--mid);">RaDD waterfront district downtown SD · $1.7B · Urban waterfront LA; different profile than ARE campus work. Secondary target.</td>
+              </tr>
+              <tr>
+                <td><strong>Healthpeak Properties</strong><br><span style="font-size:10px;color:var(--light);">NYSE: DOC · Denver HQ</span></td>
+                <td><div class="abr"><div class="abt"><div class="abf m" style="width:60%;"></div></div><span style="font-size:10px;font-family:&#39;DM Mono&#39;,monospace;">Medium</span></div></td>
+                <td><span class="dbadge db-sel">Selective</span></td>
+                <td style="font-size:10px;color:var(--mid);">Active in SD but selective new starts in 2026. Confirmed at Bisnow SoCal Life Sciences alongside ARE. Worth tracking.</td>
+              </tr>
+              <tr>
+                <td><strong>BioMed Realty</strong><br><span style="font-size:10px;color:var(--light);">Private · Blackstone · SD-based</span></td>
+                <td><div class="abr"><div class="abt"><div class="abf m" style="width:55%;"></div></div><span style="font-size:10px;font-family:&#39;DM Mono&#39;,monospace;">Medium</span></div></td>
+                <td><span class="dbadge db-sel">Active / Cautious</span></td>
+                <td style="font-size:10px;color:var(--mid);">Private — harder to track pipeline. ARE's closest SD competitor. Secondary target once ARE relationship established.</td>
+              </tr>
+              <tr>
+                <td><strong>Kilroy Realty</strong><br><span style="font-size:10px;color:var(--light);">NYSE: KRC · Los Angeles HQ</span></td>
+                <td><div class="abr"><div class="abt"><div class="abf l" style="width:35%;"></div></div><span style="font-size:10px;font-family:&#39;DM Mono&#39;,monospace;">Lower</span></div></td>
+                <td><span class="dbadge db-pau">Repositioning</span></td>
+                <td style="font-size:10px;color:var(--light);">Slower pace in 2026. Office-to-life-science conversion strategy. Watch for 2027 activity as market stabilizes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout" style="margin:11px 11px;"><strong>Why ARE Over the Others</strong>Only ARE has: a publicly documented $6.35B committed pipeline, an accessible Pasadena HQ for a SoCal firm, named SD development team contacts, the highest SD occupancy (97.2%), AND a confirmed gap — no landscape architect on any ARE San Diego project. IQHQ is interesting but opaque. BioMed is private. ARE is your highest-intelligence, highest-confidence, highest-upside target.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADWIND vs OPPORTUNITY -->
+  <div class="g2">
+    <div class="card">
+      <div class="card-hdr ch-red"><span class="ch-icon">⚠️</span><div><div class="ch-title">The National Headwinds — Why Most Competitors Are Quiet</div></div></div>
+      <div class="card-body">
+        <ul class="tpl">
+          <li class="tpi"><div class="tpn">1</div><div class="tpt"><strong>NIH Funding Freeze</strong><ul class="sub-bullets"><li>Proposed cuts stall early-stage academic and government-backed research</li><li>NIH funding → biotech hiring → lab space demand</li><li>ARE's government tenant base (NIH/GSA) under direct pressure</li></ul></div></li>
+          <li class="tpi"><div class="tpn">2</div><div class="tpt"><strong>Tariff Uncertainty</strong><ul class="sub-bullets"><li>Steel, aluminum, manufactured components — costs unpredictable</li><li>Developers delaying groundbreaking until cost models stabilize</li><li>Extends pre-construction phase — when LAs should be engaged</li></ul></div></li>
+          <li class="tpi"><div class="tpn">3</div><div class="tpt"><strong>Elevated Interest Rates</strong><ul class="sub-bullets"><li>Higher cost of capital makes development math harder</li><li>ARE reducing non-income-producing assets from 20% → 11–16%</li><li>Selective, funded projects continue — speculative starts pause</li></ul></div></li>
+          <li class="tpi"><div class="tpn">4</div><div class="tpt"><strong>Lab Space Glut — National</strong><ul class="sub-bullets"><li>21.4% vacancy nationally (CBRE Q1 2026)</li><li>Boston most acute — ARE occupancy dropped to 86.4%</li><li><strong>San Diego exception — 97.2% occupancy, developers still building</strong></li></ul></div></li>
+          <li class="tpi"><div class="tpn">5</div><div class="tpt"><strong>Global Uncertainty</strong><ul class="sub-bullets"><li>FDA leadership changes, drug pricing pressure, geopolitical risk</li><li>"Lingering conservatism" dampens leasing velocity nationally</li><li>San Diego's supply-demand balance insulates the local market</li></ul></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-green"><span class="ch-icon">🌱</span><div><div class="ch-title">Why San Diego Is Different — And Why Now Is Right</div></div></div>
+      <div class="card-body">
+        <div class="callout"><strong>The Contrarian Principle</strong>Headwind markets are relationship-building markets. Your competitors are focused on existing work. Decision-makers are less busy. The firms that show up now are the ones who get called first when the market turns. This happened after 2008. It happened after COVID. It will happen again in 2028.</div>
+        <ul class="tpl">
+          <li class="tpi"><div class="tpn">→</div><div class="tpt"><strong>Active pipeline doesn't stop</strong><ul class="sub-bullets"><li>ARE's $6.35B includes pre-committed projects that don't pause</li><li>BMS Campus Point — 466K RSF, 16-year lease, $102B market cap tenant</li><li>LEED-required landscape work is contractually tied to certification</li></ul></div></li>
+          <li class="tpi"><div class="tpn">→</div><div class="tpt"><strong>Re-leasing generates refresh budgets</strong><ul class="sub-bullets"><li>$71M in 2026 lease expirations nationally</li><li>Vacant spaces get exterior upgrades to attract tenants</li><li>LAs often engaged directly — not through a prime architect</li></ul></div></li>
+          <li class="tpi"><div class="tpn">→</div><div class="tpt"><strong>LEED and Fitwel are non-negotiable</strong><ul class="sub-bullets"><li>90% of ARE's top 20 tenants have net-zero commitments</li><li>Campus Point BMS: LEED Gold + Fitwel + 100% electrification</li><li>Site credits require a landscape architect — regardless of market</li></ul></div></li>
+          <li class="tpi"><div class="tpn">→</div><div class="tpt"><strong>Architect primes are easier to reach now</strong><ul class="sub-bullets"><li>Gensler, HDR, Flad calendars have more room during slowdowns</li><li>These primes assemble ARE project teams — including the LA</li><li>Build relationships now, before the next project is announced</li></ul></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sn-sec">
+    
+    
+        
+      </div>
+      
+      <div class="takeaway"><div class="tka-icon">💡</div><div><div class="tka-lbl">Key Takeaway</div><div class="tka-txt">The headwind is real nationally. The San Diego exception is real locally. The 2026 window to position your firm is open right now — precisely because your competitors are focused on surviving rather than preparing. The rest of this playbook shows exactly how to use that window.</div></div></div>
+      
+    
+</main>
+
+<footer>
+  <div>Life Sciences Market · Alexandria Real Estate Case Study · ASLA 2026</div>
+  <div>Source: ARE 10-K FY2025 · Q4 2025 Earnings Call · CBRE Q1 2026</div>
+</footer>
+
+<script>
+function ck(item) {
+  item.classList.toggle('done');
+  try {
+    var done = [];
+    document.querySelectorAll('.cki.done').forEach(function(el){
+      done.push(el.querySelector('.ck-t') ? el.querySelector('.ck-t').textContent.trim().slice(0,50) : '');
+    });
+    sessionStorage.setItem('ls_ck_mkt', JSON.stringify(done));
+  } catch(e){}
+}
+window.addEventListener('load', function(){
+  try {
+    var saved = JSON.parse(sessionStorage.getItem('ls_ck_mkt') || '[]');
+    document.querySelectorAll('.cki').forEach(function(el){
+      var t = el.querySelector('.ck-t');
+      if (t && saved.indexOf(t.textContent.trim().slice(0,50)) !== -1) el.classList.add('done');
+    });
+  } catch(e){}
+});
+</script>
+
+</body></html>

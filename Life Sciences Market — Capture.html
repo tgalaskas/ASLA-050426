@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///C:/Users/tgala/Downloads/LS-Capture%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Sciences Market — Capture</title>
+<link href="file:///C:/Users/tgala/Downloads/Life%20Sciences%20Market%20%E2%80%94%20Capture_files/css2" rel="stylesheet">
+<style>
+
+:root {
+  --green: #81BC00;
+  --green-mid: #6A9C00;
+  --green-dark: #4A7A00;
+  --green-pale: #EBF5D0;
+  --black: #1A1A1A;
+  --mid: #3D3D3D;
+  --light: #6B6B6B;
+  --border: #DDDDDD;
+  --bg: #FFFFFF;
+  --surface: #F7F7F7;
+  --navy: #1A3A5C;
+  --red: #C0392B;
+  --amber: #E67E22;
+  --blue: #2471A3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--black); }
+
+/* ── HEADER ── */
+header {
+  background: var(--green);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--black);
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+}
+header h1 em { font-style: normal; color: #fff; }
+.h-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--black);
+  padding: 0 48px;
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab:hover { color: rgba(255,255,255,0.7); }
+.tab.on { color: #fff; border-bottom-color: var(--green); }
+.tab-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.tab.on .tab-num { background: var(--green); color: var(--black); }
+
+/* ── MAIN ── */
+main { padding: 28px 48px 64px; max-width: 1380px; margin: 0 auto; }
+.pnl { display: none; }
+.pnl.on { display: block; }
+.pnl.on { display: block; }
+
+/* ── SECTION LABEL ── */
+.seclbl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 16px;
+}
+.seclbl:first-child { margin-top: 0; }
+.seclbl h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
+}
+.seclbl .ln { flex: 1; height: 1px; background: var(--border); }
+
+/* ── PHASE HERO ── */
+.phero {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.phero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.phero-desc {
+  font-size: 12px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+/* ── KPI STRIP ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.kpi-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.kpi-box.hi { border-color: var(--green); background: var(--green-pale); }
+.kpi-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+}
+.kpi-v.g { color: var(--green-dark); }
+.kpi-v.r { color: var(--red); }
+.kpi-l { font-size: 10px; color: var(--light); margin-top: 5px; line-height: 1.4; }
+
+/* ── GRID ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.card-hdr {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ch-green { background: var(--green); }
+.ch-black { background: var(--black); }
+.ch-navy { background: var(--navy); }
+.ch-red { background: var(--red); }
+.ch-amber { background: var(--amber); }
+.ch-mid { background: var(--mid); }
+.ch-blue { background: var(--blue); }
+.ch-icon { font-size: 15px; }
+.ch-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #fff; }
+.card-body { padding: 18px; }
+
+/* ── TIMELINE ── */
+.timeline { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.tl-card { border-radius: 7px; padding: 16px 18px; border: 1px solid var(--border); }
+.tl-card.dn { border-left: 4px solid var(--red); background: #FDF4F4; }
+.tl-card.md { border-left: 4px solid var(--amber); background: #FEF9E7; }
+.tl-card.up { border-left: 4px solid var(--green); background: var(--green-pale); }
+.tl-yr { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.tl-card.dn .tl-yr { color: var(--red); }
+.tl-card.md .tl-yr { color: var(--amber); }
+.tl-card.up .tl-yr { color: var(--green-dark); }
+.tl-h { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+.tl-b { font-size: 11px; color: var(--mid); line-height: 1.7; }
+
+/* ── REVENUE CHART ── */
+.rchart { padding: 16px 18px; }
+.rchart-lbl { font-size: 11px; color: var(--light); margin-bottom: 12px; }
+.rbars { display: flex; align-items: flex-end; gap: 8px; height: 120px; }
+.rbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.rbar-val { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
+.rbar-val.dv { color: var(--red); }
+.rbar-val.fl { color: var(--amber); }
+.rbar-val.pj { color: var(--green-dark); }
+.rbar { width: 100%; border-radius: 3px 3px 0 0; }
+.rbar.curr { background: var(--green); }
+.rbar.dw { background: var(--red); }
+.rbar.fl { background: var(--amber); }
+.rbar.pj { background: var(--green); opacity: 0.6; }
+.rbar-yr { font-size: 9px; color: var(--light); text-align: center; line-height: 1.4; margin-top: 4px; }
+.rleg { display: flex; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+.rleg-i { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--light); }
+.rleg-d { width: 10px; height: 10px; border-radius: 2px; }
+
+/* ── DEVELOPER TABLE ── */
+.dev-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.dev-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.dev-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.dev-table tr:hover td { background: var(--surface); }
+.dev-table tr:last-child td { border-bottom: none; }
+.dev-pri { font-weight: 600; color: var(--black); }
+.status-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.06em; }
+.sb-hi { background: var(--green-pale); color: var(--green-dark); }
+.sb-med { background: #FEF9E7; color: #7D5010; }
+.sb-lo { background: var(--surface); color: var(--light); }
+
+/* ── CALLOUT ── */
+.callout {
+  background: var(--surface);
+  border-left: 3px solid var(--green);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.callout strong { color: var(--black); }
+
+/* ── INSIGHT BOX ── */
+.insight {
+  background: var(--black);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.insight-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.insight-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 10px;
+}
+.insight-item:last-child { border-bottom: none; }
+.insight-item::before { content: '→'; color: var(--green); flex-shrink: 0; }
+
+/* ── CONTACT CARDS ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cc-name { font-weight: 600; font-size: 13px; color: var(--black); margin-bottom: 3px; }
+.cc-role { font-size: 10px; color: var(--green-dark); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; margin-bottom: 8px; }
+.cc-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+.cc-tags { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+.cc-tag { font-family: 'DM Mono', monospace; font-size: 9px; background: var(--green-pale); color: var(--green-dark); padding: 2px 7px; border-radius: 2px; }
+
+/* ── RISK ITEMS ── */
+.risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.risk-item { border-radius: 6px; padding: 13px 15px; }
+.risk-item.hi { background: #FDF4F4; border: 1px solid #E8D0D0; border-left: 4px solid var(--red); }
+.risk-item.am { background: #FEF9E7; border: 1px solid #E8D5B0; border-left: 4px solid var(--amber); }
+.risk-item.bl { background: #EBF5FB; border: 1px solid #B0CADF; border-left: 4px solid var(--blue); }
+.risk-item.gn { background: var(--green-pale); border: 1px solid var(--border); border-left: 4px solid var(--green); }
+.ri-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 2px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+.rb-hi { background: #FDEDEC; color: var(--red); }
+.rb-am { background: #FEF9E7; color: var(--amber); }
+.rb-bl { background: #EBF5FB; color: var(--blue); }
+.rb-gn { background: var(--green-pale); color: var(--green-dark); }
+.ri-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.ri-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── TENANT GRID ── */
+.tenant-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.tenant-card { background: var(--surface); border-radius: 5px; padding: 10px 12px; border: 1px solid var(--border); }
+.tc-name { font-size: 11px; font-weight: 600; color: var(--black); margin-bottom: 3px; line-height: 1.3; }
+.tc-pct { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--green-dark); font-weight: 600; }
+.tc-rating { font-size: 10px; color: var(--light); margin-top: 2px; }
+
+/* ── OPP CARDS ── */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+/* ── PIPELINE TABLE ── */
+.pip-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.pip-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.pip-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); vertical-align: middle; color: var(--mid); }
+.pip-table tr:last-child td { border-bottom: none; }
+.pip-stage { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.05em; }
+.stg-now { background: var(--green-pale); color: var(--green-dark); }
+.stg-next { background: #FEF9E7; color: #7D5010; }
+.stg-fut { background: var(--surface); color: var(--light); }
+
+/* ── MARKET OCC TABLE ── */
+.mkt-table { width: 100%; border-collapse: collapse; }
+.mkt-table th { padding: 8px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-align: left; background: var(--green-pale); color: var(--green-dark); border-bottom: 1px solid var(--border); font-family: 'DM Mono', monospace; }
+.mkt-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); font-size: 12px; vertical-align: middle; }
+.mkt-table tr:last-child td { border-bottom: none; font-weight: 600; background: var(--green-pale); }
+.occ-bar { display: flex; align-items: center; gap: 8px; }
+.occ-track { flex: 1; height: 7px; background: var(--surface); border-radius: 4px; overflow: hidden; min-width: 60px; }
+.occ-fill { height: 100%; background: var(--green); border-radius: 4px; }
+.occ-fill.lo { background: var(--amber); }
+.occ-fill.vlo { background: var(--red); }
+.occ-txt { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--light); width: 38px; flex-shrink: 0; }
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li input[type="checkbox"] { margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+
+/* ── SOCIAL MEDIA CARDS ── */
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.sc-platform { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.sc-type { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.sc-quote { font-size: 11px; color: var(--mid); line-height: 1.6; font-style: italic; margin-bottom: 8px; padding: 8px 12px; background: var(--bg); border-radius: 4px; border-left: 3px solid var(--green); }
+.sc-action { font-size: 11px; color: var(--light); line-height: 1.6; }
+.sc-action strong { color: var(--green-dark); }
+
+/* ── EVENTS TABLE ── */
+.evt-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.evt-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.evt-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.evt-table tr:last-child td { border-bottom: none; }
+.evt-pri { font-size: 10px; font-weight: 700; }
+.pri-hi { color: var(--red); }
+.pri-med { color: var(--amber); }
+.pri-lo { color: var(--green-dark); }
+
+/* ── COMPETITIVE TABLE ── */
+.comp-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.comp-table th { padding: 8px 12px; text-align: left; background: var(--black); color: rgba(255,255,255,0.55); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.comp-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.comp-table tr:hover td { background: var(--surface); }
+.comp-table tr:last-child td { border-bottom: none; }
+
+/* ── WIN STATEMENT ── */
+.win-stmt { background: var(--black); border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; }
+.win-stmt-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+.win-stmt-txt { font-family: 'Playfair Display', serif; font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; font-style: italic; }
+
+/* ── LANG CARD ── */
+.lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.lang-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.lang-quote { font-size: 12px; color: var(--black); line-height: 1.65; padding: 14px 16px; font-style: italic; border-left: 3px solid var(--green); background: var(--bg); }
+.lang-src { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); padding: 6px 16px; background: var(--green-pale); display: block; }
+.lang-use { padding: 12px 16px; font-size: 11px; color: var(--mid); line-height: 1.65; }
+.lang-use strong { color: var(--black); display: block; margin-bottom: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); }
+
+/* ── LEED GRID ── */
+.leed-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.leed-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.leed-credit { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+.leed-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.leed-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── CALENDAR ── */
+.cal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.cal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cal-month { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.cal-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.cal-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+
+/* ── TAKEAWAY ── */
+.takeaway {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 20px;
+}
+.tka-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(0,0,0,0.45); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.tka-txt { font-size: 13px; color: var(--black); line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  padding: 14px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer div { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+@media(max-width:900px){
+  header, main, footer, nav { padding-left: 20px; padding-right: 20px; }
+  .g2,.g3,.kpi-strip,.timeline,.opp-grid,.lang-grid,.leed-grid,.risk-grid,.contact-grid,.social-grid,.cal-grid { grid-template-columns: 1fr; }
+  .tenant-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-strip { grid-template-columns: 1fr 1fr; }
+}
+
+/* Numbered list items */
+.tpi-list { list-style: none; padding: 0; margin: 0; }
+.tpi { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.tpi:last-child { border-bottom: none; }
+.tpn { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.tpt { font-size: 12px; color: var(--mid); line-height: 1.7; }
+.tpt strong { color: var(--black); }
+/* Insight items with arrow */
+.sn-body-i { display: flex; gap: 10px; font-size: 12px; color: var(--mid); line-height: 1.7; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.sn-body-i:last-child { border-bottom: none; }
+/* Transition cue - remove display */
+.tr-cue { display: none; }
+/* Note content blocks - remove display */  
+.ncb { display: none; }
+/* Old chart classes compatibility */
+.rw { padding: 16px 18px; }
+
+
+/* Developer table */
+.dtbl { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
+.dtbl th { padding: 9px 14px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid var(--border); font-weight: 600; }
+.dtbl td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 12px; color: var(--mid); line-height: 1.6; }
+.dtbl td strong { font-size: 12px; color: var(--black); font-weight: 600; display: inline; }
+.dtbl tr:last-child td { border-bottom: none; }
+.dtbl tr:hover td { background: var(--surface); }
+/* Activity bar */
+.abr { display: flex; flex-direction: column; gap: 4px; }
+.abt { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.abf { height: 100%; border-radius: 3px; }
+.abf.h { background: var(--green); }
+.abf.m { background: var(--amber); }
+.abf.l { background: var(--border); }
+/* Developer badges */
+.dbadge { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 3px; font-weight: 500; }
+.db-act { background: var(--green-pale); color: var(--green-dark); }
+.db-sel { background: #FEF9E7; color: #7D5010; }
+.db-pau { background: var(--surface); color: var(--light); }
+
+
+/* LA Opportunity Box */
+.la-box { background: var(--black); border-radius: 8px; padding: 22px 24px; margin-bottom: 20px; }
+.la-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.la-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 18px; line-height: 1.6; }
+.la-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.la-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 14px 16px; }
+.la-item-title { font-size: 12px; font-weight: 600; color: var(--green); margin-bottom: 6px; }
+.la-item-body { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+/* Contractual precedent cards */
+.prec-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.prec-card { background: var(--navy); border-radius: 8px; padding: 16px 18px; }
+.pc-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.pc-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 7px; }
+.pc-body { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.pc-firm { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.9); background: rgba(129,188,0,0.2); border: 1px solid rgba(129,188,0,0.3); padding: 2px 7px; border-radius: 2px; }
+
+/* Opp grid for engage section */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+
+/* Scout Q&A lists */
+.ql { list-style: none; padding: 0; margin: 0; }
+.qi { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.qi:last-child { border-bottom: none; }
+.qdot { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.qi:not(.ans) .qdot { background: #FEF9E7; color: var(--amber); }
+.qt { flex: 1; font-size: 12px; color: var(--black); line-height: 1.6; }
+.qt strong { display: block; margin-bottom: 3px; }
+.qa { font-size: 11px; color: var(--mid); line-height: 1.65; margin-top: 3px; }
+.qa.amber { color: #7D5010; }
+
+/* Card header pale variant */
+.ch-pale { background: var(--surface); border-bottom: 1px solid var(--border); }
+.ch-pale .ch-title { color: var(--black); }
+.ch-pale .ch-sub { color: var(--light); }
+.ch-pale .ch-icon { font-size: 15px; }
+
+/* Checklist */
+.ckl { list-style: none; padding: 0; margin: 0; }
+.cki { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; cursor: pointer; }
+.cki:last-child { border-bottom: none; }
+.ckb { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; margin-top: 1px; transition: all 0.15s; }
+.cki.done .ckb { background: var(--green); border-color: var(--green); }
+.cki.done .ckb::after { content: '✓'; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.cki.done { color: var(--light); text-decoration: line-through; }
+.ck-t { flex: 1; }
+.ckbg { font-family: 'DM Mono', monospace; font-size: 9px; padding: 1px 6px; border-radius: 2px; margin-left: 6px; white-space: nowrap; }
+.ckbg-ok { background: var(--green-pale); color: var(--green-dark); }
+.ckbg-gap { background: #FEF9E7; color: #7D5010; }
+.ckbg-risk { background: #FDEDEC; color: var(--red); }
+
+/* Assessment go/no-go */
+.gnogo { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.gnogo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.gnogo-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.gnogo-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.gnogo-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+
+
+/* Nav links */
+nav a { text-decoration: none; color: inherit; }
+.tab { cursor: pointer; }
+
+/* LEED grid */
+.co-warn { background: #FEF9E7; border-left: 3px solid var(--amber); border-radius: 0 6px 6px 0; padding: 13px 16px; font-size: 12px; color: var(--mid); line-height: 1.7; margin-bottom: 16px; }
+.co-warn strong { color: #7D5010; }
+.leed-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.leed-item { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-top: 3px solid var(--green); }
+.leed-name { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.leed-body { font-size: 11px; color: var(--mid); line-height: 1.7; }
+
+/* Fee strategy cards */
+.fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.fee-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.fee-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.fee-body { font-size: 11px; color: var(--mid); line-height: 1.7; }
+
+
+.co-amber { background: #FEF9E7; border-left: 3px solid var(--amber); border-radius: 0 6px 6px 0; padding: 13px 16px; font-size: 12px; color: var(--mid); line-height: 1.7; margin-bottom: 16px; }
+.co-amber strong { color: #7D5010; display: inline; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;color:rgba(0,0,0,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">ASLA BD Workshop · 2026</div>
+    <h1>Life Sciences <em>Market</em></h1>
+  </div>
+  <div class="h-meta">
+    National Lab Vacancy &nbsp;·&nbsp; 21.4% (CBRE Q1 2026)<br>
+    San Diego Occupancy &nbsp;·&nbsp; 97.2% &nbsp;·&nbsp; Strongest Market Nationally<br>
+    Live Case Study &nbsp;·&nbsp; Alexandria Real Estate Equities
+  </div>
+</header>
+
+<nav>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Market.html" class="tab"><span class="tab-num">⊕</span>Market</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-ARE-Profile.html" class="tab"><span class="tab-num">★</span>ARE Profile</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Scout.html" class="tab"><span class="tab-num">1</span>Scout</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Engage.html" class="tab"><span class="tab-num">2</span>Engage</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Position.html" class="tab"><span class="tab-num">3</span>Position</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Capture.html" class="tab on"><span class="tab-num">4</span>Capture</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Retain.html" class="tab"><span class="tab-num">5</span>Retain</a>
+</nav>
+
+
+<main>
+<div class="phero">
+    <div style="font-size:36px;flex-shrink:0">✍️</div>
+    <div style="flex:1">
+      
+      <div class="phero-title">Write to Win</div>
+      <div class="phero-desc">Move from "Me" to "You." Write for ARE specifically — not about your firm generally. Mirror their language exactly. Lead with LEED, Fitwel, talent recruitment, and the indoor-outdoor connection. 50% of RFP responses are generic. Be the other 50% by using the research you've already done.</div>
+    </div>
+    
+  </div>
+
+  <div class="seclbl"><h3>ARE's Own Language — Use It Back to Them Verbatim</h3><div class="ln"></div></div>
+  <div class="callout"><strong>Mirror Their Words — Not Paraphrases</strong>ARE has told you exactly what they care about in press releases, earnings calls, CR reports, and LinkedIn posts. Every phrase below is sourced from a public ARE document. Selection panels recognize familiar language and respond to it — it signals you understand their business, not just their project specs.</div>
+
+  <div class="lang-grid">
+    <div class="lang-card">
+      <div class="lang-quote">"Elevated amenity experience that enables the recruitment and retention of mission-critical talent to advance next-generation discoveries."</div>
+      <div class="lang-src">Campus Point BMS Press Release · July 2025</div>
+      <div class="lang-use"><strong>How to use it</strong>Replace "outdoor amenities" entirely. Frame every design decision around this phrase — your walking path enables talent recruitment. Your terrace enables retention. Your event lawn enables the social connectivity that drives discovery. Never say "amenities" again in an ARE proposal.</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-quote">"Seamlessly blending indoor and outdoor spaces that serves as a central gathering place for the innovation community."</div>
+      <div class="lang-src">Campus Point BMS Press Release · July 2025</div>
+      <div class="lang-use"><strong>How to use it</strong>An explicit design priority they've named publicly. Describe specifically how your landscape design achieves this — not just promises it. What transitions, materials, programming, and spatial relationships deliver this seamless connection?</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-quote">"Restorative walking path" · "Large event lawn" · "Garden seating" · "Destination restaurant with outdoor dining."</div>
+      <div class="lang-src">Lilly Gateway Labs SD Announcement · Sept 2025</div>
+      <div class="lang-use"><strong>How to use it</strong>ARE names outdoor elements specifically as headline amenities — not as generic landscaping. Use this same specificity in your design narrative. Name the spaces you're proposing with the same level of intentionality they use in press releases.</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-quote">"Vibrant Megacampus ecosystem that supports the entire life science value chain."</div>
+      <div class="lang-src">ARE Annual Report · Recurring language</div>
+      <div class="lang-use"><strong>How to use it</strong>Use "Megacampus ecosystem" when referring to Campus Point — not just "campus." It signals you understand ARE's brand strategy and their thesis about why clustering matters. A small word choice that signals a large amount of research.</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-quote">"Targeting LEED Gold Core &amp; Shell and Fitwel certifications, and 100% building electrification."</div>
+      <div class="lang-src">Campus Point BMS Build-to-Suit Specs · 2025</div>
+      <div class="lang-use"><strong>How to use it</strong>Name these three certifications explicitly and describe how your landscape design delivers credits toward each. If you can't name specific LEED v4 site credits and Fitwel outdoor requirements, you're not speaking ARE's technical language.</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-quote">"Making a positive and lasting impact on the world by enabling life-changing science and technology."</div>
+      <div class="lang-src">ARE Mission Statement · All Press Releases</div>
+      <div class="lang-use"><strong>How to use it</strong>Frame your firm's work in mission language. Not "we design beautiful landscapes." Instead: "We create outdoor environments that advance the mission-critical work happening inside these buildings — and we have the LEED credentials to prove it."</div>
+    </div>
+  </div>
+
+  <div class="seclbl"><h3>LEED &amp; Fitwel Credits — Name Them or Don't Submit</h3><div class="ln"></div></div>
+  <div class="co-warn"><strong>Non-Negotiable for Any ARE Proposal</strong>If your proposal does not name specific LEED v4 Site &amp; Water credits and Fitwel outdoor space requirements, it reads as generic. ARE's sustainability team reads every proposal. They will know immediately whether you understand lab-building LEED or not. This is the single most differentiating technical capability you can demonstrate — and the most common gap in LA firm proposals for life science work.</div>
+
+  <div class="leed-grid">
+    <div class="leed-item">
+      <div class="leed-name">LEED SS — Stormwater Management</div>
+      <div class="leed-body">Bioretention planters, permeable paving, on-site water quality treatment. Campus Point is in a region with water quality regulatory requirements. Name the credit, name the strategy, name the measurable outcome. Show you've done this before — with documentation.</div>
+    </div>
+    <div class="leed-item">
+      <div class="leed-name">LEED SS — Heat Island Reduction</div>
+      <div class="leed-body">Native shade trees, cool paving strategies (SRI values), green roofs, reflective hardscape. SD climate creates heat island risk — your design mitigates it. Name specific SRI values for the paving materials you're proposing. Don't be vague on this credit.</div>
+    </div>
+    <div class="leed-item">
+      <div class="leed-name">LEED SS — Open Space + Site Assessment</div>
+      <div class="leed-body">Outdoor access for occupants — the "restorative walking path" and "event lawn" ARE already named ARE your deliverables for these credits. Show how your design maximizes these credits while delivering ARE's stated amenity vision. The overlap is your narrative.</div>
+    </div>
+    <div class="leed-item">
+      <div class="leed-name">LEED WE — Water Efficient Landscaping</div>
+      <div class="leed-body">Native and adapted plant species, efficient irrigation design, potable water reduction targets. San Diego's drought context makes this credit especially visible to the development team. Show your native plant palette and irrigation strategy explicitly.</div>
+    </div>
+    <div class="leed-item">
+      <div class="leed-name">Fitwel — Outdoor Spaces (Credits 11–14)</div>
+      <div class="leed-body">Fitwel certifies buildings on occupant health outcomes. Outdoor spaces supporting physical activity and mental restoration are scored credits. ARE named Fitwel in BMS specs — describe specifically how your design delivers Fitwel credits, not just LEED. These are different frameworks; both matter.</div>
+    </div>
+    <div class="leed-item">
+      <div class="leed-name">I2SL Labs2Zero — Energy Reduction Contribution</div>
+      <div class="leed-body">ARE tracks building energy performance using this lab-specific scoring system (averaged 74/100 in 2024). Your landscape design contributes through shading strategies that reduce building cooling loads and HVAC demand. Note this explicitly — it demonstrates sector-specific literacy beyond standard LEED.</div>
+    </div>
+  </div>
+
+  <div class="seclbl"><h3>Fee Strategy — Headwind Market, Premium Client</h3><div class="ln"></div></div>
+  <div class="co-amber"><strong>Do Not Compete on Price Against ARE — They Are Not Price-Sensitive on LEED Delivery</strong>In a headwind market, the instinct is to sharpen the pencil. Resist it. ARE is not selecting the lowest bidder for a $6.35B portfolio. They are selecting the firm that can reliably deliver LEED Gold, Fitwel, and an outdoor environment that helps BMS recruit PhD-level scientists from around the world. Pricing too low signals you don't understand the scope — or that you'll cut corners when budget pressure hits.</div>
+  <div class="g3">
+    <div class="card">
+      <div class="ch ch-pale"><span class="ch-icon">💲</span><div><div class="ch-title" style="color:var(--green-dark);">Price to LEED Value</div></div></div>
+      <div class="card-body" style="font-size:12px;color:var(--mid);line-height:1.7;">LEED certification failure costs far more than your fee. Frame your fee as LEED delivery insurance: "Our team has delivered LEED Gold/Platinum site credits on [X projects] without a single credit shortfall or certification delay. That reliability is what your fee is paying for — not hours, but outcomes."</div>
+    </div>
+    <div class="card">
+      <div class="ch ch-pale"><span class="ch-icon">📍</span><div><div class="ch-title" style="color:var(--green-dark);">Local Presence = Billable Savings</div></div></div>
+      <div class="card-body" style="font-size:12px;color:var(--mid);line-height:1.7;">Competing firms with distant offices bill travel expenses for every site visit to Campus Point. You don't. Frame it as responsiveness first, cost second: "Our team can be on-site within 2 hours of a call from ARE's development team — without travel costs and without scheduling constraints. That's not just convenient — it's a different kind of partnership."</div>
+    </div>
+    <div class="card">
+      <div class="ch ch-pale"><span class="ch-icon">🎯</span><div><div class="ch-title" style="color:var(--green-dark);">Scope Clarity Protects Margin</div></div></div>
+      <div class="card-body" style="font-size:12px;color:var(--mid);line-height:1.7;">Life science campus projects generate enormous change order exposure — phasing changes, TI coordination, utility conflicts, tenant-driven modifications. Define precisely what is and is not included. Document your change order process in the proposal. Don't absorb ARE's development complexity for free.</div>
+    </div>
+  </div>
+
+  <div class="seclbl"><h3>Proposal Checklist — Before You Submit Anything to ARE</h3><div class="ln"></div></div>
+  <div class="card" style="margin-bottom:15px;">
+    <div class="card-hdr ch-black"><span class="ch-icon">✅</span><div><div class="ch-title">Capture Readiness — Check All Before Submitting</div><div class="ch-sub">Tap to mark done · Every unchecked item is a competitive weakness</div></div></div>
+    <div class="card-body">
+      <div class="g2" style="margin-bottom:0;">
+        <ul class="ckl">
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Win strategy statement written and reviewed by team</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">ARE language audit: "amenities" replaced with "talent recruitment" framing</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">BMS press release language quoted or paraphrased in proposal</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Specific LEED v4 site credits named with delivery strategy</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Fitwel outdoor space credits addressed explicitly</span></li>
+        </ul>
+        <ul class="ckl">
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Labs2Zero / I2SL energy contribution mentioned</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Local presence advantage quantified (site visits, no travel billing)</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Fee includes LEED credit delivery as defined outcome, not hourly estimate</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Scope exclusions clearly documented — change order process described</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Comparable life science project: LEED certification + outdoor scope documented</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sn-sec">
+    
+    
+        
+      </div>
+      
+      <div class="takeaway"><div class="tka-icon">💡</div><div><div class="tka-lbl">Key Takeaway</div><div class="tka-txt">ARE doesn't need a landscape architect. They need a firm that speaks LEED, knows Fitwel, understands the difference between "outdoor amenities" and "environments that enable the recruitment of mission-critical talent," and can deliver without a learning curve. Write every sentence to prove you're that firm.</div></div></div>
+      
+    
+</main>
+
+<footer>
+  <div>Life Sciences Market · Alexandria Real Estate Case Study · ASLA 2026</div>
+  <div>Source: ARE 10-K FY2025 · Q4 2025 Earnings Call · CBRE Q1 2026</div>
+</footer>
+
+<script>
+function ck(item) {
+  item.classList.toggle('done');
+  try {
+    var done = [];
+    document.querySelectorAll('.cki.done').forEach(function(el){
+      done.push(el.querySelector('.ck-t') ? el.querySelector('.ck-t').textContent.trim().slice(0,50) : '');
+    });
+    sessionStorage.setItem('ls_ck_ca', JSON.stringify(done));
+  } catch(e){}
+}
+window.addEventListener('load', function(){
+  try {
+    var saved = JSON.parse(sessionStorage.getItem('ls_ck_ca') || '[]');
+    document.querySelectorAll('.cki').forEach(function(el){
+      var t = el.querySelector('.ck-t');
+      if (t && saved.indexOf(t.textContent.trim().slice(0,50)) !== -1) el.classList.add('done');
+    });
+  } catch(e){}
+});
+</script>
+
+</body></html>

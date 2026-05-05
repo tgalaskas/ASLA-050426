@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/tgala/Downloads/Priming%20a%20Proposal%20(10).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priming a Proposal — Step-by-Step Guide</title>
+<link href="file:///C:/Users/tgala/Downloads/Priming%20a%20Proposal%20%E2%80%94%20Step-by-Step%20Guide_files/css2" rel="stylesheet">
+<style>
+:root {
+  --green: #81BC00;
+  --green-dark: #4A7A00;
+  --green-pale: #EBF5D0;
+  --black: #1A1A1A;
+  --mid: #3D3D3D;
+  --light: #6B6B6B;
+  --border: #DDDDDD;
+  --bg: #FFFFFF;
+  --surface: #F7F7F7;
+  --cyan: #00AEEF;
+  --cyan-dark: #0087C0;
+  --cyan-pale: #E0F5FF;
+  --amber: #E67E22;
+  --red: #C0392B;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--black); }
+
+/* ── HEADER ── */
+header {
+  background: var(--green);
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--black);
+}
+header h1 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--black); }
+header h1 em { font-style: normal; color: #fff; }
+.h-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(0,0,0,0.5); letter-spacing: 0.08em; line-height: 1.9; text-align: right; }
+
+/* ── STEP NAV ── */
+.step-nav {
+  background: var(--black);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.step-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  user-select: none;
+}
+.step-btn:hover { color: rgba(255,255,255,0.7); }
+.step-btn.on { color: #fff; border-bottom-color: var(--green); }
+.step-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step-btn.on .step-num { background: var(--green); color: var(--black); }
+.step-btn.done .step-num { background: var(--green-dark); color: #fff; }
+.step-btn.done { color: rgba(255,255,255,0.5); }
+
+/* ── PROGRESS BAR ── */
+.progress-bar { height: 3px; background: var(--border); }
+.progress-fill { height: 100%; background: var(--green); transition: width 0.3s; }
+
+/* ── MAIN ── */
+main { max-width: 1100px; margin: 0 auto; padding: 32px 48px 80px; }
+.step-panel { display: none; }
+.step-panel.on { display: block; }
+
+/* ── SECTION LABEL ── */
+.seclbl { display: flex; align-items: center; gap: 12px; margin: 28px 0 16px; }
+.seclbl:first-child { margin-top: 0; }
+.seclbl h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--black); white-space: nowrap; }
+.seclbl .ln { flex: 1; height: 1px; background: var(--border); }
+
+/* ── PHASE HERO ── */
+.phero { background: var(--green); border-radius: 8px; padding: 22px 26px; margin-bottom: 24px; }
+.phero-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+.phero-desc { font-size: 12px; color: rgba(0,0,0,0.55); line-height: 1.7; max-width: 700px; }
+
+/* ── CALLOUT ── */
+.callout { background: var(--surface); border-left: 3px solid var(--green); border-radius: 0 6px 6px 0; padding: 12px 16px; font-size: 12px; color: var(--mid); line-height: 1.7; margin-bottom: 16px; }
+.callout strong { color: var(--black); }
+.callout-amber { background: #FEF9E7; border-left: 3px solid var(--amber); border-radius: 0 6px 6px 0; padding: 12px 16px; font-size: 12px; color: #5A3A10; line-height: 1.7; margin-bottom: 16px; }
+
+/* ── INSIGHT BOX ── */
+.insight { background: var(--black); border-radius: 8px; padding: 18px 22px; margin-bottom: 16px; }
+.insight-title { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.insight-item { display: flex; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.7; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.insight-item:last-child { border-bottom: none; }
+.insight-item::before { content: '→'; color: var(--green); flex-shrink: 0; }
+
+/* ── GRIDS ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+
+/* ── CARDS ── */
+.card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+.card-hdr { padding: 12px 18px; display: flex; align-items: center; gap: 10px; }
+.ch-green { background: var(--green); }
+.ch-black { background: var(--black); }
+.ch-cyan { background: var(--cyan); }
+.ch-amber { background: var(--amber); }
+.ch-surface { background: var(--surface); border-bottom: 1px solid var(--border); }
+.ch-icon { font-size: 15px; }
+.ch-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #fff; }
+.ch-surface .ch-title { color: var(--black); }
+.card-body { padding: 18px; font-size: 12px; color: var(--mid); line-height: 1.7; }
+
+/* ── CALENDAR ── */
+.cal-month-label { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 700; color: var(--green-dark); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid var(--green); }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 20px; }
+.cal-day {
+  border-radius: 8px;
+  padding: 8px 6px;
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.cal-day.active { background: var(--cyan); }
+.cal-day.key { background: var(--green); }
+.cal-day.due { background: var(--black); }
+.cal-day.off { background: var(--surface); position: relative; overflow: hidden; }
+.cal-day.off::after { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: repeating-linear-gradient(135deg, transparent, transparent 6px, rgba(0,0,0,0.08) 6px, rgba(0,0,0,0.08) 7px); }
+.cal-num { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 4px; }
+.cal-day.off .cal-num { color: var(--border); }
+.cal-task { font-size: 9px; color: rgba(255,255,255,0.9); line-height: 1.35; }
+.cal-day.key .cal-num { color: var(--black); }
+.cal-day.key .cal-task { color: rgba(0,0,0,0.7); }
+
+/* ── OUTLINE GRID ── */
+.outline-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 20px; }
+.outline-card {
+  background: var(--cyan);
+  border-radius: 8px;
+  padding: 10px 8px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.outline-card.sub { background: var(--cyan-dark); }
+.oc-sec { font-family: 'DM Mono', monospace; font-size: 8px; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; margin-bottom: 4px; }
+.oc-title { font-size: 10px; font-weight: 600; color: #fff; line-height: 1.35; }
+
+/* ── CLIENT MATRIX ── */
+.matrix-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+.matrix-top { background: var(--black); color: #fff; padding: 14px 20px; text-align: center; }
+.matrix-top-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; }
+.matrix-top-sub { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.matrix-divider { padding: 10px 20px; background: rgba(0,0,0,0.04); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; font-size: 11px; color: var(--light); font-style: italic; }
+.matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.matrix-cell { padding: 20px 24px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
+.matrix-cell:nth-child(even) { border-right: none; }
+.matrix-cell:nth-last-child(-n+2) { border-bottom: none; }
+.mc-type { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.mc-desc { font-size: 11px; color: var(--light); margin-bottom: 10px; line-height: 1.5; }
+.mc-value { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); padding: 4px 10px; border-radius: 3px; display: inline-block; }
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; cursor: pointer; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li input[type="checkbox"] { margin-top: 2px; accent-color: var(--green); flex-shrink: 0; width: 14px; height: 14px; }
+.checklist li.done { color: var(--light); text-decoration: line-through; }
+
+/* ── NAV BUTTONS ── */
+.nav-btns { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); }
+.btn { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 24px; border-radius: 4px; cursor: pointer; border: none; transition: all 0.15s; }
+.btn-prev { background: var(--surface); color: var(--mid); border: 1px solid var(--border); }
+.btn-prev:hover { background: var(--border); }
+.btn-next { background: var(--green); color: var(--black); }
+.btn-next:hover { background: var(--green-dark); color: #fff; }
+.btn-next:disabled { background: var(--border); color: var(--light); cursor: not-allowed; }
+.step-indicator { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--light); }
+
+/* ── FOOTER ── */
+footer { background: var(--black); padding: 14px 48px; display: flex; justify-content: space-between; align-items: center; }
+footer div { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+@media(max-width:900px) {
+  header, main, footer, .step-nav { padding-left: 20px; padding-right: 20px; }
+  .g2, .g3, .g4, .matrix-grid { grid-template-columns: 1fr; }
+  .cal-grid { grid-template-columns: repeat(4, 1fr); }
+  .outline-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* === Proposal Intake Form Styles === */
+
+:root{--g:#81BC00;--gm:#6A9C00;--gd:#4A7A00;--gl:#EBF5D0;--bk:#1A1A1A;--md:#3D3D3D;--lt:#6B6B6B;--bd:#DDDDDD;--pl:#F4F4F4;--wh:#FFFFFF;--rd:#C0392B;--am:#E67E22;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--pl);color:var(--bk);min-height:100vh;}
+
+header{background:#81BC00;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #1A1A1A;}
+.hlogo{display:flex;align-items:center;gap:10px;}
+.hlogt{font-size:11px;color:#fff;line-height:1.4;}
+.hlogt strong{display:block;}
+.htitle{font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:600;}
+.htitle span{color:var(--g);}
+.hbadge{font-family:'DM Mono',monospace;font-size:10px;background:rgba(129,188,0,0.15);border:1px solid rgba(129,188,0,0.3);color:var(--g);padding:4px 10px;border-radius:2px;letter-spacing:0.06em;}
+
+.tabs{background:var(--bk);padding:0 40px;display:flex;border-bottom:1px solid rgba(255,255,255,0.08);}
+.tab{padding:12px 22px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:7px;transition:all 0.2s;}
+.tab:hover{color:rgba(255,255,255,0.75);}
+.tab.on{color:#fff;border-bottom-color:var(--g);}
+
+main{padding:28px 40px 56px;max-width:1200px;margin:0 auto;}
+.pnl{display:none;}.pnl.on{display:block;}
+
+/* SAVE BAR */
+.savebar{background:var(--wh);border:1px solid var(--bd);border-radius:8px;padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.savebar-left{font-size:12px;color:var(--lt);}
+.savebar-left strong{color:var(--bk);display:block;font-size:13px;margin-bottom:2px;}
+.btn{padding:8px 18px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;border:none;transition:all 0.2s;letter-spacing:0.04em;}
+.btn-g{background:var(--g);color:#fff;}
+.btn-g:hover{background:var(--gm);}
+.btn-o{background:var(--wh);color:var(--bk);border:1px solid var(--bd);}
+.btn-o:hover{border-color:var(--g);color:var(--g);}
+.btn-rd{background:#FDEDEC;color:var(--rd);border:1px solid #E8C0C0;}
+.btn-rd:hover{background:var(--rd);color:#fff;}
+.btns{display:flex;gap:8px;}
+
+/* FORM LAYOUT */
+.card{background:var(--wh);border:1px solid var(--bd);border-radius:8px;overflow:hidden;margin-bottom:20px;}
+.card-hdr{padding:14px 20px;background:var(--g);display:flex;align-items:center;gap:10px;}
+.card-hdr.dark{background:var(--bk);}
+.card-hdr.mid{background:var(--gm);}
+.card-hdr.slate{background:var(--md);}
+.ch-icon{font-size:16px;}
+.ch-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#fff;}
+.ch-sub{font-size:10px;color:rgba(255,255,255,0.6);margin-top:1px;}
+.card-body{padding:20px;}
+
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fgrid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.fgrid-1{display:grid;grid-template-columns:1fr;gap:16px;}
+.fspan2{grid-column:span 2;}
+.fspan3{grid-column:span 3;}
+
+.fg{display:flex;flex-direction:column;gap:5px;}
+.fg label{font-size:11px;font-weight:600;color:var(--md);text-transform:uppercase;letter-spacing:0.07em;}
+.fg input,.fg select,.fg textarea{padding:8px 12px;border:1px solid var(--bd);border-radius:4px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--bk);background:var(--wh);outline:none;transition:border 0.15s;width:100%;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--g);}
+.fg textarea{resize:vertical;min-height:80px;}
+.fg input[type="date"]{color:var(--bk);}
+.fg .hint{font-size:10px;color:var(--lt);font-style:italic;}
+
+/* SECTION LABEL */
+.seclbl{display:flex;align-items:center;gap:12px;margin-bottom:14px;margin-top:4px;}
+.seclbl h3{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--bk);white-space:nowrap;}
+.seclbl .ln{flex:1;height:1px;background:var(--bd);}
+
+/* SELECTION CRITERIA TABLE */
+.criteria-table{width:100%;border-collapse:collapse;}
+.criteria-table th{padding:8px 12px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:left;background:var(--gl);color:var(--gd);border-bottom:1px solid var(--bd);font-family:'DM Mono',monospace;}
+.criteria-table td{padding:8px 12px;border-bottom:1px dashed var(--bd);vertical-align:top;}
+.criteria-table tr:last-child td{border-bottom:none;}
+.criteria-table tr:hover td{background:var(--gl);}
+.add-row-btn{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--g);cursor:pointer;padding:8px 12px;background:none;border:none;font-family:'DM Sans',sans-serif;transition:color 0.15s;}
+.add-row-btn:hover{color:var(--gd);}
+
+/* CHECKLIST TABLE */
+.ck-table{width:100%;border-collapse:collapse;}
+.ck-table th{padding:8px 12px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:left;background:var(--pl);color:var(--lt);border-bottom:1px solid var(--bd);font-family:'DM Mono',monospace;}
+.ck-table td{padding:8px 12px;border-bottom:1px dashed var(--bd);font-size:12px;vertical-align:middle;}
+.ck-table tr:last-child td{border-bottom:none;}
+.ck-table tr:hover td{background:var(--gl);}
+.ck-wrap{display:flex;align-items:center;gap:8px;}
+.ck{width:16px;height:16px;border:1.5px solid var(--bd);border-radius:3px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;background:var(--wh);}
+.ck.on{background:var(--g);border-color:var(--g);}
+.ck.on::after{content:'✓';color:#fff;font-size:9px;font-weight:700;}
+.ck-done{text-decoration:line-through;color:var(--lt);}
+.inp-sm{padding:6px 10px;border:1px solid var(--bd);border-radius:3px;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--bk);background:var(--wh);outline:none;width:100%;}
+.inp-sm:focus{border-color:var(--g);}
+input[type="date"].inp-sm{min-width:120px;}
+
+/* WIN STRATEGY */
+.ws-table{width:100%;border-collapse:collapse;}
+.ws-table th{padding:9px 12px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:var(--gl);color:var(--gd);border-bottom:1px solid var(--bd);font-family:'DM Mono',monospace;}
+.ws-table td{padding:8px 10px;border-bottom:1px dashed var(--bd);font-size:12px;vertical-align:top;}
+.ws-table tr:last-child td{border-bottom:none;}
+.ws-label{font-weight:600;color:var(--bk);white-space:nowrap;}
+
+/* SUBCONSULTANT */
+.sub-section{border:1px solid var(--bd);border-radius:6px;overflow:hidden;margin-bottom:16px;}
+.sub-hdr{padding:11px 16px;background:var(--pl);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:10px;}
+.sub-role{font-family:'DM Mono',monospace;font-size:10px;font-weight:600;color:var(--gd);background:var(--gl);padding:2px 8px;border-radius:2px;}
+.sub-name-input{flex:1;padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none;}
+.sub-name-input:focus{border-color:var(--g);}
+.sub-contact{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px 16px;background:#FAFAFA;border-bottom:1px solid var(--bd);}
+.sub-contact input{padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:'DM Sans',sans-serif;outline:none;}
+.sub-contact input:focus{border-color:var(--g);}
+.sub-contact label{font-size:9px;font-weight:600;color:var(--lt);text-transform:uppercase;letter-spacing:0.07em;display:block;margin-bottom:3px;}
+.sub-ck-table{width:100%;border-collapse:collapse;}
+.sub-ck-table td{padding:7px 16px;border-bottom:1px dashed var(--bd);font-size:11px;}
+.sub-ck-table tr:last-child td{border-bottom:none;}
+.sub-ck-table tr:hover td{background:var(--gl);}
+
+/* PROGRESS */
+.progress-wrap{background:var(--pl);border-radius:4px;height:6px;overflow:hidden;margin-top:6px;}
+.progress-bar{height:100%;background:var(--g);border-radius:4px;transition:width 0.3s;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--bk);color:#fff;padding:12px 20px;border-radius:6px;font-size:13px;border-left:3px solid var(--g);box-shadow:0 8px 24px rgba(0,0,0,0.2);transform:translateY(80px);opacity:0;transition:all 0.3s;z-index:1000;}
+.toast.on{transform:translateY(0);opacity:1;}
+
+footer{padding:12px 40px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;background:var(--wh);}
+.fl{font-family:'Playfair Display',serif;font-size:13px;color:var(--gd);font-weight:600;}
+.fr{font-size:10px;color:var(--lt);font-family:'DM Mono',monospace;}
+
+@media(max-width:900px){.fgrid,.fgrid-3{grid-template-columns:1fr;}.fspan2,.fspan3{grid-column:span 1;}.sub-contact{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){main,header,footer,.tabs{padding-left:16px;padding-right:16px;}}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;color:rgba(0,0,0,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">ASLA BD Workshop · 2026</div>
+    <h1>Priming a <em>Proposal</em></h1>
+  </div>
+  <div class="h-meta">
+    Step-by-step guide for landscape architects<br>
+    Go/No-Go · Schedule · Outline · Client Strategy · Submission
+  </div>
+</header>
+
+<!-- STEP NAV -->
+<nav class="step-nav">
+  <div class="step-btn on" id="snav-1" onclick="goStep(1)"><span class="step-num">1</span>Go / No-Go</div>
+  <div class="step-btn" id="snav-2" onclick="goStep(2)"><span class="step-num">2</span>Know Your Client</div>
+  <div class="step-btn" id="snav-3" onclick="goStep(3)"><span class="step-num">3</span>Proposal Schedule</div>
+  <div class="step-btn" id="snav-4" onclick="goStep(4)"><span class="step-num">4</span>Proposal Outline</div>
+  <div class="step-btn" id="snav-5" onclick="goStep(5)"><span class="step-num">📋</span>Proposal Intake</div>
+  <div class="step-btn" id="snav-6" onclick="goStep(6)"><span class="step-num">6</span>Submit &amp; Win</div>
+</nav>
+<div class="progress-bar"><div class="progress-fill" id="progress" style="width: 100%;"></div></div>
+
+<main>
+
+<!-- ══ STEP 1: DO YOU HAVE WHAT IT TAKES ══ -->
+<div class="step-panel on" id="step-1">
+  <div class="phero">
+        <div class="phero-desc">Before investing a single hour in a proposal, you need to answer this question honestly. Most firms lose not because their proposal was bad — but because they never should have submitted in the first place. A rigorous Go/No-Go saves you from your own optimism.</div>
+  </div>
+
+  <div class="seclbl"><h3>The Five Questions to Answer Before You Write Anything</h3><div class="ln"></div></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hdr ch-green"><span class="ch-icon">✅</span><div><div class="ch-title">1. Do We Have the Experience?</div></div></div>
+      <div class="card-body">
+        <ul class="checklist" id="exp-list">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Have we done this type of project before?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Do we have 2–3 directly comparable projects to show?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Are those projects completed — not just in progress?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Do we have measurable outcomes to cite (LEED credits, budget adherence, client satisfaction)?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-green"><span class="ch-icon">🤝</span><div><div class="ch-title">2. Do We Have a Relationship?</div></div></div>
+      <div class="card-body">
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Have we spoken with someone inside this organization before?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Do they know our firm's name before this RFP dropped?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Do we know the decision-makers, or at least the prime architect?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Have we had any interaction — LinkedIn, event, referral — in the past 12 months?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-amber"><span class="ch-icon">⏱️</span><div><div class="ch-title">3. Do We Have the Capacity?</div></div></div>
+      <div class="card-body">
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Is the proposal deadline realistic given current workload?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">If we win, can we deliver on time and within budget?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Do we have the right subconsultants ready to commit?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Can we absorb this project without burning out the team?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-amber"><span class="ch-icon">💰</span><div><div class="ch-title">4. Is the Fee Realistic?</div></div></div>
+      <div class="card-body">
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Does the estimated fee cover our fully-burdened costs?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Is there margin for scope creep and revisions?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Is the client known for paying on time?</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Does winning this contract advance our strategic goals — even if the margin is thin?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr ch-black"><span class="ch-icon">🎯</span><div><div class="ch-title">5. Can We Write a Compelling Win Statement?</div></div></div>
+    <div class="card-body">
+      <div class="callout"><strong>The test:</strong> Can you complete this sentence in one paragraph — without being vague? If you can't, you probably shouldn't submit.</div>
+      <div style="background:var(--black);border-radius:6px;padding:20px 24px;font-family:&#39;Playfair Display&#39;,serif;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.75;font-style:italic;">"We should win this because we are [the only / one of the few] [firm type] with [specific credential] — close enough to [project location] to serve as a true local partner, fluent enough in [client language] to deliver their goals without a learning curve, and present enough in [client's community] to already know the [decision-makers / architects / engineers] assembling this team."</div>
+      <div style="font-size:11px;color:var(--light);margin-top:10px;">If you can fill in the brackets with specific, verifiable facts — go. If you're reaching — stop. Submit only when you can win. Every failed proposal is an investment with zero return.</div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-title">The Hard Truth About Proposal Win Rates</div>
+    <div class="insight-item">The average LA firm wins 20–30% of proposals submitted. The best firms win 50–70% — because they are ruthless about Go/No-Go. They submit fewer, win more.</div>
+    <div class="insight-item">A proposal takes 40–120 hours of billable-equivalent time. At $150/hr, that's $6,000–$18,000 in unbillable effort per submission. Choose carefully.</div>
+    <div class="insight-item">The firms that win most consistently had a conversation with the client before the RFP dropped. If you're reading the RFP for the first time on release day, you're already behind the firm that's going to win.</div>
+  </div>
+
+  <div class="nav-btns">
+    <div></div>
+    <div class="step-indicator">Step 1 of 6</div>
+    <button class="btn btn-next" onclick="goStep(2)">Know Your Client →</button>
+  </div>
+</div>
+
+<!-- ══ STEP 2: KNOW YOUR CLIENT ══ -->
+<div class="step-panel" id="step-2">
+  <div class="phero">
+    <div class="phero-title">Know Your Client</div>
+    <div class="phero-desc">Every client trusts technical competence as a baseline. What separates winning proposals is understanding what each client type values beyond competence — and writing directly to that value. Generic proposals lose. Client-specific proposals win.</div>
+  </div>
+
+  <div class="seclbl"><h3>The Trust Framework — What Every Client Needs First</h3><div class="ln"></div></div>
+  <div class="matrix-wrap">
+    <div class="matrix-top">
+      <div class="matrix-top-title">Trust — The Universal Baseline</div>
+      <div class="matrix-top-sub">All clients · Technical competence · Regulatory compliance · Risk reduction</div>
+    </div>
+    <div class="matrix-divider">Then, what else? This is where your proposal either connects or gets cut.</div>
+    <div class="matrix-grid">
+      <div class="matrix-cell">
+        <div class="mc-type">🏗️ Developers</div>
+        <div class="mc-desc">Private developers · Mixed-use · Residential · Transit-Oriented Development</div>
+        <div class="mc-value">Yield and ROI</div>
+        <div style="font-size:11px;color:var(--mid);margin-top:10px;line-height:1.6;">Frame your design as a revenue generator, not a cost center. Show how landscape increases marketable units, reduces tenant turnover, supports higher rents, or accelerates lease-up. They are not buying landscape — they are buying yield.</div>
+      </div>
+      <div class="matrix-cell">
+        <div class="mc-type">🏛️ Architects / Contractors / Public Agencies</div>
+        <div class="mc-desc">Municipalities · Institutions · AEC prime consultants</div>
+        <div class="mc-value">Schedule, budget, deliverables</div>
+        <div style="font-size:11px;color:var(--mid);margin-top:10px;line-height:1.6;">They need to know you won't be the bottleneck. Emphasize your project management systems, subconsultant coordination experience, and track record of on-time deliverables. Reliability is your differentiator.</div>
+      </div>
+      <div class="matrix-cell">
+        <div class="mc-type">🏢 Public Companies</div>
+        <div class="mc-desc">Corporate campuses · Tech · Healthcare · Hospitality</div>
+        <div class="mc-value">ESG and wellness goals</div>
+        <div style="font-size:11px;color:var(--mid);margin-top:10px;line-height:1.6;">They are reporting to investors and boards. LEED credits, biophilic design, stormwater performance, and employee wellness outcomes are not nice-to-haves — they are investor-facing metrics. Speak their language: carbon sequestration, heat island reduction, Fitwel credits.</div>
+      </div>
+      <div class="matrix-cell">
+        <div class="mc-type">🏡 Homeowners</div>
+        <div class="mc-desc">Residential · Private estates · High-net-worth clients</div>
+        <div class="mc-value">Lifestyle and long-term value</div>
+        <div style="font-size:11px;color:var(--mid);margin-top:10px;line-height:1.6;">They are buying a vision of how they will live. Show them the experience, not the plan. Reference comparable projects where you transformed how owners use their outdoor space. Long-term maintenance, plant longevity, and seasonal interest matter here more than anywhere else.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seclbl"><h3>How to Research Your Client Before Writing a Single Word</h3><div class="ln"></div></div>
+  <div class="g3">
+    <div class="card">
+      <div class="card-hdr ch-green"><span class="ch-icon">🔍</span><div><div class="ch-title">Public Clients</div></div></div>
+      <div class="card-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Read the full RFP — every word, every exhibit</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Review their General Plan, Climate Action Plan, and prior project EIRs</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Attend the pre-proposal conference — always</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Submit written questions — your questions signal sophistication</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;">· Review their council/board meeting minutes for project history</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-cyan"><span class="ch-icon">🏢</span><div><div class="ch-title">Corporate / Developer</div></div></div>
+      <div class="card-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Read their annual report and ESG/CR report</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Review their 10-K for stated sustainability goals</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Study their LinkedIn presence — what do they post about?</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Research their other campuses — what LA firms did they use?</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;">· Know their LEED and Fitwel certification targets by name</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-black"><span class="ch-icon">🎯</span><div><div class="ch-title">All Clients</div></div></div>
+      <div class="card-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Use their exact language — mirror their vocabulary back</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Name their project by name in every relevant section</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Never submit a generic cover letter</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Reference what they said they wanted — then show you deliver it</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;">· Know the decision-maker's name, title, and professional background</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn btn-prev" onclick="goStep(1)">← Go/No-Go</button>
+    <div class="step-indicator">Step 2 of 5</div>
+    <button class="btn btn-next" onclick="goStep(3)">Proposal Schedule →</button>
+  </div>
+</div>
+
+<!-- ══ STEP 3: PROPOSAL SCHEDULE ══ -->
+<div class="step-panel" id="step-3">
+  <div class="phero">
+    <div class="phero-title">Proposal Schedule</div>
+    <div class="phero-desc">The example below shows a 30-day proposal cycle — RFP release Sep 14, due date Oct 14. Reverse-engineer your schedule from the due date. Most firms start too late. The firms that win start the day the RFP drops — or before.</div>
+  </div>
+
+  <div class="callout"><strong>The Golden Rule:</strong> Your proposal is never as close to done as you think it is. Build your schedule so the "final" draft is done 3 days before submission — not the night before. The last 3 days are for polish, not writing.</div>
+
+  <div class="seclbl"><h3>Sample 30-Day Proposal Calendar — Sep 14 → Oct 14</h3><div class="ln"></div></div>
+
+  <div class="cal-month-label">September</div>
+  <div class="cal-grid">
+    <div class="cal-day key"><div class="cal-num">14</div><div class="cal-task">RFP Release</div></div>
+    <div class="cal-day active"><div class="cal-num">15</div><div class="cal-task">Review solicitation · due diligence</div></div>
+    <div class="cal-day active"><div class="cal-num">16</div><div class="cal-task">Review solicitation · due diligence</div></div>
+    <div class="cal-day active"><div class="cal-num">17</div><div class="cal-task">Collect RFP questions</div></div>
+    <div class="cal-day active"><div class="cal-num">18</div><div class="cal-task">Submit RFP questions</div></div>
+    <div class="cal-day off"><div class="cal-num">19</div></div>
+    <div class="cal-day off"><div class="cal-num">20</div></div>
+    <div class="cal-day active"><div class="cal-num">21</div><div class="cal-task">Make the Go/No-Go decision</div></div>
+    <div class="cal-day active"><div class="cal-num">22</div><div class="cal-task">Assemble team · assign tasks</div></div>
+    <div class="cal-day active"><div class="cal-num">23</div><div class="cal-task">ID internal + external team · begin content</div></div>
+    <div class="cal-day active"><div class="cal-num">24</div><div class="cal-task">Reach out to subconsultants</div></div>
+    <div class="cal-day active"><div class="cal-num">25</div><div class="cal-task">Content development · internal materials</div></div>
+    <div class="cal-day off"><div class="cal-num">26</div></div>
+    <div class="cal-day off"><div class="cal-num">27</div></div>
+    <div class="cal-day active"><div class="cal-num">28</div><div class="cal-task">Content development · internal materials</div></div>
+    <div class="cal-day active"><div class="cal-num">29</div><div class="cal-task">Content development · internal materials</div></div>
+    <div class="cal-day active"><div class="cal-num">30</div><div class="cal-task">Subconsultant materials due</div></div>
+  </div>
+
+  <div class="cal-month-label" style="margin-top:8px;">October</div>
+  <div class="cal-grid">
+    <div class="cal-day active"><div class="cal-num">1</div><div class="cal-task">Incorporate subconsultant materials</div></div>
+    <div class="cal-day active"><div class="cal-num">2</div><div class="cal-task">Full draft ready for review</div></div>
+    <div class="cal-day off"><div class="cal-num">3</div></div>
+    <div class="cal-day off"><div class="cal-num">4</div></div>
+    <div class="cal-day active"><div class="cal-num">5</div><div class="cal-task">Edits · contact printer + delivery</div></div>
+    <div class="cal-day active"><div class="cal-num">6</div><div class="cal-task">Edits</div></div>
+    <div class="cal-day active"><div class="cal-num">7</div><div class="cal-task">Final draft review</div></div>
+    <div class="cal-day active"><div class="cal-num">8</div><div class="cal-task">Edits</div></div>
+    <div class="cal-day active"><div class="cal-num">9</div><div class="cal-task">Prepare file for submission / printer</div></div>
+    <div class="cal-day off"><div class="cal-num">10</div></div>
+    <div class="cal-day off"><div class="cal-num">11</div></div>
+    <div class="cal-day active"><div class="cal-num">12</div><div class="cal-task">Printer</div></div>
+    <div class="cal-day active"><div class="cal-num">13</div><div class="cal-task">Send</div></div>
+    <div class="cal-day due"><div class="cal-num">14</div><div class="cal-task">DUE DATE</div></div>
+  </div>
+
+  <div class="seclbl"><h3>Key Milestones — Build Your Version Around These</h3><div class="ln"></div></div>
+  <div class="g2">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px;">
+      <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:9px;color:var(--green-dark);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Non-Negotiable Deadlines</div>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:12px;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;"><span style="color:var(--cyan);font-weight:700;flex-shrink:0;">Day 1–2</span>Read every word of the RFP. Highlight mandatory requirements.</li>
+        <li style="font-size:12px;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;"><span style="color:var(--cyan);font-weight:700;flex-shrink:0;">Day 5–7</span>Go/No-Go decision made. Don't wait — scope and team definition depends on it.</li>
+        <li style="font-size:12px;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;"><span style="color:var(--cyan);font-weight:700;flex-shrink:0;">Day 16</span>Subconsultant materials due to you — not the day before due date.</li>
+        <li style="font-size:12px;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0;">Day 19</span>Full draft complete. Internal review. No more writing.</li>
+        <li style="font-size:12px;color:var(--mid);padding:6px 0;display:flex;gap:10px;"><span style="color:var(--black);font-weight:700;flex-shrink:0;">Day 27+</span>File prep, printing, delivery. Buffer for anything unexpected.</li>
+      </ul>
+    </div>
+    <div class="insight">
+      <div class="insight-title">Common Scheduling Mistakes</div>
+      <div class="insight-item">Waiting until day 10 to make Go/No-Go — by then you've already invested unbillable hours and it's hard to say no.</div>
+      <div class="insight-item">Giving subconsultants the same deadline as your due date — their delay becomes your problem.</div>
+      <div class="insight-item">Treating the due date as the "finish" date — your final review, file prep, and delivery need 3–5 days after writing is done.</div>
+      <div class="insight-item">Not attending the pre-proposal conference — this is where you learn what the client actually cares about, not just what the RFP says.</div>
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn btn-prev" onclick="goStep(2)">← Know Your Client</button>
+    <div class="step-indicator">Step 3 of 5</div>
+    <button class="btn btn-next" onclick="goStep(4)">Proposal Outline →</button>
+  </div>
+</div>
+
+<!-- ══ STEP 4: PROPOSAL OUTLINE ══ -->
+<div class="step-panel" id="step-4">
+  <div class="phero">
+    <div class="phero-title">Proposal Outline</div>
+    <div class="phero-desc">A well-structured proposal follows the RFP's required sections in order — then exceeds expectations within each section. The outline below reflects a typical public agency proposal structure. Always verify against your specific RFP.</div>
+  </div>
+
+  <div class="callout-amber"><strong>Always follow the RFP structure first.</strong> Proposals that deviate from required sections or page limits are frequently disqualified before anyone reads the content. Read the RFP. Follow it exactly. Then make every section exceptional.</div>
+
+  <div class="seclbl"><h3>Standard Proposal Outline — Culver City TOD Example</h3><div class="ln"></div></div>
+  <div class="outline-grid">
+    <div class="outline-card"><div class="oc-sec">Section 1</div><div class="oc-title">Letter of Introduction</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 2</div><div class="oc-title">Firm Qualifications (Our Firm)</div></div>
+    <div class="outline-card sub"><div class="oc-sec">Section 2</div><div class="oc-title">Firm Qualifications (Include Subconsultants)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 3</div><div class="oc-title">Firm Experience (Projects 1 &amp; 2)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 3</div><div class="oc-title">Firm Experience (Projects 3 &amp; 4)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 3</div><div class="oc-title">Firm Experience (Projects 5 &amp; 6)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 3</div><div class="oc-title">Firm Experience (Projects 7 &amp; 8)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 3</div><div class="oc-title">Firm Experience (References)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 4</div><div class="oc-title">Project Leadership</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 5</div><div class="oc-title">Project Team (Org Chart)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 5</div><div class="oc-title">Project Team (Our Team Members)</div></div>
+    <div class="outline-card sub"><div class="oc-sec">Section 5</div><div class="oc-title">Project Team (Subconsultant Members)</div></div>
+    <div class="outline-card sub"><div class="oc-sec">Section 5</div><div class="oc-title">Project Team (Subconsultant Members)</div></div>
+    <div class="outline-card sub"><div class="oc-sec">Section 5</div><div class="oc-title">Project Team (Subconsultant Members)</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 6</div><div class="oc-title">Resource Matrix and Schedule</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 7</div><div class="oc-title">Approach and Work Plan</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 7</div><div class="oc-title">Approach and Work Plan</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 7</div><div class="oc-title">Approach and Work Plan</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 8</div><div class="oc-title">Project Timeline</div></div>
+    <div class="outline-card"><div class="oc-sec">Section 9</div><div class="oc-title">Project Fee</div></div>
+    <div class="outline-card" style="background:#555;"><div class="oc-sec">Addendum</div><div class="oc-title">Acknowledgment Form (doesn't count toward page limits)</div></div>
+  </div>
+
+  <div class="seclbl"><h3>What Makes Each Section Win — The Inside View</h3><div class="ln"></div></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hdr ch-cyan"><span class="ch-icon">✉️</span><div><div class="ch-title">1. Letter of Introduction</div></div></div>
+      <div class="card-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Never generic — name the project, the client, the specific challenge</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Lead with your win statement — why you, why now, why this project</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Signed by the principal who will actually lead the project</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;">· One page maximum — evaluators read hundreds of these</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-cyan"><span class="ch-icon">📁</span><div><div class="ch-title">3. Firm Experience — The Most Important Section</div></div></div>
+      <div class="card-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Lead with your most comparable project — not your most impressive</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Every project sheet must have: scope, budget, your role, client contact, measurable outcome</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· "Similar in size, scope, and complexity" — use this language, it mirrors RFP evaluation criteria</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;">· Include at least one project where something went wrong and you solved it — shows maturity</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-cyan"><span class="ch-icon">🧠</span><div><div class="ch-title">7. Approach and Work Plan — Where You Win or Lose</div></div></div>
+      <div class="card-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Show you understand their specific challenges — not just the general project type</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Reference their stated goals using their exact language from the RFP</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Include a risk/mitigation section — shows you've thought past the optimistic scenario</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;">· Be specific about deliverables — "we will provide" not "we will work to provide"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-cyan"><span class="ch-icon">💲</span><div><div class="ch-title">9. Project Fee — Price to Win, Not to Low-Ball</div></div></div>
+      <div class="card-body">
+        <ul style="list-style:none;padding:0;">
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Know the client's budget range before you price — ask at pre-proposal if not stated</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Price to deliver at the quality level you've promised — low fees signal you'll cut corners</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--border);">· Break out hours by phase and task — it shows rigor and builds confidence</li>
+          <li style="font-size:11px;color:var(--mid);padding:5px 0;">· Include a reimbursable expenses allowance — never absorb these costs into your base fee</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn btn-prev" onclick="goStep(3)">← Schedule</button>
+    <div class="step-indicator">Step 4 of 5</div>
+    <button class="btn btn-next" onclick="goStep(5)">Submit &amp; Win →</button>
+  </div>
+</div>
+
+<!-- ══ STEP 5: SUBMIT & WIN ══ -->
+<div class="step-panel" id="step-6">
+  <div class="phero">
+    <div class="phero-title">Submit &amp; Win</div>
+    <div class="phero-desc">The proposal is written. Now the work is execution, quality control, and making sure you don't lose on a technicality after all the effort you've invested. Then — whether you win or lose — the follow-through defines your next opportunity.</div>
+  </div>
+
+  <div class="seclbl"><h3>Pre-Submission Checklist — Complete Every Item</h3><div class="ln"></div></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hdr ch-black"><span class="ch-icon">📋</span><div><div class="ch-title">Content Compliance</div></div></div>
+      <div class="card-body">
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Every required section included in correct order</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Page limits respected — counted and verified</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Font size and margin requirements met</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">All addenda acknowledged and included</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">All required forms completed (DBE, insurance, certifications)</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">References contacted and confirmed available</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-black"><span class="ch-icon">✏️</span><div><div class="ch-title">Quality Control</div></div></div>
+      <div class="card-body">
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Spell-check completed — including proper nouns and project names</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Client name spelled correctly throughout — every instance</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Project name used consistently — no "find/replace" errors</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">All fees add up correctly — math verified by a second person</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Photos and graphics are high resolution — minimum 150 dpi</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Someone outside the project team has read the full document</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-black"><span class="ch-icon">📦</span><div><div class="ch-title">Submission Requirements</div></div></div>
+      <div class="card-body">
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Correct number of copies (hard copy and/or digital)</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Correct file format (PDF naming convention per RFP)</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Submission method confirmed (portal, email, hand delivery)</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Delivery address and room number verified</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Submission deadline time confirmed — not just date</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Confirmation receipt obtained / delivery tracked</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-green"><span class="ch-icon">📞</span><div><div class="ch-title">After Submission</div></div></div>
+      <div class="card-body">
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)"><input type="checkbox">Send a brief confirmation to the contact — acknowledge receipt</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Note the interview date in your calendar if interviews are part of the process</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Prepare for the interview immediately — don't wait for the shortlist notification</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Request a debrief regardless of outcome — win or lose, learn from it</li>
+          <li onclick="toggleCheck(this)"><input type="checkbox">Log the pursuit in your BD tracker with hours invested and outcome</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="seclbl"><h3>If You Don't Win — The Follow-Through That Sets Up the Next Win</h3><div class="ln"></div></div>
+  <div class="insight">
+    <div class="insight-title">What to Do When You Lose</div>
+    <div class="insight-item">Request a formal debrief immediately. Most public agencies are required to provide one. Private clients often will if asked respectfully. This is the single most valuable source of competitive intelligence available to you.</div>
+    <div class="insight-item">Ask specifically: what was the scoring breakdown? Which section were we weakest in? What did the winning firm do better? Take notes — these answers directly improve your next submission.</div>
+    <div class="insight-item">Thank the selection committee contact. Express genuine interest in the next opportunity. The relationship you build in defeat often leads to the win on the next RFP — especially with public agencies that issue work regularly.</div>
+    <div class="insight-item">Track your win rate by client type, project type, and project scale. If you're winning 30% of parks projects but 60% of campus projects — that data tells you where to focus your pursuit energy.</div>
+  </div>
+
+  <div class="callout"><strong>The Compounding Return:</strong> Every proposal you submit — win or lose — builds your firm's proposal infrastructure. Your project sheets get sharper. Your win statement gets tighter. Your team gets faster. The first proposal takes 120 hours. The tenth takes 60. The thirtieth takes 30. This is the investment that pays forward.</div>
+
+  <div class="nav-btns">
+    <button class="btn btn-prev" onclick="goStep(4)">← Proposal Outline</button>
+    <div class="step-indicator">Step 5 of 5</div>
+    <button class="btn btn-next" disabled="">Complete ✓</button>
+  </div>
+</div>
+
+
+<!-- ══ STEP 6: PROPOSAL INTAKE FORM ══ -->
+<div class="step-panel" id="step-5">
+  <div class="phero">
+    <div class="phero-title">Proposal Intake Form</div>
+    <div class="phero-desc">Use this form to capture all project details before you start writing. Track go/no-go criteria, internal costs, and external team coordination in one place. Save your progress as you go.</div>
+  </div>
+
+  <!-- Sub-tabs for intake sections -->
+  <div style="display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:20px;">
+    <div class="intake-sub on" id="isub-1" onclick="showIntake(1)" style="padding:10px 20px;font-family:&#39;DM Mono&#39;,monospace;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;border-bottom:3px solid var(--green);color:var(--black);">📋 Intake</div>
+    <div class="intake-sub" id="isub-2" onclick="showIntake(2)" style="padding:10px 20px;font-family:&#39;DM Mono&#39;,monospace;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;border-bottom:3px solid transparent;color:var(--light);">🔒 Internal</div>
+    <div class="intake-sub" id="isub-3" onclick="showIntake(3)" style="padding:10px 20px;font-family:&#39;DM Mono&#39;,monospace;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;border-bottom:3px solid transparent;color:var(--light);">🤝 External</div>
+  </div>
+
+  <div id="intake-pnl-1" class="intake-pnl">
+    <!-- ══════════ INTAKE ══════════ -->
+<div id="pnl-intake-inner">
+
+  <div class="savebar">
+    <div class="savebar-left">
+      <strong id="project-name-display">New Proposal</strong>
+      Fill in the form below and save your progress at any time.
+    </div>
+    <div class="btns">
+      <button class="btn btn-o" onclick="clearForm()">Clear</button>
+      <button class="btn btn-g" onclick="saveForm()">💾 Save Progress</button>
+    </div>
+  </div>
+
+  <!-- PROJECT INFO -->
+  <div class="card">
+    <div class="card-hdr">
+      <span class="ch-icon">📁</span>
+      <div><div class="ch-title">Project Information</div><div class="ch-sub">Basic project details and client contact</div></div>
+    </div>
+    <div class="card-body">
+      <div class="fgrid-1" style="margin-bottom:16px;">
+        <div class="fg">
+          <label>Project Name</label>
+          <input type="text" id="i-project-name" placeholder="e.g. Culver City TOD District Visioning Study" oninput="updateProjectName()">
+        </div>
+      </div>
+      <div class="fgrid" style="margin-bottom:16px;">
+        <div class="fg">
+          <label>Owner / Client Organization</label>
+          <input type="text" id="i-owner" placeholder="Agency or organization name">
+        </div>
+        <div class="fg">
+          <label>RFP / RFQ Link</label>
+          <input type="url" id="i-rfp-link" placeholder="https://...">
+        </div>
+        <div class="fg">
+          <label>Contact Name</label>
+          <input type="text" id="i-contact-name" placeholder="Primary contact">
+        </div>
+        <div class="fg">
+          <label>Contact Email</label>
+          <input type="email" id="i-contact-email" placeholder="email@agency.gov">
+        </div>
+      </div>
+      <div class="fgrid">
+        <div class="fg">
+          <label>Contract Type</label>
+          <select id="i-contract-type">
+            <option value="">Select...</option>
+            <option>Fixed Fee / Lump Sum</option>
+            <option>Time &amp; Materials</option>
+            <option>Not to Exceed</option>
+            <option>Indefinite Delivery / Indefinite Quantity (IDIQ)</option>
+            <option>On-Call / Retainer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Estimated Contract Amount</label>
+          <input type="text" id="i-contract-amount" placeholder="e.g. $250,000–$400,000">
+        </div>
+        <div class="fg">
+          <label>Project Delivery Method</label>
+          <select id="i-delivery-method">
+            <option value="">Select...</option>
+            <option>Design-Bid-Build</option>
+            <option>Design-Build</option>
+            <option>CM at Risk</option>
+            <option>Progressive Design-Build</option>
+            <option>Professional Services Only</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>SBE / LBE / MBE / WBE / DVBE Goals</label>
+          <input type="text" id="i-sbe-goals" placeholder="e.g. 51% SBE, 25% MBE">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT DESCRIPTION -->
+  <div class="card">
+    <div class="card-hdr mid">
+      <span class="ch-icon">📝</span>
+      <div><div class="ch-title">Project Description</div><div class="ch-sub">Scope, background, and supporting documentation</div></div>
+    </div>
+    <div class="card-body">
+      <div class="fgrid-1">
+        <div class="fg">
+          <label>Project Description / Scope Summary</label>
+          <textarea id="i-description" rows="4" placeholder="Describe the project scope, background, and what the RFP is asking for..."></textarea>
+        </div>
+        <div class="fg">
+          <label>Supporting Documentation (Addenda, Plans, Studies)</label>
+          <textarea id="i-supporting-docs" rows="2" placeholder="List any supporting documents and where to find them..."></textarea>
+        </div>
+        <div class="fg">
+          <label>Office Proposal Folder Link</label>
+          <input type="url" id="i-folder-link" placeholder="Link to shared drive folder...">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEADLINES -->
+  <div class="card">
+    <div class="card-hdr dark">
+      <span class="ch-icon">📅</span>
+      <div><div class="ch-title">Key Deadlines</div><div class="ch-sub">All critical dates for this pursuit</div></div>
+    </div>
+    <div class="card-body">
+      <div class="fgrid-3">
+        <div class="fg">
+          <label>RFQ/P Release Date</label>
+          <input type="date" id="i-release-date">
+        </div>
+        <div class="fg">
+          <label>Pre-Proposal Meeting</label>
+          <input type="date" id="i-pre-proposal">
+        </div>
+        <div class="fg">
+          <label>Questions Due</label>
+          <input type="date" id="i-questions-due">
+        </div>
+        <div class="fg">
+          <label>Submission Due</label>
+          <input type="date" id="i-submission-due">
+          <span class="hint">⚠️ This is your hard deadline</span>
+        </div>
+        <div class="fg">
+          <label>Interview Date</label>
+          <input type="date" id="i-interview-date">
+        </div>
+        <div class="fg">
+          <label>Est. Award / Start Date</label>
+          <input type="date" id="i-award-date">
+        </div>
+        <div class="fg fspan3">
+          <label>Submission Address</label>
+          <input type="text" id="i-submission-address" placeholder="Physical or digital submission address...">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPOSAL SPECIFICS -->
+  <div class="card">
+    <div class="card-hdr" style="background:var(--md);">
+      <span class="ch-icon">📐</span>
+      <div><div class="ch-title">Proposal Specifics</div><div class="ch-sub">Format, packaging, and submission requirements</div></div>
+    </div>
+    <div class="card-body">
+      <div class="fgrid">
+        <div class="fg">
+          <label>Format</label>
+          <select id="i-format">
+            <option value="">Select...</option>
+            <option>Digital (PDF Upload)</option>
+            <option>Print Only</option>
+            <option>Digital + Print</option>
+            <option>Online Portal</option>
+            <option>Email Submission</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Number of Pages (Limit)</label>
+          <input type="text" id="i-page-limit" placeholder="e.g. 20 pages, 10 pages plus appendix">
+        </div>
+        <div class="fg">
+          <label>Required Forms / Documentation</label>
+          <textarea id="i-required-forms" rows="3" placeholder="List all required forms (SF330, SBE forms, signatures, etc.)..."></textarea>
+        </div>
+        <div class="fg">
+          <label>Packaging Instructions</label>
+          <textarea id="i-packaging" rows="3" placeholder="Binding, paper size, number of copies, labeling requirements..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELECTION CRITERIA -->
+  <div class="card">
+    <div class="card-hdr" style="background:var(--gd);">
+      <span class="ch-icon">⚖️</span>
+      <div><div class="ch-title">Selection Criteria &amp; Scoring</div><div class="ch-sub">Enter evaluation criteria and point values from the RFP</div></div>
+    </div>
+    <div class="card-body">
+      <table class="criteria-table" id="criteria-table">
+        <thead>
+          <tr>
+            <th style="width:60%;">Criteria</th>
+            <th style="width:15%;">Points</th>
+            <th style="width:25%;">Notes</th>
+          </tr>
+        </thead>
+        <tbody id="criteria-body">
+          <tr>
+            <td><input class="inp-sm" type="text" placeholder="e.g. Relevant Experience"></td>
+            <td><input class="inp-sm" type="number" placeholder="25" style="width:70px;"></td>
+            <td><input class="inp-sm" type="text" placeholder="Notes..."></td>
+          </tr>
+          <tr>
+            <td><input class="inp-sm" type="text" placeholder="e.g. Project Approach / Methodology"></td>
+            <td><input class="inp-sm" type="number" placeholder="25" style="width:70px;"></td>
+            <td><input class="inp-sm" type="text" placeholder="Notes..."></td>
+          </tr>
+          <tr>
+            <td><input class="inp-sm" type="text" placeholder="e.g. Team Qualifications"></td>
+            <td><input class="inp-sm" type="number" placeholder="20" style="width:70px;"></td>
+            <td><input class="inp-sm" type="text" placeholder="Notes..."></td>
+          </tr>
+          <tr>
+            <td><input class="inp-sm" type="text" placeholder="e.g. Fee Proposal"></td>
+            <td><input class="inp-sm" type="number" placeholder="20" style="width:70px;"></td>
+            <td><input class="inp-sm" type="text" placeholder="Notes..."></td>
+          </tr>
+          <tr>
+            <td><input class="inp-sm" type="text" placeholder="e.g. Local/SBE Participation"></td>
+            <td><input class="inp-sm" type="number" placeholder="10" style="width:70px;"></td>
+            <td><input class="inp-sm" type="text" placeholder="Notes..."></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="add-row-btn" onclick="addCriteriaRow()">+ Add Criterion</button>
+    </div>
+  </div>
+
+</div><!-- /intake -->
+
+
+
+  </div>
+  <div id="intake-pnl-2" class="intake-pnl" style="display:none;">
+    <!-- ══════════ INTERNAL ══════════ -->
+<div id="pnl-internal-inner">
+
+  <div class="savebar">
+    <div class="savebar-left">
+      <strong>Internal Coordination</strong>
+      Win strategy, team assignments, and proposal components checklist
+    </div>
+    <div class="btns">
+      <button class="btn btn-g" onclick="saveForm()">💾 Save Progress</button>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="card">
+    <div class="card-hdr">
+      <span class="ch-icon">👥</span>
+      <div><div class="ch-title">Proposal Team</div></div>
+    </div>
+    <div class="card-body">
+      <div class="fgrid">
+        <div class="fg">
+          <label>Marketing Lead</label>
+          <input type="text" id="int-mktg-lead" placeholder="Name">
+        </div>
+        <div class="fg">
+          <label>Principal-in-Charge</label>
+          <input type="text" id="int-principal" placeholder="Name">
+        </div>
+      </div>
+      <div style="margin-top:16px;">
+        <div class="seclbl"><h3>Questions &amp; Clarifications</h3><div class="ln"></div></div>
+        <table class="ck-table" id="questions-table">
+          <thead><tr><th style="width:60%;">Question</th><th>Due Date</th><th style="width:20px;"></th></tr></thead>
+          <tbody id="questions-body">
+            <tr>
+              <td><input class="inp-sm" type="text" placeholder="Question to submit to client..."></td>
+              <td><input class="inp-sm" type="date"></td>
+              <td><span style="cursor:pointer;color:var(--lt);font-size:12px;" onclick="removeRow(this)">✕</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="add-row-btn" onclick="addQuestionRow()">+ Add Question</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WIN STRATEGY -->
+  <div class="card">
+    <div class="card-hdr dark">
+      <span class="ch-icon">🎯</span>
+      <div><div class="ch-title">Win Strategy</div><div class="ch-sub">Complete before writing a single word of the proposal</div></div>
+    </div>
+    <div class="card-body">
+      <table class="ws-table">
+        <thead><tr><th style="width:28%;">Topic</th><th style="width:24%;">State (What Is True)</th><th style="width:24%;">Approach (What We'll Do)</th><th style="width:24%;">Benefits to Client</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="ws-label">Client Success / Motivators / Issues</td>
+            <td><textarea class="inp-sm" rows="3" placeholder="What does success look like for them?"></textarea></td>
+            <td><textarea class="inp-sm" rows="3" placeholder="How will we address this?"></textarea></td>
+            <td><textarea class="inp-sm" rows="3" placeholder="What&#39;s the benefit to them?"></textarea></td>
+          </tr>
+          <tr>
+            <td class="ws-label">Key Project Issues / Challenges</td>
+            <td><textarea class="inp-sm" rows="3" placeholder="What are the project&#39;s main challenges?"></textarea></td>
+            <td><textarea class="inp-sm" rows="3" placeholder="Our approach to each challenge..."></textarea></td>
+            <td><textarea class="inp-sm" rows="3" placeholder="How does this benefit the client?"></textarea></td>
+          </tr>
+          <tr>
+            <td class="ws-label">Our Differentiators</td>
+            <td><textarea class="inp-sm" rows="3" placeholder="What makes us uniquely qualified?"></textarea></td>
+            <td><textarea class="inp-sm" rows="3" placeholder="How will we communicate this?"></textarea></td>
+            <td><textarea class="inp-sm" rows="3" placeholder="Why does this matter to them?"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- COMPONENTS CHECKLIST -->
+  <div class="card">
+    <div class="card-hdr mid">
+      <span class="ch-icon">✅</span>
+      <div><div class="ch-title">Proposal Components</div><div class="ch-sub">Track who owns each section, graphics needed, review status, and due dates</div></div>
+    </div>
+    <div class="card-body">
+      <table class="ck-table">
+        <thead>
+          <tr>
+            <th style="width:22%;">Component</th>
+            <th style="width:18%;">Lead (Responsible)</th>
+            <th style="width:18%;">Graphics Needed</th>
+            <th style="width:10%;text-align:center;">Review ✓</th>
+            <th style="width:18%;">Due Date</th>
+            <th style="width:14%;">Page Limit</th>
+          </tr>
+        </thead>
+        <tbody id="components-body"><tr><td style="font-weight:600;font-size:12px;">Cover Image</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><input class="inp-sm" type="text" value="Image" placeholder="Graphics type..."></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Cover Letter</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Executive Summary</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Firm Expertise</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Project Experience — Project #1</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Project Experience — Project #2</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Project Experience — Project #3</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Project Experience — Project #4</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Project Experience — Project #5</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Organizational Chart</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><input class="inp-sm" type="text" value="Chart" placeholder="Graphics type..."></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Resume — Principal</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Resume — Project Manager</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Resume — Designer</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Resume — Designer</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Project Approach / Methodology</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><input class="inp-sm" type="text" value="Support Images" placeholder="Graphics type..."></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Proposed Fee</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Schedule / Timeline</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><input class="inp-sm" type="text" value="Timeline" placeholder="Graphics type..."></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Required Forms — SBE / SLBE</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr><tr><td style="font-weight:600;font-size:12px;">Required Forms — SF330</td><td><input class="inp-sm" type="text" placeholder="Assign to..."></td><td><span style="color:var(--lt);font-size:11px;">—</span></td><td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td><td><input class="inp-sm" type="date"></td><td><input class="inp-sm" type="text" placeholder="# pages"></td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /internal -->
+
+
+
+  </div>
+  <div id="intake-pnl-3" class="intake-pnl" style="display:none;">
+    <!-- ══════════ EXTERNAL ══════════ -->
+<div id="pnl-external-inner">
+
+  <div class="savebar">
+    <div class="savebar-left">
+      <strong>External Coordination</strong>
+      Track subconsultant materials requests and submission status
+    </div>
+    <div class="btns">
+      <button class="btn btn-g" onclick="saveForm()">💾 Save Progress</button>
+    </div>
+  </div>
+
+  <div id="subconsultants-container"><div class="sub-section"><div class="sub-hdr"><span class="sub-role">Structural</span><input class="sub-name-input" type="text" placeholder="Firm name..."></div><div class="sub-contact"><div><label>Contact Name</label><input type="text" placeholder="Contact name..." style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Email</label><input type="email" placeholder="email@firm.com" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Materials Due Date</label><input type="date" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div></div><table class="sub-ck-table"><tbody><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Firm Profile</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Relevant Projects</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Resumes</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Hourly Rates</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Fee Proposal</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Special Forms (WBE, Licenses, etc.)</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Other</td><td><input class="inp-sm" type="date"></td></tr></tbody></table></div><div class="sub-section"><div class="sub-hdr"><span class="sub-role">MEP</span><input class="sub-name-input" type="text" placeholder="Firm name..."></div><div class="sub-contact"><div><label>Contact Name</label><input type="text" placeholder="Contact name..." style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Email</label><input type="email" placeholder="email@firm.com" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Materials Due Date</label><input type="date" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div></div><table class="sub-ck-table"><tbody><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Firm Profile</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Relevant Projects</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Resumes</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Hourly Billing Rates</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Fee Proposal</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Special Forms (WBE, Licenses, etc.)</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Other</td><td><input class="inp-sm" type="date"></td></tr></tbody></table></div><div class="sub-section"><div class="sub-hdr"><span class="sub-role">Civil</span><input class="sub-name-input" type="text" placeholder="Firm name..."></div><div class="sub-contact"><div><label>Contact Name</label><input type="text" placeholder="Contact name..." style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Email</label><input type="email" placeholder="email@firm.com" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Materials Due Date</label><input type="date" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div></div><table class="sub-ck-table"><tbody><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Firm Profile</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Relevant Projects</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Resumes</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Hourly Rates</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Fee Proposal</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Special Forms (WBE, Licenses, etc.)</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Other</td><td><input class="inp-sm" type="date"></td></tr></tbody></table></div><div class="sub-section"><div class="sub-hdr"><span class="sub-role">Landscape</span><input class="sub-name-input" type="text" placeholder="Firm name..."></div><div class="sub-contact"><div><label>Contact Name</label><input type="text" placeholder="Contact name..." style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Email</label><input type="email" placeholder="email@firm.com" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Materials Due Date</label><input type="date" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div></div><table class="sub-ck-table"><tbody><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Firm Profile</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Relevant Projects</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Resumes</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Hourly Rates</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Fee Proposal</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Special Forms (WBE, Licenses, etc.)</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Other</td><td><input class="inp-sm" type="date"></td></tr></tbody></table></div><div class="sub-section"><div class="sub-hdr"><span class="sub-role">Other</span><input class="sub-name-input" type="text" placeholder="Firm name..."></div><div class="sub-contact"><div><label>Contact Name</label><input type="text" placeholder="Contact name..." style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Email</label><input type="email" placeholder="email@firm.com" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Materials Due Date</label><input type="date" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div></div><table class="sub-ck-table"><tbody><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Firm Profile</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Relevant Projects</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Resumes</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Hourly Rates</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Fee Proposal</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Special Forms (WBE, Licenses, etc.)</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Other</td><td><input class="inp-sm" type="date"></td></tr></tbody></table></div><div class="sub-section"><div class="sub-hdr"><span class="sub-role">Other</span><input class="sub-name-input" type="text" placeholder="Firm name..."></div><div class="sub-contact"><div><label>Contact Name</label><input type="text" placeholder="Contact name..." style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Email</label><input type="email" placeholder="email@firm.com" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div><div><label>Materials Due Date</label><input type="date" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div></div><table class="sub-ck-table"><tbody><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Firm Profile</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Relevant Projects</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Resumes</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Hourly Rates</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Fee Proposal</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Special Forms (WBE, Licenses, etc.)</td><td><input class="inp-sm" type="date"></td></tr><tr><td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td><td style="font-size:12px;">Other</td><td><input class="inp-sm" type="date"></td></tr></tbody></table></div></div>
+
+</div><!-- /external -->
+
+
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn btn-prev" onclick="goStep(4)">← Proposal Outline</button>
+    <div class="step-indicator">Step 5 of 6</div>
+    <button class="btn btn-next" onclick="goStep(6)">Submit &amp; Win →</button>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div>Priming a Proposal · ASLA BD Workshop · 2026</div>
+  <div>Step-by-step guide for landscape architecture firms pursuing prime contracts</div>
+</footer>
+
+<script>
+var current = 1;
+var total = 6;
+
+function goStep(n) {
+  // Hide current
+  document.getElementById('step-' + current).classList.remove('on');
+  document.getElementById('snav-' + current).classList.remove('on');
+  if (current < n) document.getElementById('snav-' + current).classList.add('done');
+
+  // Show new
+  current = n;
+  document.getElementById('step-' + current).classList.add('on');
+  document.getElementById('snav-' + current).classList.add('on');
+  document.getElementById('snav-' + current).classList.remove('done');
+
+  // Update progress
+  document.getElementById('progress').style.width = (current / total * 100) + '%';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleCheck(li) {
+  var cb = li.querySelector('input[type="checkbox"]');
+  cb.checked = !cb.checked;
+  li.classList.toggle('done', cb.checked);
+}
+
+// Intake sub-tabs
+function showIntake(n) {
+  document.querySelectorAll('.intake-pnl').forEach(function(p){ p.style.display = 'none'; });
+  document.querySelectorAll('.intake-sub').forEach(function(t){
+    t.style.borderBottomColor = 'transparent';
+    t.style.color = 'var(--light)';
+  });
+  document.getElementById('intake-pnl-' + n).style.display = 'block';
+  var sub = document.getElementById('isub-' + n);
+  sub.style.borderBottomColor = 'var(--green)';
+  sub.style.color = 'var(--black)';
+}
+
+// Update step 6 button text
+var origGoStep = goStep;
+
+
+
+// ── DATA ──
+var components = [
+  {name:'Cover Image',graphics:'Image',hasGraphics:true},
+  {name:'Cover Letter',graphics:'',hasGraphics:false},
+  {name:'Executive Summary',graphics:'',hasGraphics:false},
+  {name:'Firm Expertise',graphics:'',hasGraphics:false},
+  {name:'Project Experience — Project #1',graphics:'',hasGraphics:false},
+  {name:'Project Experience — Project #2',graphics:'',hasGraphics:false},
+  {name:'Project Experience — Project #3',graphics:'',hasGraphics:false},
+  {name:'Project Experience — Project #4',graphics:'',hasGraphics:false},
+  {name:'Project Experience — Project #5',graphics:'',hasGraphics:false},
+  {name:'Organizational Chart',graphics:'Chart',hasGraphics:true},
+  {name:'Resume — Principal',graphics:'',hasGraphics:false},
+  {name:'Resume — Project Manager',graphics:'',hasGraphics:false},
+  {name:'Resume — Designer',graphics:'',hasGraphics:false},
+  {name:'Resume — Designer',graphics:'',hasGraphics:false},
+  {name:'Project Approach / Methodology',graphics:'Support Images',hasGraphics:true},
+  {name:'Proposed Fee',graphics:'',hasGraphics:false},
+  {name:'Schedule / Timeline',graphics:'Timeline',hasGraphics:true},
+  {name:'Required Forms — SBE / SLBE',graphics:'',hasGraphics:false},
+  {name:'Required Forms — SF330',graphics:'',hasGraphics:false}
+];
+
+var subconsultants = [
+  {role:'Structural',materials:['Firm Profile','Relevant Projects','Resumes','Hourly Rates','Fee Proposal','Special Forms (WBE, Licenses, etc.)','Other']},
+  {role:'MEP',materials:['Firm Profile','Relevant Projects','Resumes','Hourly Billing Rates','Fee Proposal','Special Forms (WBE, Licenses, etc.)','Other']},
+  {role:'Civil',materials:['Firm Profile','Relevant Projects','Resumes','Hourly Rates','Fee Proposal','Special Forms (WBE, Licenses, etc.)','Other']},
+  {role:'Landscape',materials:['Firm Profile','Relevant Projects','Resumes','Hourly Rates','Fee Proposal','Special Forms (WBE, Licenses, etc.)','Other']},
+  {role:'Other',materials:['Firm Profile','Relevant Projects','Resumes','Hourly Rates','Fee Proposal','Special Forms (WBE, Licenses, etc.)','Other']},
+  {role:'Other',materials:['Firm Profile','Relevant Projects','Resumes','Hourly Rates','Fee Proposal','Special Forms (WBE, Licenses, etc.)','Other']}
+];
+
+// ── RENDER COMPONENTS ──
+function renderComponents() {
+  var tbody = document.getElementById('components-body');
+  var rows = '';
+  for (var i = 0; i < components.length; i++) {
+    var c = components[i];
+    var gfx = c.hasGraphics ? '<input class="inp-sm" type="text" value="' + c.graphics + '" placeholder="Graphics type...">' : '<span style="color:var(--lt);font-size:11px;">—</span>';
+    rows += '<tr>' +
+      '<td style="font-weight:600;font-size:12px;">' + c.name + '</td>' +
+      '<td><input class="inp-sm" type="text" placeholder="Assign to..."></td>' +
+      '<td>' + gfx + '</td>' +
+      '<td style="text-align:center;"><div class="ck" onclick="toggleCk(this)"></div></td>' +
+      '<td><input class="inp-sm" type="date"></td>' +
+      '<td><input class="inp-sm" type="text" placeholder="# pages"></td>' +
+    '</tr>';
+  }
+  tbody.innerHTML = rows;
+}
+
+// ── RENDER SUBCONSULTANTS ──
+function renderSubs() {
+  var container = document.getElementById('subconsultants-container');
+  var html = '';
+  for (var i = 0; i < subconsultants.length; i++) {
+    var s = subconsultants[i];
+    var sid = 'sub-' + i;
+    var mats = '';
+    for (var j = 0; j < s.materials.length; j++) {
+      mats += '<tr>' +
+        '<td style="width:40px;"><div class="ck" onclick="toggleCk(this)"></div></td>' +
+        '<td style="font-size:12px;">' + s.materials[j] + '</td>' +
+        '<td><input class="inp-sm" type="date"></td>' +
+      '</tr>';
+    }
+    html += '<div class="sub-section">' +
+      '<div class="sub-hdr">' +
+        '<span class="sub-role">' + s.role + '</span>' +
+        '<input class="sub-name-input" type="text" placeholder="Firm name...">' +
+      '</div>' +
+      '<div class="sub-contact">' +
+        '<div><label>Contact Name</label><input type="text" placeholder="Contact name..." style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div>' +
+        '<div><label>Email</label><input type="email" placeholder="email@firm.com" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div>' +
+        '<div><label>Materials Due Date</label><input type="date" style="padding:5px 10px;border:1px solid var(--bd);border-radius:3px;font-size:11px;font-family:DM Sans,sans-serif;width:100%;outline:none;"></div>' +
+      '</div>' +
+      '<table class="sub-ck-table"><tbody>' + mats + '</tbody></table>' +
+    '</div>';
+  }
+  container.innerHTML = html;
+}
+
+// ── TOGGLE CHECKBOX ──
+function toggleCk(el) {
+  el.classList.toggle('on');
+  updateProgress();
+}
+
+// ── PROGRESS ──
+function updateProgress() {
+  var all = document.querySelectorAll('.ck');
+  var done = document.querySelectorAll('.ck.on');
+  var pct = all.length ? Math.round((done.length / all.length) * 100) : 0;
+  document.getElementById('progress-badge').textContent = pct + '% Complete';
+}
+
+// ── ADD ROWS ──
+function addCriteriaRow() {
+  var tbody = document.getElementById('criteria-body');
+  var tr = document.createElement('tr');
+  tr.innerHTML = '<td><input class="inp-sm" type="text" placeholder="Criterion..."></td>' +
+    '<td><input class="inp-sm" type="number" placeholder="pts" style="width:70px;"></td>' +
+    '<td><input class="inp-sm" type="text" placeholder="Notes..."></td>';
+  tbody.appendChild(tr);
+}
+
+function addQuestionRow() {
+  var tbody = document.getElementById('questions-body');
+  var tr = document.createElement('tr');
+  tr.innerHTML = '<td><input class="inp-sm" type="text" placeholder="Question..."></td>' +
+    '<td><input class="inp-sm" type="date"></td>' +
+    '<td><span style="cursor:pointer;color:var(--lt);font-size:12px;" onclick="removeRow(this)">✕</span></td>';
+  tbody.appendChild(tr);
+}
+
+function removeRow(el) {
+  el.closest('tr').remove();
+}
+
+// ── PROJECT NAME ──
+function updateProjectName() {
+  var v = document.getElementById('i-project-name').value;
+  var display = v || 'New Proposal';
+  document.getElementById('project-name-display').textContent = display;
+  document.getElementById('footer-project').textContent = display + ' · 2026';
+}
+
+// ── SAVE / CLEAR ──
+function saveForm() {
+  try {
+    var data = {
+      projectName: document.getElementById('i-project-name').value,
+      owner: document.getElementById('i-owner').value,
+      rfpLink: document.getElementById('i-rfp-link').value,
+      contactName: document.getElementById('i-contact-name').value,
+      contactEmail: document.getElementById('i-contact-email').value,
+      contractType: document.getElementById('i-contract-type').value,
+      contractAmount: document.getElementById('i-contract-amount').value,
+      deliveryMethod: document.getElementById('i-delivery-method').value,
+      sbeGoals: document.getElementById('i-sbe-goals').value,
+      description: document.getElementById('i-description').value,
+      supportingDocs: document.getElementById('i-supporting-docs').value,
+      folderLink: document.getElementById('i-folder-link').value,
+      releaseDate: document.getElementById('i-release-date').value,
+      preProposal: document.getElementById('i-pre-proposal').value,
+      questionsDue: document.getElementById('i-questions-due').value,
+      submissionDue: document.getElementById('i-submission-due').value,
+      interviewDate: document.getElementById('i-interview-date').value,
+      awardDate: document.getElementById('i-award-date').value,
+      submissionAddress: document.getElementById('i-submission-address').value,
+      format: document.getElementById('i-format').value,
+      pageLimit: document.getElementById('i-page-limit').value,
+      requiredForms: document.getElementById('i-required-forms').value,
+      packaging: document.getElementById('i-packaging').value,
+      mktgLead: document.getElementById('int-mktg-lead').value,
+      principal: document.getElementById('int-principal').value,
+      winStrategy: {
+        clientMotivators: {
+          state: document.querySelector('#pnl-internal .ws-table tbody tr:nth-child(1) td:nth-child(2) textarea') ? document.querySelector('#pnl-internal .ws-table tbody tr:nth-child(1) td:nth-child(2) textarea').value : '',
+          approach: document.querySelector('#pnl-internal .ws-table tbody tr:nth-child(1) td:nth-child(3) textarea') ? document.querySelector('#pnl-internal .ws-table tbody tr:nth-child(1) td:nth-child(3) textarea').value : '',
+          benefits: document.querySelector('#pnl-internal .ws-table tbody tr:nth-child(1) td:nth-child(4) textarea') ? document.querySelector('#pnl-internal .ws-table tbody tr:nth-child(1) td:nth-child(4) textarea').value : ''
+        }
+      },
+      savedAt: new Date().toLocaleString()
+    };
+    sessionStorage.setItem('proposal-intake', JSON.stringify(data));
+    toast('✓ Progress saved');
+  } catch(e) {
+    toast('Save failed — check browser storage');
+  }
+}
+
+function clearForm() {
+  if (!confirm('Clear all form data? This cannot be undone.')) return;
+  sessionStorage.removeItem('proposal-intake');
+  location.reload();
+}
+
+function loadForm() {
+  try {
+    var saved = sessionStorage.getItem('proposal-intake');
+    if (!saved) return;
+    var data = JSON.parse(saved);
+    var fields = {
+      'i-project-name': data.projectName, 'i-owner': data.owner,
+      'i-rfp-link': data.rfpLink, 'i-contact-name': data.contactName,
+      'i-contact-email': data.contactEmail, 'i-contract-amount': data.contractAmount,
+      'i-sbe-goals': data.sbeGoals, 'i-description': data.description,
+      'i-supporting-docs': data.supportingDocs, 'i-folder-link': data.folderLink,
+      'i-release-date': data.releaseDate, 'i-pre-proposal': data.preProposal,
+      'i-questions-due': data.questionsDue, 'i-submission-due': data.submissionDue,
+      'i-interview-date': data.interviewDate, 'i-award-date': data.awardDate,
+      'i-submission-address': data.submissionAddress, 'i-page-limit': data.pageLimit,
+      'i-required-forms': data.requiredForms, 'i-packaging': data.packaging,
+      'int-mktg-lead': data.mktgLead, 'int-principal': data.principal
+    };
+    for (var id in fields) {
+      var el = document.getElementById(id);
+      if (el && fields[id]) el.value = fields[id];
+    }
+    if (data.contractType) document.getElementById('i-contract-type').value = data.contractType;
+    if (data.deliveryMethod) document.getElementById('i-delivery-method').value = data.deliveryMethod;
+    if (data.format) document.getElementById('i-format').value = data.format;
+    updateProjectName();
+  } catch(e) {}
+}
+
+// ── TOAST ──
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('on');
+  setTimeout(function() { t.classList.remove('on'); }, 2500);
+}
+
+// ── TABS ──
+function showTab(id) {
+  document.querySelectorAll('.pnl').forEach(function(p) { p.classList.remove('on'); });
+  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('on'); });
+  document.getElementById('pnl-' + id).classList.add('on');
+  document.getElementById('tb-' + id).classList.add('on');
+}
+
+document.getElementById('tb-intake').addEventListener('click', function() { showTab('intake'); });
+document.getElementById('tb-internal').addEventListener('click', function() { showTab('internal'); });
+document.getElementById('tb-external').addEventListener('click', function() { showTab('external'); });
+
+// ── INIT ──
+renderComponents();
+renderSubs();
+loadForm();
+updateProgress();
+
+</script>
+
+
+</body></html>

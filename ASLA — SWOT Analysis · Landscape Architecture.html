@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/tgala/Downloads/ASLA%20%E2%80%94%20SWOT%20Analysis.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASLA — SWOT Analysis · Landscape Architecture</title>
+<link href="./ASLA — SWOT Analysis · Landscape Architecture_files/css2" rel="stylesheet">
+<style>
+      :root {
+    --ink:      #1A1A18;
+    --earth:    #81BC00;
+    --sage:     #6A9C00;
+    --moss:     #4A7A00;
+    --mist:     #ffffff;
+    --pale:     #EFEFEF;
+    --cream:    #F4F4F4;
+    --warm:     #F4F4F4;
+    --gold:     #1A1A1A;
+    --gold-lt:  #333333;
+    --border:   #DDDDDD;
+    --text:     #1A1A1A;
+    --text-lt:  #6B6B6B;
+
+    --s-bg:     #EBF5D0;
+    --s-hdr:    #81BC00;
+    --s-accent: #4A7A00;
+    --w-bg:     #EFEFEF;
+    --w-hdr:    #3D3D3D;
+    --w-accent: #555555;
+    --o-bg:     #EBF5D0;
+    --o-hdr:    #6A9C00;
+    --o-accent: #4A7A00;
+    --t-bg:     #EFEFEF;
+    --t-hdr:    #2B2B2B;
+    --t-accent: #555555;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); min-height:100vh; }
+
+  /* ── HEADER ── */
+  .header {
+    background:var(--earth);
+    padding:24px 48px;
+    display:flex; align-items:flex-start; justify-content:space-between; gap:32px;
+    border-bottom:3px solid var(--gold);
+    position:relative; overflow:hidden;
+  }
+  .header::before {
+    content:'';
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,0.015) 40px,rgba(255,255,255,0.015) 41px);
+  }
+  .h-left { position:relative; z-index:1; }
+  .h-eyebrow { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--mist); font-weight:500; margin-bottom:6px; }
+  .h-title { font-family:'Playfair Display',serif; font-size:32px; color:#fff; font-weight:600; line-height:1.1; }
+  .h-title span { color:var(--gold-lt); }
+  .h-sub { font-size:11px; color:var(--mist); margin-top:6px; letter-spacing:0.06em; opacity:0.8; }
+  .h-right { display:flex; align-items:center; gap:16px; position:relative; z-index:1; flex-wrap:wrap; }
+  .meta-wrap { display:flex; flex-direction:column; gap:6px; }
+  .meta-label { font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mist); opacity:0.6; }
+  .meta-field { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:3px; padding:5px 10px; font-family:'DM Sans',sans-serif; font-size:12px; color:#fff; width:200px; outline:none; }
+  .meta-field::placeholder { color:rgba(255,255,255,0.3); }
+  .meta-field:focus { border-color:var(--gold-lt); }
+  .hdr-btns { display:flex; flex-direction:column; gap:8px; }
+  .btn-save { background:var(--gold); border:none; border-radius:3px; padding:9px 18px; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--earth); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+  .btn-save:hover { background:var(--gold-lt); }
+  .btn-clear { background:transparent; border:1px solid rgba(255,255,255,0.2); border-radius:3px; padding:9px 18px; font-family:'DM Sans',sans-serif; font-size:11px; color:rgba(255,255,255,0.5); cursor:pointer; transition:all 0.2s; }
+  .btn-clear:hover { border-color:rgba(255,255,255,0.4); color:rgba(255,255,255,0.8); }
+
+  /* ── TABS ── */
+  .tabs { background:var(--earth); padding:0 48px; display:flex; gap:0; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .tab { padding:12px 22px; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.45); cursor:pointer; border-bottom:3px solid transparent; transition:all 0.2s; }
+  .tab:hover { color:rgba(255,255,255,0.75); }
+  .tab.active { color:#fff; border-bottom-color:var(--gold); }
+
+  /* ── MAIN ── */
+  main { padding:32px 48px 48px; max-width:1400px; margin:0 auto; }
+
+  /* ── TAB PANELS ── */
+  .panel { display:none; }
+  .panel.active { display:block; }
+
+  /* ── SWOT GRID ── */
+  .swot-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+
+  /* ── QUADRANT CARD ── */
+  .quad {
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    display:flex;
+    flex-direction:column;
+  }
+  .quad-header {
+    padding:16px 22px 14px;
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .quad-icon { font-size:24px; line-height:1; flex-shrink:0; }
+  .quad-title-wrap { flex:1; }
+  .quad-letter {
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    font-weight:700;
+    line-height:1;
+    opacity:0.2;
+    float:right;
+    margin-top:-4px;
+  }
+  .quad-word {
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    font-weight:600;
+    color:#fff;
+    line-height:1.1;
+  }
+  .quad-tagline { font-size:11px; color:rgba(255,255,255,0.65); margin-top:4px; line-height:1.5; }
+
+  .quad-body { padding:20px 22px; flex:1; display:flex; flex-direction:column; gap:16px; background:#fff; }
+
+  /* Strengths */
+  .quad.strengths .quad-header { background:#81BC00; }
+  .quad.strengths .quad-letter { color:var(--s-accent); opacity:0.3; }
+  /* Weaknesses */
+  .quad.weaknesses .quad-header { background:#6A9C00; }
+  .quad.weaknesses .quad-letter { color:#fff; }
+  /* Opportunities */
+  .quad.opportunities .quad-header { background:#81BC00; }
+  .quad.opportunities .quad-letter { color:#fff; }
+  /* Threats */
+  .quad.threats .quad-header { background:#6A9C00; }
+  .quad.threats .quad-letter { color:#fff; }
+
+  /* ── PROMPT BULLETS ── */
+  .prompt-section { }
+  .prompt-title {
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--border);
+  }
+  .strengths .prompt-title { color:#4A7A00; border-color:#EFEFEF; }
+  .weaknesses .prompt-title { color:#666666; border-color:#F4F4F4; }
+  .opportunities .prompt-title { color:#4A7A00; border-color:#EFEFEF; }
+  .threats .prompt-title { color:#888888; border-color:#F4F4F4; }
+
+  .prompt-list { list-style:none; margin-bottom:12px; }
+  .prompt-item {
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    padding:5px 8px;
+    border-radius:4px;
+    margin-bottom:4px;
+    cursor:pointer;
+    transition:all 0.15s;
+    font-size:11px;
+    color:var(--text-lt);
+    line-height:1.5;
+    border:1px solid transparent;
+  }
+  .prompt-item:hover { background:var(--pale); color:var(--text); border-color:var(--border); }
+  .prompt-item.applied { color:var(--text-lt); text-decoration:line-through; opacity:0.5; }
+  .prompt-bullet { flex-shrink:0; width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; color:#fff; margin-top:1px; }
+  .strengths .prompt-bullet { background:#4A7A00; }
+  .weaknesses .prompt-bullet { background:#666666; }
+  .opportunities .prompt-bullet { background:#4A7A00; }
+  .threats .prompt-bullet { background:#888888; }
+  .prompt-hint { font-size:10px; color:var(--text-lt); font-style:italic; margin-bottom:8px; }
+
+  /* ── TEXT AREA ── */
+  .field-label { font-size:10px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; margin-bottom:6px; }
+  .strengths .field-label { color:#4A7A00; }
+  .weaknesses .field-label { color:#666666; }
+  .opportunities .field-label { color:#4A7A00; }
+  .threats .field-label { color:#888888; }
+
+  textarea {
+    font-family:'DM Sans',sans-serif; font-size:12px; color:var(--text);
+    background:#FDFCF8; border:1px solid var(--border); border-radius:4px;
+    padding:10px 12px; outline:none; resize:vertical; width:100%; line-height:1.6;
+    transition:border-color 0.15s, box-shadow 0.15s;
+    min-height:100px;
+  }
+  textarea::placeholder { color:#BDC4B8; font-style:italic; }
+  .strengths textarea:focus { border-color:#555; box-shadow:0 0 0 3px rgba(85,85,85,0.08); }
+  .weaknesses textarea:focus { border-color:#666; box-shadow:0 0 0 3px rgba(102,102,102,0.08); }
+  .opportunities textarea:focus { border-color:#555; box-shadow:0 0 0 3px rgba(85,85,85,0.08); }
+  .threats textarea:focus { border-color:#888; box-shadow:0 0 0 3px rgba(136,136,136,0.08); }
+  textarea.tall { min-height:130px; }
+
+  /* ── INTERSECTIONS PANEL ── */
+  .intersections-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .int-card { background:#fff; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  .int-header { padding:14px 20px; display:flex; align-items:center; gap:10px; }
+  .int-badge { font-family:'DM Mono',monospace; font-size:11px; font-weight:600; padding:3px 10px; border-radius:12px; flex-shrink:0; }
+  .int-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:600; color:#fff; }
+  .int-sub { font-size:10px; color:rgba(255,255,255,0.65); margin-top:2px; }
+  .int-so .int-header { background:linear-gradient(135deg, #81BC00, #444444); }
+  .int-so .int-badge { background:rgba(255,255,255,0.15); color:#fff; }
+  .int-wt .int-header { background:linear-gradient(135deg, #6A9C00, #4A7A00); }
+  .int-wt .int-badge { background:rgba(255,255,255,0.15); color:#fff; }
+  .int-st .int-header { background:linear-gradient(135deg, #81BC00, #6A9C00); }
+  .int-st .int-badge { background:rgba(255,255,255,0.15); color:#fff; }
+  .int-wo .int-header { background:linear-gradient(135deg, #6A9C00, #4A7A00); }
+  .int-wo .int-badge { background:rgba(255,255,255,0.15); color:#fff; }
+  .int-body { padding:18px 20px; display:flex; flex-direction:column; gap:12px; }
+  .int-question { font-size:12px; color:var(--text-lt); font-style:italic; padding:8px 12px; background:var(--pale); border-radius:4px; border-left:3px solid var(--border); line-height:1.5; }
+  .int-so .int-question { border-left-color:#4A7A00; }
+  .int-wt .int-question { border-left-color:#666666; }
+  .int-st .int-question { border-left-color:#4A7A00; }
+  .int-wo .int-question { border-left-color:#1A1A1A; }
+
+  /* ── GOALS PANEL ── */
+  .goals-intro { background:#fff; border:1px solid var(--border); border-radius:8px; padding:24px 28px; margin-bottom:24px; }
+  .goals-intro-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:600; color:var(--earth); margin-bottom:8px; }
+  .goals-intro-text { font-size:12px; color:var(--text-lt); line-height:1.7; }
+  .goals-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin-bottom:24px; }
+  .goal-card { background:#fff; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  .goal-header { padding:14px 18px 12px; background:var(--pale); border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+  .goal-num { font-family:'DM Mono',monospace; font-size:10px; color:var(--moss); font-weight:500; }
+  .goal-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:600; color:var(--earth); }
+  .goal-icon { font-size:16px; }
+  .goal-body { padding:14px 18px; display:flex; flex-direction:column; gap:10px; }
+  .goal-field { display:flex; flex-direction:column; gap:4px; }
+  .goal-label { font-size:10px; font-weight:600; color:var(--sage); text-transform:uppercase; letter-spacing:0.08em; }
+  input[type="text"] { font-family:'DM Sans',sans-serif; font-size:12px; color:var(--text); background:#FDFCF8; border:1px solid var(--border); border-radius:4px; padding:7px 10px; outline:none; width:100%; transition:border-color 0.15s; }
+  input[type="text"]:focus { border-color:var(--moss); box-shadow:0 0 0 3px rgba(107,143,94,0.08); }
+  input::placeholder { color:#BDC4B8; font-style:italic; }
+
+  /* ── GOALS TIMELINE TABLE ── */
+  .timeline-wrap { background:#fff; border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:24px; }
+  .timeline-header { padding:14px 22px 12px; background:var(--earth); display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .timeline-title { font-family:'Playfair Display',serif; font-size:17px; color:#fff; font-weight:600; }
+  .timeline-sub { font-size:11px; color:var(--mist); opacity:0.7; }
+  .timeline-table { width:100%; border-collapse:collapse; }
+  .timeline-table th { font-size:10px; font-weight:600; color:var(--sage); text-transform:uppercase; letter-spacing:0.09em; padding:10px 14px; border-bottom:1px solid var(--border); background:var(--pale); text-align:left; }
+  .timeline-table td { padding:6px 10px; border-bottom:1px dashed var(--border); vertical-align:top; }
+  .timeline-table tr:last-child td { border-bottom:none; }
+  .timeline-table td:first-child { font-size:11px; font-weight:600; color:var(--earth); padding-left:14px; }
+  .timeline-table input[type="text"] { border:none; background:transparent; padding:4px 2px; font-size:11px; border-radius:0; border-bottom:1px solid transparent; box-shadow:none; }
+  .timeline-table input[type="text"]:focus { border-bottom:1px solid var(--moss); background:var(--pale); }
+  .yr-badge { display:inline-block; font-family:'DM Mono',monospace; font-size:10px; padding:2px 8px; border-radius:2px; font-weight:600; }
+  .yr1 { background:#EFEFEF; color:#4A7A00; }
+  .yr2 { background:#E8E8E8; color:#81BC00; }
+  .yr3 { background:#F4F4F4; color:#6A9C00; }
+
+  /* ── SECTION LABEL ── */
+  .sec-lbl { display:flex; align-items:center; gap:12px; margin-bottom:16px; margin-top:28px; }
+  .sec-lbl:first-child { margin-top:0; }
+  .sec-lbl h2 { font-family:'Playfair Display',serif; font-size:17px; font-weight:600; color:var(--earth); white-space:nowrap; }
+  .sec-lbl .ln { flex:1; height:1px; background:var(--border); }
+  .sec-lbl .bdg { font-family:'DM Mono',monospace; font-size:10px; padding:3px 10px; background:var(--earth); color:var(--light-grey,#ccc); border-radius:2px; letter-spacing:0.1em; white-space:nowrap; }
+
+  /* ── TOAST ── */
+  .toast { position:fixed; bottom:24px; right:24px; background:var(--earth); color:#fff; padding:12px 20px; border-radius:6px; font-size:13px; border-left:3px solid var(--gold); box-shadow:0 8px 24px rgba(0,0,0,0.2); transform:translateY(80px); opacity:0; transition:all 0.3s cubic-bezier(.4,0,.2,1); z-index:1000; }
+  .toast.show { transform:translateY(0); opacity:1; }
+
+  /* ── FOOTER ── */
+  footer { padding:14px 48px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; background:#fff; }
+  .ft-l { font-family:'Playfair Display',serif; font-size:13px; color:var(--sage); font-weight:600; letter-spacing:0.04em; }
+  .ft-r { font-size:10px; color:var(--text-lt); font-family:'DM Mono',monospace; }
+
+  @media(max-width:1000px) { .swot-grid,.intersections-grid,.goals-grid { grid-template-columns:1fr; } main { padding:24px 24px 40px; } .header { flex-direction:column; padding:20px 24px; } .tabs { padding:0 24px; } footer { padding:14px 24px; } }
+  @media(max-width:640px) { .header { padding:16px 20px; } .tabs { padding:0 16px; overflow-x:auto; } main { padding:16px; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="h-left">
+    <div class="h-eyebrow">ASLA — Landscape Architecture Practice</div>
+    <h1 class="h-title">SWOT <span>Analysis</span></h1>
+    <div class="h-sub">Strategic assessment tool · Landscape architecture firms · Individual &amp; session use</div>
+  </div>
+  <div class="h-right">
+    <div class="meta-wrap">
+      <div class="meta-label">Firm / Practitioner</div>
+      <input class="meta-field" id="meta-firm" type="text" placeholder="Your firm name">
+      <div class="meta-label" style="margin-top:8px;">Date</div>
+      <input class="meta-field" id="meta-date" type="text" placeholder="Month Year">
+    </div>
+    <div class="hdr-btns">
+      <button class="btn-save" onclick="saveData()">💾 Save Progress</button>
+      <button class="btn-clear" onclick="clearAll()">Clear All</button>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab" onclick="showTab(&#39;swot&#39;,this)">SWOT Analysis</div>
+  <div class="tab" onclick="showTab(&#39;intersections&#39;,this)">Intersections</div>
+  <div class="tab active" onclick="showTab(&#39;goals&#39;,this)">3-Year Goals</div>
+</div>
+
+<main>
+
+  <!-- ═══════════════════════════════════════ TAB 1: SWOT ═══ -->
+  <div class="panel" id="panel-swot">
+    <div class="swot-grid">
+
+      <!-- STRENGTHS -->
+      <div class="quad strengths">
+        <div class="quad-header">
+          <div class="quad-icon">💪</div>
+          <div class="quad-title-wrap">
+            <span class="quad-letter">S</span>
+            <div class="quad-word">Strengths</div>
+            <div class="quad-tagline">What do you do better than anyone in your market?<br>Genuine competitive advantages — not what you wish were true.</div>
+          </div>
+        </div>
+        <div class="quad-body">
+          <div class="prompt-section">
+            <div class="prompt-title">Prompts — click any to add to your notes</div>
+            <div class="prompt-hint">These are common LA firm strengths. Click any that apply to add them as a starting point.</div>
+            <ul class="prompt-list" id="s-prompts">
+              <li class="prompt-item" onclick="addPrompt(this,&#39;s-text&#39;)"><div class="prompt-bullet">+</div>Deep expertise in a specific sector — parks, healthcare, urban streetscapes, higher ed</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;s-text&#39;)"><div class="prompt-bullet">+</div>Long-standing relationships with key public agency staff or developers</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;s-text&#39;)"><div class="prompt-bullet">+</div>A recognizable design voice or methodology</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;s-text&#39;)"><div class="prompt-bullet">+</div>Reputation for delivering on time and on budget</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;s-text&#39;)"><div class="prompt-bullet">+</div>A tenured team with low turnover</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;s-text&#39;)"><div class="prompt-bullet">+</div>Strong local or regional presence and name recognition</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;s-text&#39;)"><div class="prompt-bullet">+</div>Certifications that matter to target clients — SITES, LEED, RLA multi-state</li>
+            </ul>
+          </div>
+          <div>
+            <div class="field-label">Your Strengths</div>
+            <textarea id="s-text" class="tall" placeholder="Document your genuine competitive advantages here. Be specific — vague strengths don&#39;t win proposals."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEAKNESSES -->
+      <div class="quad weaknesses">
+        <div class="quad-header">
+          <div class="quad-icon">⚠️</div>
+          <div class="quad-title-wrap">
+            <span class="quad-letter">W</span>
+            <div class="quad-word">Weaknesses</div>
+            <div class="quad-tagline">Where are you vulnerable, understaffed, or inconsistent?<br>Don't rush past this quadrant. Your competitors already know.</div>
+          </div>
+        </div>
+        <div class="quad-body">
+          <div class="prompt-section">
+            <div class="prompt-title">Prompts — click any to add to your notes</div>
+            <div class="prompt-hint">Common vulnerabilities for small LA firms. Honest assessment here drives the most strategic value.</div>
+            <ul class="prompt-list" id="w-prompts">
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>Over-reliance on one or two clients for the majority of revenue</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>No dedicated BD or marketing function — principals doing everything</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>Inconsistent proposal quality or response time</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>Limited expertise outside core sector — hard to diversify when market shifts</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>Thin margins that leave no room for BD investment</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>Staff capacity constraints that limit what you can pursue</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>Weak digital presence — website, SEO, social — invisible to prospects who don't know you</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;w-text&#39;)"><div class="prompt-bullet">+</div>Principal-dependent relationships that don't transfer if key people leave</li>
+            </ul>
+          </div>
+          <div>
+            <div class="field-label">Your Weaknesses</div>
+            <textarea id="w-text" class="tall" placeholder="Be honest. This is the quadrant most firms rush past — and where the most important strategic work happens."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPPORTUNITIES -->
+      <div class="quad opportunities">
+        <div class="quad-header">
+          <div class="quad-icon">🚀</div>
+          <div class="quad-title-wrap">
+            <span class="quad-letter">O</span>
+            <div class="quad-word">Opportunities</div>
+            <div class="quad-tagline">Where do tailwinds align with your strengths?<br>Not just what's growing — what's growing that you're positioned to win.</div>
+          </div>
+        </div>
+        <div class="quad-body">
+          <div class="prompt-section">
+            <div class="prompt-title">Prompts — click any to add to your notes</div>
+            <div class="prompt-hint">Current market tailwinds for landscape architecture. Cross-reference with your strengths.</div>
+            <ul class="prompt-list" id="o-prompts">
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>Climate resilience and stormwater infrastructure — federal and state funding still moving</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>Urban heat island mitigation — growing demand from municipalities and developers</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>Aging parks infrastructure — cities and counties investing in renovation and programming</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>Mixed-use and transit-oriented development — developers valuing landscape as amenity</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>Healthcare and senior living outdoor environments — evidence-based design demand growing</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>Wildfire mitigation and defensible space — significant opportunity in western states</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>Growing recognition of biophilic design in corporate and institutional projects</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;o-text&#39;)"><div class="prompt-bullet">+</div>AI and digital tools lowering cost of marketing and BD for small firms</li>
+            </ul>
+          </div>
+          <div>
+            <div class="field-label">Your Opportunities</div>
+            <textarea id="o-text" class="tall" placeholder="Which market tailwinds are you actually positioned to capture? Be selective — not every opportunity is your opportunity."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- THREATS -->
+      <div class="quad threats">
+        <div class="quad-header">
+          <div class="quad-icon">⛈️</div>
+          <div class="quad-title-wrap">
+            <span class="quad-letter">T</span>
+            <div class="quad-word">Threats</div>
+            <div class="quad-tagline">What headwinds could hurt you if you don't respond?<br>Market forces, competitive dynamics, structural risks.</div>
+          </div>
+        </div>
+        <div class="quad-body">
+          <div class="prompt-section">
+            <div class="prompt-title">Prompts — click any to add to your notes</div>
+            <div class="prompt-hint">Common headwinds for small-to-mid LA firms. Which of these apply to your situation?</div>
+            <ul class="prompt-list" id="t-prompts">
+              <li class="prompt-item" onclick="addPrompt(this,&#39;t-text&#39;)"><div class="prompt-bullet">+</div>Interest rate environment slowing private development — fewer projects in pipeline</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;t-text&#39;)"><div class="prompt-bullet">+</div>Larger multidisciplinary firms absorbing landscape architecture scope in-house</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;t-text&#39;)"><div class="prompt-bullet">+</div>Fee compression as clients push back on professional services costs</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;t-text&#39;)"><div class="prompt-bullet">+</div>Talent shortage — difficulty attracting and retaining qualified staff</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;t-text&#39;)"><div class="prompt-bullet">+</div>Over-dependence on public sector work vulnerable to budget cycles and political shifts</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;t-text&#39;)"><div class="prompt-bullet">+</div>Firms in lower-cost markets competing on price in your geography</li>
+              <li class="prompt-item" onclick="addPrompt(this,&#39;t-text&#39;)"><div class="prompt-bullet">+</div>Clients consolidating consultant rosters — fewer firms getting more work</li>
+            </ul>
+          </div>
+          <div>
+            <div class="field-label">Your Threats</div>
+            <textarea id="t-text" class="tall" placeholder="Which of these are real risks for your practice right now? What would you add that&#39;s specific to your market or situation?"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /swot-grid -->
+  </div><!-- /panel-swot -->
+
+  <!-- ═══════════════════════════════════════ TAB 2: INTERSECTIONS ═══ -->
+  <div class="panel" id="panel-intersections">
+
+    <div class="sec-lbl">
+      <h2>Strategic Intersections</h2>
+      <div class="ln"></div>
+      <div class="bdg">Where SWOT Becomes Strategy</div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:24px;">
+      <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:18px;font-weight:600;color:var(--earth);margin-bottom:8px;">How to use this section</div>
+      <p style="font-size:12px;color:var(--text-lt);line-height:1.8;">The real power of a SWOT isn't in the four quadrants — it's in the intersections. Look diagonally and ask the strategic questions below. Strategy built without this step is just wishful thinking dressed up as a plan.</p>
+    </div>
+
+    <div class="intersections-grid">
+
+      <!-- S + O -->
+      <div class="int-card int-so">
+        <div class="int-header">
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:4px;">
+              <span class="int-badge">S</span><span class="int-badge">O</span>
+            </div>
+            <div class="int-title">Strengths × Opportunities</div>
+            <div class="int-sub">Where should you double down and invest?</div>
+          </div>
+        </div>
+        <div class="int-body">
+          <div class="int-question">"We have [strength] and the market needs [opportunity] — this is where we invest aggressively."</div>
+          <div class="field-label" style="color:#4A7A00;">Your S×O Strategy</div>
+          <textarea id="int-so" placeholder="e.g. Our deep parks relationships + Measure A funding surge = double down on LA County parks pipeline. Assign BD lead, attend every county parks event this year."></textarea>
+        </div>
+      </div>
+
+      <!-- W + T -->
+      <div class="int-card int-wt">
+        <div class="int-header">
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:4px;">
+              <span class="int-badge">W</span><span class="int-badge">T</span>
+            </div>
+            <div class="int-title">Weaknesses × Threats</div>
+            <div class="int-sub">Where are you most exposed — and what must be addressed first?</div>
+          </div>
+        </div>
+        <div class="int-body">
+          <div class="int-question">"Our [weakness] combined with [threat] is our most urgent strategic risk. Here's what we're doing about it."</div>
+          <div class="field-label" style="color:#666666;">Your W×T Risk Response</div>
+          <textarea id="int-wt" placeholder="e.g. Over-reliance on one developer client + fee compression = revenue cliff risk. Must diversify to 3+ active client relationships within 12 months."></textarea>
+        </div>
+      </div>
+
+      <!-- S + T -->
+      <div class="int-card int-st">
+        <div class="int-header">
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:4px;">
+              <span class="int-badge">S</span><span class="int-badge">T</span>
+            </div>
+            <div class="int-title">Strengths × Threats</div>
+            <div class="int-sub">How do your strengths protect you from headwinds?</div>
+          </div>
+        </div>
+        <div class="int-body">
+          <div class="int-question">"Even if [threat] materializes, our [strength] insulates us because..."</div>
+          <div class="field-label" style="color:#4A7A00;">Your S×T Defense</div>
+          <textarea id="int-st" placeholder="e.g. If larger firms absorb LA scope in-house, our deep agency relationships mean we get called in as specialized sub — not replaced. Invest in those relationships now."></textarea>
+        </div>
+      </div>
+
+      <!-- W + O -->
+      <div class="int-card int-wo">
+        <div class="int-header">
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:4px;">
+              <span class="int-badge">W</span><span class="int-badge">O</span>
+            </div>
+            <div class="int-title">Weaknesses × Opportunities</div>
+            <div class="int-sub">What do you need to fix to capture emerging demand?</div>
+          </div>
+        </div>
+        <div class="int-body">
+          <div class="int-question">"[Opportunity] is real but we can't capture it until we fix [weakness]. The fix is..."</div>
+          <div class="field-label" style="color:#1A1A1A;">Your W×O Fix</div>
+          <textarea id="int-wo" placeholder="e.g. Climate resilience funding is flowing but we have no SITES accreditation and thin stormwater portfolio. Fix: one staff member pursues SITES by Q3, propose a stormwater project pro-bono to build the case study."></textarea>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:var(--earth);border-radius:8px;padding:22px 28px;margin-top:20px;">
+      <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:18px;color:#fff;font-weight:600;margin-bottom:12px;">Your 3-Question Strategy Test</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+        <div style="background:rgba(255,255,255,0.07);border-radius:6px;padding:14px 16px;">
+          <div style="font-size:10px;color:var(--gold-lt);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">Which sectors &amp; clients</div>
+          <textarea id="q1" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:11px;min-height:70px;" placeholder="Which sectors and client types are we going after — and why?"></textarea>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border-radius:6px;padding:14px 16px;">
+          <div style="font-size:10px;color:var(--gold-lt);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">What we want to be known for</div>
+          <textarea id="q2" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:11px;min-height:70px;" placeholder="What do we want to be known for in 3 years?"></textarea>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border-radius:6px;padding:14px 16px;">
+          <div style="font-size:10px;color:var(--gold-lt);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:8px;">What the firm looks like in 3 years</div>
+          <textarea id="q3" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:11px;min-height:70px;" placeholder="Size, revenue, project type, services, geography..."></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-intersections -->
+
+  <!-- ═══════════════════════════════════════ TAB 3: GOALS ═══ -->
+  <div class="panel active" id="panel-goals">
+
+    <div class="goals-intro">
+      <div class="goals-intro-title">Three-Year Business Objectives &amp; Goals</div>
+      <p class="goals-intro-text">Once you understand where the market is heading, you can set meaningful business objectives. Not before. Strategy built without market intelligence is just wishful thinking dressed up as a plan. The six objectives below are drawn from the most common strategic priorities for 5–10 person California landscape architecture firms. Customize each to your situation.</p>
+    </div>
+
+    <div class="goals-grid">
+
+      <div class="goal-card">
+        <div class="goal-header">
+          <span class="goal-icon">⚖️</span>
+          <div><div class="goal-num">Objective 01</div><div class="goal-title">Stabilize &amp; Diversify Revenue</div></div>
+        </div>
+        <div class="goal-body">
+          <div style="font-size:11px;color:var(--text-lt);font-style:italic;padding:7px 10px;background:#F4F4F4;border-radius:4px;border-left:3px solid #888888;line-height:1.5;margin-bottom:4px;">Risk: over-reliance on one sector leaves you exposed to budget cycles and political shifts.</div>
+          <div class="goal-field"><div class="goal-label">Year 1 Target</div><input type="text" placeholder="e.g. No single client &gt;40% of revenue"></div>
+          <div class="goal-field"><div class="goal-label">Year 2 Target</div><input type="text" placeholder="e.g. 3 active sectors contributing revenue"></div>
+          <div class="goal-field"><div class="goal-label">Year 3 Target</div><input type="text" placeholder="e.g. Developer sector = 25% of revenue"></div>
+          <div class="goal-field"><div class="goal-label">Your Notes</div><textarea style="min-height:60px;" placeholder="How will you achieve this? What&#39;s your first move?"></textarea></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="goal-header">
+          <span class="goal-icon">🌿</span>
+          <div><div class="goal-num">Objective 02</div><div class="goal-title">Lead in Climate Resilience</div></div>
+        </div>
+        <div class="goal-body">
+          <div style="font-size:11px;color:var(--text-lt);font-style:italic;padding:7px 10px;background:#EFEFEF;border-radius:4px;border-left:3px solid #1A1A1A;line-height:1.5;margin-bottom:4px;">Opportunity: federal and state funding is flowing toward resilience, stormwater, urban heat.</div>
+          <div class="goal-field"><div class="goal-label">Year 1 Target</div><input type="text" placeholder="e.g. SITES accreditation for one senior staff"></div>
+          <div class="goal-field"><div class="goal-label">Year 2 Target</div><input type="text" placeholder="e.g. 2 signature resilience projects completed"></div>
+          <div class="goal-field"><div class="goal-label">Year 3 Target</div><input type="text" placeholder="e.g. Known regionally for resilience work"></div>
+          <div class="goal-field"><div class="goal-label">Your Notes</div><textarea style="min-height:60px;" placeholder="Which resilience topics align with your strengths?"></textarea></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="goal-header">
+          <span class="goal-icon">🤝</span>
+          <div><div class="goal-num">Objective 03</div><div class="goal-title">Reduce Principal Dependency in BD</div></div>
+        </div>
+        <div class="goal-body">
+          <div style="font-size:11px;color:var(--text-lt);font-style:italic;padding:7px 10px;background:#F4F4F4;border-radius:4px;border-left:3px solid #888888;line-height:1.5;margin-bottom:4px;">Risk: if BD lives entirely with the principal, growth stalls and key relationships don't transfer.</div>
+          <div class="goal-field"><div class="goal-label">Year 1 Target</div><input type="text" placeholder="e.g. 1–2 senior staff begin client-facing BD"></div>
+          <div class="goal-field"><div class="goal-label">Year 2 Target</div><input type="text" placeholder="e.g. Principal spends 20% on BD coaching"></div>
+          <div class="goal-field"><div class="goal-label">Year 3 Target</div><input type="text" placeholder="e.g. CRM in place, pipeline managed by team"></div>
+          <div class="goal-field"><div class="goal-label">Your Notes</div><textarea style="min-height:60px;" placeholder="Who is your BD successor / backup?"></textarea></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="goal-header">
+          <span class="goal-icon">💻</span>
+          <div><div class="goal-num">Objective 04</div><div class="goal-title">Improve Digital Presence</div></div>
+        </div>
+        <div class="goal-body">
+          <div style="font-size:11px;color:var(--text-lt);font-style:italic;padding:7px 10px;background:#EFEFEF;border-radius:4px;border-left:3px solid #1A1A1A;line-height:1.5;margin-bottom:4px;">Opportunity: AI tools have lowered the barrier — a small firm can compete for visibility affordably.</div>
+          <div class="goal-field"><div class="goal-label">Year 1 Target</div><input type="text" placeholder="e.g. Website refresh with current projects + SEO"></div>
+          <div class="goal-field"><div class="goal-label">Year 2 Target</div><input type="text" placeholder="e.g. 1 case study per quarter published"></div>
+          <div class="goal-field"><div class="goal-label">Year 3 Target</div><input type="text" placeholder="e.g. Thought leadership established in 1–2 topics"></div>
+          <div class="goal-field"><div class="goal-label">Your Notes</div><textarea style="min-height:60px;" placeholder="What&#39;s your current digital weakness? Where do you start?"></textarea></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="goal-header">
+          <span class="goal-icon">🏆</span>
+          <div><div class="goal-num">Objective 05</div><div class="goal-title">Build Reputation Intentionally</div></div>
+        </div>
+        <div class="goal-body">
+          <div style="font-size:11px;color:var(--text-lt);font-style:italic;padding:7px 10px;background:#EFEFEF;border-radius:4px;border-left:3px solid #1A1A1A;line-height:1.5;margin-bottom:4px;">Opportunity: in a regional market, reputation compounds fast when you're consistent and visible.</div>
+          <div class="goal-field"><div class="goal-label">Year 1 Target</div><input type="text" placeholder="e.g. 2 ASLA award submissions · 4 industry events"></div>
+          <div class="goal-field"><div class="goal-label">Year 2 Target</div><input type="text" placeholder="e.g. Regional recognition in target sector"></div>
+          <div class="goal-field"><div class="goal-label">Year 3 Target</div><input type="text" placeholder="e.g. Known for: design, delivery, great to work with"></div>
+          <div class="goal-field"><div class="goal-label">Your Notes</div><textarea style="min-height:60px;" placeholder="What 3 things do you want to be known for?"></textarea></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="goal-header">
+          <span class="goal-icon">📊</span>
+          <div><div class="goal-num">Objective 06</div><div class="goal-title">Strengthen Financial Health</div></div>
+        </div>
+        <div class="goal-body">
+          <div style="font-size:11px;color:var(--text-lt);font-style:italic;padding:7px 10px;background:#F4F4F4;border-radius:4px;border-left:3px solid #888888;line-height:1.5;margin-bottom:4px;">Risk: thin margins leave no room for investment in growth, people, or strategic opportunities.</div>
+          <div class="goal-field"><div class="goal-label">Year 1 Target</div><input type="text" placeholder="e.g. Achieve 15% net profit margin"></div>
+          <div class="goal-field"><div class="goal-label">Year 2 Target</div><input type="text" placeholder="e.g. 3-month operating reserve built"></div>
+          <div class="goal-field"><div class="goal-label">Year 3 Target</div><input type="text" placeholder="e.g. 20% margin · Hire ahead of demand"></div>
+          <div class="goal-field"><div class="goal-label">Your Notes</div><textarea style="min-height:60px;" placeholder="Current margin? Fee review scheduled? Reserve status?"></textarea></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TIMELINE TABLE -->
+    <div class="timeline-wrap">
+      <div class="timeline-header">
+        <div>
+          <div class="timeline-title">Three-Year Headline Goals at a Glance</div>
+          <div class="timeline-sub">Fill in your specific numbers and targets · Sample firm: 5–10 person LA firm, California</div>
+        </div>
+      </div>
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th style="width:22%;">Goal Area</th>
+            <th style="width:26%;"><span class="yr-badge yr1">Year 1</span></th>
+            <th style="width:26%;"><span class="yr-badge yr2">Year 2</span></th>
+            <th style="width:26%;"><span class="yr-badge yr3">Year 3</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Revenue Growth</td>
+            <td><input type="text" placeholder="Baseline + 10%"></td>
+            <td><input type="text" placeholder="+ 15%"></td>
+            <td><input type="text" placeholder="+ 20%"></td>
+          </tr>
+          <tr>
+            <td>Active Client Relationships</td>
+            <td><input type="text" placeholder="Current + X"></td>
+            <td><input type="text" placeholder="+ 4 new"></td>
+            <td><input type="text" placeholder="+ 8 new"></td>
+          </tr>
+          <tr>
+            <td>Sector Diversity</td>
+            <td><input type="text" placeholder="1 sector dominant"></td>
+            <td><input type="text" placeholder="3 sectors balanced"></td>
+            <td><input type="text" placeholder="3 + 1 emerging"></td>
+          </tr>
+          <tr>
+            <td>Staff Doing BD</td>
+            <td><input type="text" placeholder="Principal only"></td>
+            <td><input type="text" placeholder="+ 1 senior staff"></td>
+            <td><input type="text" placeholder="+ 2 senior staff"></td>
+          </tr>
+          <tr>
+            <td>Digital Presence</td>
+            <td><input type="text" placeholder="Website refresh"></td>
+            <td><input type="text" placeholder="SEO + content"></td>
+            <td><input type="text" placeholder="Thought leadership"></td>
+          </tr>
+          <tr>
+            <td>Reputation</td>
+            <td><input type="text" placeholder="2 award submissions"></td>
+            <td><input type="text" placeholder="Regional recognition"></td>
+            <td><input type="text" placeholder="Known regionally"></td>
+          </tr>
+          <tr>
+            <td>Profit Margin</td>
+            <td><input type="text" placeholder="Target: ___%"></td>
+            <td><input type="text" placeholder="Target: ___%"></td>
+            <td><input type="text" placeholder="Target: 20%+"></td>
+          </tr>
+          <tr>
+            <td>Staffing</td>
+            <td><input type="text" placeholder="5 staff"></td>
+            <td><input type="text" placeholder="6–7 staff"></td>
+            <td><input type="text" placeholder="8–10 staff"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /panel-goals -->
+
+</main>
+
+<footer>
+  <div class="ft-l">ASLA — Landscape Architecture SWOT &amp; Strategy Tool</div>
+  <div class="ft-r">Purpose-built for landscape architects · Individual · Firm · Session · 2026</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+// ── TABS ──
+function showTab(id, el) {
+  document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('panel-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── PROMPT CLICK-TO-ADD ──
+function addPrompt(item, targetId) {
+  var ta = document.getElementById(targetId);
+  var text = item.querySelector('.prompt-bullet').nextSibling.textContent.trim();
+  if (item.classList.contains('applied')) return;
+  ta.value = ta.value ? ta.value + '\n• ' + text : '• ' + text;
+  item.classList.add('applied');
+  ta.focus();
+  autoSave();
+}
+
+// ── GATHER / RESTORE ──
+function gatherData() {
+  var data = {};
+  document.querySelectorAll('textarea, input[type="text"]').forEach(function(el){
+    if (el.id) data[el.id] = el.value;
+  });
+  // applied prompts
+  var applied = [];
+  document.querySelectorAll('.prompt-item.applied').forEach(function(item){
+    applied.push(item.closest('.prompt-list').id + '|' + item.querySelector('.prompt-bullet').nextSibling.textContent.trim().substring(0,40));
+  });
+  data._applied = applied;
+  return data;
+}
+
+function restoreData(data) {
+  if (!data) return;
+  Object.keys(data).forEach(function(k){
+    if (k === '_applied') return;
+    var el = document.getElementById(k);
+    if (el) el.value = data[k];
+  });
+  if (data._applied) {
+    data._applied.forEach(function(key){
+      var parts = key.split('|');
+      var listId = parts[0];
+      var prefix = parts[1];
+      var list = document.getElementById(listId);
+      if (!list) return;
+      list.querySelectorAll('.prompt-item').forEach(function(item){
+        var txt = item.querySelector('.prompt-bullet').nextSibling.textContent.trim().substring(0,40);
+        if (txt === prefix) item.classList.add('applied');
+      });
+    });
+  }
+}
+
+function autoSave() {
+  try { sessionStorage.setItem('asla_swot', JSON.stringify(gatherData())); } catch(e){}
+}
+
+function saveData() {
+  try {
+    var d = gatherData();
+    var blob = new Blob([JSON.stringify(d, null, 2)], {type:'application/json'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'asla-swot-analysis.json'; a.click();
+    URL.revokeObjectURL(url);
+    showToast('✓ SWOT analysis saved');
+  } catch(e){ showToast('Save failed — try again'); }
+}
+
+function clearAll() {
+  if (!confirm('Clear all entries? This cannot be undone.')) return;
+  document.querySelectorAll('textarea, input[type="text"]').forEach(function(el){ el.value=''; });
+  document.querySelectorAll('.prompt-item.applied').forEach(function(item){ item.classList.remove('applied'); });
+  sessionStorage.removeItem('asla_swot');
+  showToast('Cleared — fresh start');
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+
+document.addEventListener('input', function(e){
+  if (e.target.matches('textarea, input[type="text"]')) autoSave();
+});
+
+window.addEventListener('load', function(){
+  try {
+    var saved = sessionStorage.getItem('asla_swot');
+    if (saved) restoreData(JSON.parse(saved));
+  } catch(e){}
+  var d = document.getElementById('meta-date');
+  if (d && !d.value) {
+    var now = new Date();
+    d.value = now.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+  }
+});
+</script>
+
+
+</body></html>

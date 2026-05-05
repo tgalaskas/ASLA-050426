@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)file:///C:/Users/tgala/Downloads/LS-Engage%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Sciences Market — Engage</title>
+<link href="file:///C:/Users/tgala/Downloads/Life%20Sciences%20Market%20%E2%80%94%20Engage_files/css2" rel="stylesheet">
+<style>
+
+:root {
+  --green: #81BC00;
+  --green-mid: #6A9C00;
+  --green-dark: #4A7A00;
+  --green-pale: #EBF5D0;
+  --black: #1A1A1A;
+  --mid: #3D3D3D;
+  --light: #6B6B6B;
+  --border: #DDDDDD;
+  --bg: #FFFFFF;
+  --surface: #F7F7F7;
+  --navy: #1A3A5C;
+  --red: #C0392B;
+  --amber: #E67E22;
+  --blue: #2471A3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--black); }
+
+/* ── HEADER ── */
+header {
+  background: var(--green);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--black);
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+}
+header h1 em { font-style: normal; color: #fff; }
+.h-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--black);
+  padding: 0 48px;
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab:hover { color: rgba(255,255,255,0.7); }
+.tab.on { color: #fff; border-bottom-color: var(--green); }
+.tab-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.tab.on .tab-num { background: var(--green); color: var(--black); }
+
+/* ── MAIN ── */
+main { padding: 28px 48px 64px; max-width: 1380px; margin: 0 auto; }
+.pnl { display: none; }
+.pnl.on { display: block; }
+.pnl.on { display: block; }
+
+/* ── SECTION LABEL ── */
+.seclbl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 16px;
+}
+.seclbl:first-child { margin-top: 0; }
+.seclbl h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
+}
+.seclbl .ln { flex: 1; height: 1px; background: var(--border); }
+
+/* ── PHASE HERO ── */
+.phero {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.phero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.phero-desc {
+  font-size: 12px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+/* ── KPI STRIP ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.kpi-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.kpi-box.hi { border-color: var(--green); background: var(--green-pale); }
+.kpi-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+}
+.kpi-v.g { color: var(--green-dark); }
+.kpi-v.r { color: var(--red); }
+.kpi-l { font-size: 10px; color: var(--light); margin-top: 5px; line-height: 1.4; }
+
+/* ── GRID ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.card-hdr {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ch-green { background: var(--green); }
+.ch-black { background: var(--black); }
+.ch-navy { background: var(--navy); }
+.ch-red { background: var(--red); }
+.ch-amber { background: var(--amber); }
+.ch-mid { background: var(--mid); }
+.ch-blue { background: var(--blue); }
+.ch-icon { font-size: 15px; }
+.ch-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #fff; }
+.card-body { padding: 18px; }
+
+/* ── TIMELINE ── */
+.timeline { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.tl-card { border-radius: 7px; padding: 16px 18px; border: 1px solid var(--border); }
+.tl-card.dn { border-left: 4px solid var(--red); background: #FDF4F4; }
+.tl-card.md { border-left: 4px solid var(--amber); background: #FEF9E7; }
+.tl-card.up { border-left: 4px solid var(--green); background: var(--green-pale); }
+.tl-yr { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.tl-card.dn .tl-yr { color: var(--red); }
+.tl-card.md .tl-yr { color: var(--amber); }
+.tl-card.up .tl-yr { color: var(--green-dark); }
+.tl-h { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+.tl-b { font-size: 11px; color: var(--mid); line-height: 1.7; }
+
+/* ── REVENUE CHART ── */
+.rchart { padding: 16px 18px; }
+.rchart-lbl { font-size: 11px; color: var(--light); margin-bottom: 12px; }
+.rbars { display: flex; align-items: flex-end; gap: 8px; height: 120px; }
+.rbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.rbar-val { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
+.rbar-val.dv { color: var(--red); }
+.rbar-val.fl { color: var(--amber); }
+.rbar-val.pj { color: var(--green-dark); }
+.rbar { width: 100%; border-radius: 3px 3px 0 0; }
+.rbar.curr { background: var(--green); }
+.rbar.dw { background: var(--red); }
+.rbar.fl { background: var(--amber); }
+.rbar.pj { background: var(--green); opacity: 0.6; }
+.rbar-yr { font-size: 9px; color: var(--light); text-align: center; line-height: 1.4; margin-top: 4px; }
+.rleg { display: flex; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+.rleg-i { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--light); }
+.rleg-d { width: 10px; height: 10px; border-radius: 2px; }
+
+/* ── DEVELOPER TABLE ── */
+.dev-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.dev-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.dev-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.dev-table tr:hover td { background: var(--surface); }
+.dev-table tr:last-child td { border-bottom: none; }
+.dev-pri { font-weight: 600; color: var(--black); }
+.status-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.06em; }
+.sb-hi { background: var(--green-pale); color: var(--green-dark); }
+.sb-med { background: #FEF9E7; color: #7D5010; }
+.sb-lo { background: var(--surface); color: var(--light); }
+
+/* ── CALLOUT ── */
+.callout {
+  background: var(--surface);
+  border-left: 3px solid var(--green);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.callout strong { color: var(--black); }
+
+/* ── INSIGHT BOX ── */
+.insight {
+  background: var(--black);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.insight-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.insight-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 10px;
+}
+.insight-item:last-child { border-bottom: none; }
+.insight-item::before { content: '→'; color: var(--green); flex-shrink: 0; }
+
+/* ── CONTACT CARDS ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cc-name { font-weight: 600; font-size: 13px; color: var(--black); margin-bottom: 3px; }
+.cc-role { font-size: 10px; color: var(--green-dark); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; margin-bottom: 8px; }
+.cc-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+.cc-tags { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+.cc-tag { font-family: 'DM Mono', monospace; font-size: 9px; background: var(--green-pale); color: var(--green-dark); padding: 2px 7px; border-radius: 2px; }
+
+/* ── RISK ITEMS ── */
+.risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.risk-item { border-radius: 6px; padding: 13px 15px; }
+.risk-item.hi { background: #FDF4F4; border: 1px solid #E8D0D0; border-left: 4px solid var(--red); }
+.risk-item.am { background: #FEF9E7; border: 1px solid #E8D5B0; border-left: 4px solid var(--amber); }
+.risk-item.bl { background: #EBF5FB; border: 1px solid #B0CADF; border-left: 4px solid var(--blue); }
+.risk-item.gn { background: var(--green-pale); border: 1px solid var(--border); border-left: 4px solid var(--green); }
+.ri-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 2px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+.rb-hi { background: #FDEDEC; color: var(--red); }
+.rb-am { background: #FEF9E7; color: var(--amber); }
+.rb-bl { background: #EBF5FB; color: var(--blue); }
+.rb-gn { background: var(--green-pale); color: var(--green-dark); }
+.ri-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.ri-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── TENANT GRID ── */
+.tenant-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.tenant-card { background: var(--surface); border-radius: 5px; padding: 10px 12px; border: 1px solid var(--border); }
+.tc-name { font-size: 11px; font-weight: 600; color: var(--black); margin-bottom: 3px; line-height: 1.3; }
+.tc-pct { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--green-dark); font-weight: 600; }
+.tc-rating { font-size: 10px; color: var(--light); margin-top: 2px; }
+
+/* ── OPP CARDS ── */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+/* ── PIPELINE TABLE ── */
+.pip-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.pip-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.pip-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); vertical-align: middle; color: var(--mid); }
+.pip-table tr:last-child td { border-bottom: none; }
+.pip-stage { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.05em; }
+.stg-now { background: var(--green-pale); color: var(--green-dark); }
+.stg-next { background: #FEF9E7; color: #7D5010; }
+.stg-fut { background: var(--surface); color: var(--light); }
+
+/* ── MARKET OCC TABLE ── */
+.mkt-table { width: 100%; border-collapse: collapse; }
+.mkt-table th { padding: 8px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-align: left; background: var(--green-pale); color: var(--green-dark); border-bottom: 1px solid var(--border); font-family: 'DM Mono', monospace; }
+.mkt-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); font-size: 12px; vertical-align: middle; }
+.mkt-table tr:last-child td { border-bottom: none; font-weight: 600; background: var(--green-pale); }
+.occ-bar { display: flex; align-items: center; gap: 8px; }
+.occ-track { flex: 1; height: 7px; background: var(--surface); border-radius: 4px; overflow: hidden; min-width: 60px; }
+.occ-fill { height: 100%; background: var(--green); border-radius: 4px; }
+.occ-fill.lo { background: var(--amber); }
+.occ-fill.vlo { background: var(--red); }
+.occ-txt { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--light); width: 38px; flex-shrink: 0; }
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li input[type="checkbox"] { margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+
+/* ── SOCIAL MEDIA CARDS ── */
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.sc-platform { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.sc-type { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.sc-quote { font-size: 11px; color: var(--mid); line-height: 1.6; font-style: italic; margin-bottom: 8px; padding: 8px 12px; background: var(--bg); border-radius: 4px; border-left: 3px solid var(--green); }
+.sc-action { font-size: 11px; color: var(--light); line-height: 1.6; }
+.sc-action strong { color: var(--green-dark); }
+
+/* ── EVENTS TABLE ── */
+.evt-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.evt-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.evt-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.evt-table tr:last-child td { border-bottom: none; }
+.evt-pri { font-size: 10px; font-weight: 700; }
+.pri-hi { color: var(--red); }
+.pri-med { color: var(--amber); }
+.pri-lo { color: var(--green-dark); }
+
+/* ── COMPETITIVE TABLE ── */
+.comp-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.comp-table th { padding: 8px 12px; text-align: left; background: var(--black); color: rgba(255,255,255,0.55); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.comp-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.comp-table tr:hover td { background: var(--surface); }
+.comp-table tr:last-child td { border-bottom: none; }
+
+/* ── WIN STATEMENT ── */
+.win-stmt { background: var(--black); border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; }
+.win-stmt-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+.win-stmt-txt { font-family: 'Playfair Display', serif; font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; font-style: italic; }
+
+/* ── LANG CARD ── */
+.lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.lang-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.lang-quote { font-size: 12px; color: var(--black); line-height: 1.65; padding: 14px 16px; font-style: italic; border-left: 3px solid var(--green); background: var(--bg); }
+.lang-src { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); padding: 6px 16px; background: var(--green-pale); display: block; }
+.lang-use { padding: 12px 16px; font-size: 11px; color: var(--mid); line-height: 1.65; }
+.lang-use strong { color: var(--black); display: block; margin-bottom: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); }
+
+/* ── LEED GRID ── */
+.leed-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.leed-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.leed-credit { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+.leed-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.leed-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── CALENDAR ── */
+.cal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.cal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cal-month { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.cal-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.cal-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+
+/* ── TAKEAWAY ── */
+.takeaway {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 20px;
+}
+.tka-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(0,0,0,0.45); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.tka-txt { font-size: 13px; color: var(--black); line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  padding: 14px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer div { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+@media(max-width:900px){
+  header, main, footer, nav { padding-left: 20px; padding-right: 20px; }
+  .g2,.g3,.kpi-strip,.timeline,.opp-grid,.lang-grid,.leed-grid,.risk-grid,.contact-grid,.social-grid,.cal-grid { grid-template-columns: 1fr; }
+  .tenant-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-strip { grid-template-columns: 1fr 1fr; }
+}
+
+/* Numbered list items */
+.tpi-list { list-style: none; padding: 0; margin: 0; }
+.tpi { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.tpi:last-child { border-bottom: none; }
+.tpn { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.tpt { font-size: 12px; color: var(--mid); line-height: 1.7; }
+.tpt strong { color: var(--black); }
+/* Insight items with arrow */
+.sn-body-i { display: flex; gap: 10px; font-size: 12px; color: var(--mid); line-height: 1.7; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.sn-body-i:last-child { border-bottom: none; }
+/* Transition cue - remove display */
+.tr-cue { display: none; }
+/* Note content blocks - remove display */  
+.ncb { display: none; }
+/* Old chart classes compatibility */
+.rw { padding: 16px 18px; }
+
+
+/* Developer table */
+.dtbl { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
+.dtbl th { padding: 9px 14px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid var(--border); font-weight: 600; }
+.dtbl td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 12px; color: var(--mid); line-height: 1.6; }
+.dtbl td strong { font-size: 12px; color: var(--black); font-weight: 600; display: inline; }
+.dtbl tr:last-child td { border-bottom: none; }
+.dtbl tr:hover td { background: var(--surface); }
+/* Activity bar */
+.abr { display: flex; flex-direction: column; gap: 4px; }
+.abt { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.abf { height: 100%; border-radius: 3px; }
+.abf.h { background: var(--green); }
+.abf.m { background: var(--amber); }
+.abf.l { background: var(--border); }
+/* Developer badges */
+.dbadge { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 3px; font-weight: 500; }
+.db-act { background: var(--green-pale); color: var(--green-dark); }
+.db-sel { background: #FEF9E7; color: #7D5010; }
+.db-pau { background: var(--surface); color: var(--light); }
+
+
+/* LA Opportunity Box */
+.la-box { background: var(--black); border-radius: 8px; padding: 22px 24px; margin-bottom: 20px; }
+.la-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.la-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 18px; line-height: 1.6; }
+.la-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.la-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 14px 16px; }
+.la-item-title { font-size: 12px; font-weight: 600; color: var(--green); margin-bottom: 6px; }
+.la-item-body { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+/* Contractual precedent cards */
+.prec-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.prec-card { background: var(--navy); border-radius: 8px; padding: 16px 18px; }
+.pc-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.pc-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 7px; }
+.pc-body { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.pc-firm { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.9); background: rgba(129,188,0,0.2); border: 1px solid rgba(129,188,0,0.3); padding: 2px 7px; border-radius: 2px; }
+
+/* Opp grid for engage section */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+
+/* Scout Q&A lists */
+.ql { list-style: none; padding: 0; margin: 0; }
+.qi { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.qi:last-child { border-bottom: none; }
+.qdot { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.qi:not(.ans) .qdot { background: #FEF9E7; color: var(--amber); }
+.qt { flex: 1; font-size: 12px; color: var(--black); line-height: 1.6; }
+.qt strong { display: block; margin-bottom: 3px; }
+.qa { font-size: 11px; color: var(--mid); line-height: 1.65; margin-top: 3px; }
+.qa.amber { color: #7D5010; }
+
+/* Card header pale variant */
+.ch-pale { background: var(--surface); border-bottom: 1px solid var(--border); }
+.ch-pale .ch-title { color: var(--black); }
+.ch-pale .ch-sub { color: var(--light); }
+.ch-pale .ch-icon { font-size: 15px; }
+
+/* Checklist */
+.ckl { list-style: none; padding: 0; margin: 0; }
+.cki { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; cursor: pointer; }
+.cki:last-child { border-bottom: none; }
+.ckb { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; margin-top: 1px; transition: all 0.15s; }
+.cki.done .ckb { background: var(--green); border-color: var(--green); }
+.cki.done .ckb::after { content: '✓'; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.cki.done { color: var(--light); text-decoration: line-through; }
+.ck-t { flex: 1; }
+.ckbg { font-family: 'DM Mono', monospace; font-size: 9px; padding: 1px 6px; border-radius: 2px; margin-left: 6px; white-space: nowrap; }
+.ckbg-ok { background: var(--green-pale); color: var(--green-dark); }
+.ckbg-gap { background: #FEF9E7; color: #7D5010; }
+.ckbg-risk { background: #FDEDEC; color: var(--red); }
+
+/* Assessment go/no-go */
+.gnogo { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.gnogo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.gnogo-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.gnogo-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.gnogo-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+
+
+/* Nav links */
+nav a { text-decoration: none; color: inherit; }
+.tab { cursor: pointer; }
+
+/* People grid */
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.pcard { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; border-top: 3px solid var(--green); }
+.pc-n { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 3px; }
+.pc-r { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 10px; }
+.pc-b { font-size: 11px; color: var(--mid); line-height: 1.7; margin-bottom: 10px; }
+.pc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.pctag { font-family: 'DM Mono', monospace; font-size: 9px; background: var(--green-pale); color: var(--green-dark); padding: 2px 8px; border-radius: 2px; }
+
+/* Social media grid */
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.sc { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.sc-p { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.sc-h { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+.sc-b { font-size: 11px; color: var(--mid); line-height: 1.65; font-style: italic; border-left: 3px solid var(--green); padding-left: 10px; margin-bottom: 8px; }
+.sc-i { font-size: 11px; color: var(--green-dark); font-weight: 500; line-height: 1.6; }
+
+/* Events table */
+.etbl { width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 16px; }
+.etbl th { padding: 9px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 2px solid var(--border); }
+.etbl td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.55; }
+.etbl tr:hover td { background: var(--surface); }
+.etbl tr:last-child td { border-bottom: none; }
+
+/* Event priority badges */
+.ep { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+.ep1 { background: #FDEDEC; color: var(--red); }
+.ep2 { background: #FEF9E7; color: #7D5010; }
+.ep3 { background: var(--green-pale); color: var(--green-dark); }
+
+/* Numbered list */
+.tpl { list-style: none; padding: 0; margin: 0; }
+.tpi { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.tpi:last-child { border-bottom: none; }
+.tpn { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.tpt { font-size: 12px; color: var(--mid); line-height: 1.7; flex: 1; }
+.tpt strong { color: var(--black); display: block; margin-bottom: 2px; }
+
+/* Checklist */
+.ckl { list-style: none; padding: 0; margin: 0; }
+.cki { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; cursor: pointer; }
+.cki:last-child { border-bottom: none; }
+.ckb { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; margin-top: 1px; }
+.cki.done .ckb { background: var(--green); border-color: var(--green); }
+.cki.done { color: var(--light); text-decoration: line-through; }
+.ck-t { flex: 1; }
+
+/* Takeaway */
+.takeaway { background: var(--green); border-radius: 8px; padding: 20px 24px; margin-top: 20px; display: flex; gap: 16px; align-items: flex-start; }
+.tka-icon { font-size: 22px; flex-shrink: 0; }
+.tka-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(0,0,0,0.5); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.tka-txt { font-size: 13px; color: var(--black); line-height: 1.7; }
+
+/* sn-sec wrapper */
+.sn-sec { margin-top: 4px; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;color:rgba(0,0,0,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">ASLA BD Workshop · 2026</div>
+    <h1>Life Sciences <em>Market</em></h1>
+  </div>
+  <div class="h-meta">
+    National Lab Vacancy &nbsp;·&nbsp; 21.4% (CBRE Q1 2026)<br>
+    San Diego Occupancy &nbsp;·&nbsp; 97.2% &nbsp;·&nbsp; Strongest Market Nationally<br>
+    Live Case Study &nbsp;·&nbsp; Alexandria Real Estate Equities
+  </div>
+</header>
+
+<nav>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Market.html" class="tab"><span class="tab-num">⊕</span>Market</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-ARE-Profile.html" class="tab"><span class="tab-num">★</span>ARE Profile</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Scout.html" class="tab"><span class="tab-num">1</span>Scout</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Engage.html" class="tab on"><span class="tab-num">2</span>Engage</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Position.html" class="tab"><span class="tab-num">3</span>Position</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Capture.html" class="tab"><span class="tab-num">4</span>Capture</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Retain.html" class="tab"><span class="tab-num">5</span>Retain</a>
+</nav>
+
+
+<main>
+<div class="phero">
+    <div style="font-size:36px;flex-shrink:0">🤝</div>
+    <div style="flex:1">
+      
+      <div class="phero-title">Understand Them</div>
+      <div class="phero-desc">Relationships are built before any RFP exists. Know how ARE is organized, what they care about, what language they use, and where they show up. The firms that win ARE work are the ones whose names come up in conversation before the RFP drops — show up as a resource, not a vendor.</div>
+    </div>
+    
+  </div>
+
+  <div class="seclbl"><h3>How ARE Is Organized — Map the Decision Tree</h3><div class="ln"></div></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hdr ch-navy"><span class="ch-icon">🗂️</span><div><div class="ch-title">ARE San Diego — Who Matters for Campus Point</div><div class="ch-sub">Relationship targets in priority order for a SoCal LA firm</div></div></div>
+      <div class="card-body">
+        <div class="pgrid">
+          <div class="pcard">
+            <div class="pc-n">Hallie Kuhn, PhD</div>
+            <div class="pc-r">EVP Capital Markets · SD Ecosystem Lead</div>
+            <div class="pc-b">Most accessible senior ARE person for SD. PhD credentials — speaks biotech science fluently. Presents VC/M&amp;A funding data on every earnings call. Active in Biocom SD. Your best entry point into ARE's San Diego world without a cold approach.</div>
+            <div class="pc-tags"><span class="pctag">Biocom SD</span><span class="pctag">Life Science Events</span><span class="pctag">ULI SD</span></div>
+          </div>
+          <div class="pcard">
+            <div class="pc-n">Daniel J.</div>
+            <div class="pc-r">Regional Market Director · San Diego</div>
+            <div class="pc-b">Named in the BMS press release as ARE SD lead. Manages leasing, acquisitions, and development for SD region. Day-to-day contact for Campus Point. Harder to access cold — warm intro through Biocom or NAIOP SD is the most reliable path.</div>
+            <div class="pc-tags"><span class="pctag">NAIOP SD</span><span class="pctag">Direct Development</span></div>
+          </div>
+          <div class="pcard">
+            <div class="pc-n">Eleni Reed</div>
+            <div class="pc-r">SVP Head of Sustainability · Pasadena HQ</div>
+            <div class="pc-b">Leads ARE's LEED and ESG strategy. 54% of ARE revenue from LEED-certified properties. Won 2024 Nareit Sustainable Design Impact Award. <strong>Most accessible ARE contact for LA firms</strong> — LEED and biophilic design are the natural intersection. 2-hr drive from Torrance.</div>
+            <div class="pc-tags"><span class="pctag">USGBC</span><span class="pctag">I2SL</span><span class="pctag">Nareit Sustainability</span></div>
+          </div>
+          <div class="pcard">
+            <div class="pc-n">Prime Architect (TBC)</div>
+            <div class="pc-r">Likely Gensler SD or HDR San Diego</div>
+            <div class="pc-b">Not publicly confirmed for Campus Point. <strong>This is your most important relationship to build.</strong> The LA subconsultant is on the architect's team — not ARE's direct hire. One established relationship with Gensler SD's life science studio lead is worth more than 10 cold emails to ARE.</div>
+            <div class="pc-tags"><span class="pctag">Priority #1</span><span class="pctag">Life Science Studio Lead</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-black"><span class="ch-icon">💡</span><div><div class="ch-title">What ARE Cares About Right Now</div><div class="ch-sub">From 10-K · press releases · earnings calls · CR report · LinkedIn</div></div></div>
+      <div class="card-body">
+        <ul class="tpl">
+          <li class="tpi"><div class="tpn">1</div><div class="tpt"><strong>Talent recruitment as the metric — not "amenities."</strong><span>ARE no longer uses the word "amenities." They use "environments that enable the recruitment and retention of mission-critical talent." Campus Point BMS press release, July 2025. Lilly Gateway Labs announcement. Their earnings calls. Mirror this language exactly — not a paraphrase.</span></div></li>
+          <li class="tpi"><div class="tpn">2</div><div class="tpt"><strong>LEED, Fitwel, and net-zero commitments.</strong><span>90% of ARE's top 20 tenants have net-zero goals. 54% of ARE revenue from LEED-certified properties. Campus Point BMS specifically targets LEED Gold + Fitwel + 100% electrification. LEED site credits need a landscape architect to deliver them — this is your formal role in their sustainability platform.</span></div></li>
+          <li class="tpi"><div class="tpn">3</div><div class="tpt"><strong>Occupancy defense and re-leasing pressure.</strong><span>Boston at 86.4% — ARE's biggest financial risk right now. Even SD's strong numbers are actively managed. Outdoor amenity quality is explicitly how ARE justifies premium rents in investor presentations and lease renewals. It's in their 10-K. It's in their earnings calls.</span></div></li>
+          <li class="tpi"><div class="tpn">4</div><div class="tpt"><strong>Mental health and biophilic wellness.</strong><span>ARE's signature social cause since 2021. OneFifteen addiction recovery, NIH biomarker research partnership, annual Alexandria Summit on Mental Health in DC. Restorative outdoor spaces, walking paths, biophilic design — your deliverables — align directly with their organizational mission and content pillars.</span></div></li>
+          <li class="tpi"><div class="tpn">5</div><div class="tpt"><strong>Trustworthiness and long-term relationship value.</strong><span>Named Newsweek Most Trustworthy Company three consecutive years. 84% of ARE's leasing came from existing tenants. BMS has been an ARE tenant for 25+ years. ARE selects consultants who demonstrate consistent reliability and commitment — not the lowest bidder or the flashiest portfolio.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="seclbl"><h3>Social Media — What They Post and How to Engage Meaningfully</h3><div class="ln"></div></div>
+  <div class="sgrid">
+    <div class="sc"><div class="sc-p">LinkedIn</div><div class="sc-h">Campus Amenity Announcements</div><div class="sc-b">"...a nutritious grab-and-go café with garden seating, a destination restaurant, large event lawn, high-tech meeting venues, and a restorative walking path." — Lilly Gateway Labs SD, Sept 2025</div><div class="sc-i">→ Comment with insight about outdoor programming for life science campuses. Use their language. Show you read it carefully — not just a like.</div></div>
+    <div class="sc"><div class="sc-p">LinkedIn</div><div class="sc-h">LEED / Sustainability Milestones</div><div class="sc-b">LEED Platinum at 325 Binney + 15 Necco. 18% GHG reduction 2022–2024. GRESB Green Star designation (8 consecutive years). Posts when CR Report drops June–July annually.</div><div class="sc-i">→ "The LEED Platinum at 15 Necco required remarkable stormwater coordination — how did the site team approach bioretention at that scale?" = signals genuine expertise.</div></div>
+    <div class="sc"><div class="sc-p">LinkedIn</div><div class="sc-h">Community &amp; Campus Life</div><div class="sc-b">"This afternoon, our NYC campus community gathered for a #solareclipse viewing party. An amazing shared experience of awe and wonder." — High-engagement outdoor moment post.</div><div class="sc-i">→ Engage when ARE posts outdoor campus moments — the algorithm shows it to their development team. Comment thoughtfully about shared outdoor experience and community.</div></div>
+    <div class="sc"><div class="sc-p">LinkedIn</div><div class="sc-h">Mental Health Month — May</div><div class="sc-b">Annual multi-post campaign: Alexandria Summit on Mental Health, NIH partnership, OneFifteen updates. Heavy LinkedIn push every May — their signature content moment.</div><div class="sc-i">→ Publish content on biophilic design and mental health outcomes (restorative environments reduce cortisol). Time it to May when ARE's team is in this content mode.</div></div>
+    <div class="sc"><div class="sc-p">LinkedIn</div><div class="sc-h">CR Report Drop — June/July</div><div class="sc-b">Annual Corporate Responsibility Report generates weeks of content. ARE's team is in "mission and values" mode. 2024 report released June 25, 2025 — predictably annual.</div><div class="sc-i">→ Pre-read ARE's supplemental sustainability data. Day-one engagement with a LEED or Labs2Zero comment puts you ahead of everyone who reads it a week later.</div></div>
+    <div class="sc"><div class="sc-p">LinkedIn</div><div class="sc-h">Leasing Milestone Announcements</div><div class="sc-b">"Its distinctive design features an expansive terrace that serves as a central gathering place, seamlessly blending indoor and outdoor spaces." — Campus Point BMS, July 2025</div><div class="sc-i">→ Share these posts to your network with commentary. It signals to ARE that you're tracking their business at a strategic level — not just waiting for their RFP.</div></div>
+  </div>
+
+  <div class="seclbl"><h3>Where They Show Up — Events to Attend</h3><div class="ln"></div></div>
+  <div style="overflow-x:auto;background:var(--bg);border:1px solid var(--border);border-radius:8px;margin-bottom:15px;">
+    <table class="etbl">
+      <thead><tr><th>Event</th><th>When / Where</th><th>ARE Presence</th><th>Your Action</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bisnow International Life Sciences &amp; Biotech Conference</strong></td><td>September annually · San Diego · 2-Day</td><td>ARE confirmed attendee/speaker. Joel Marcus + Hallie Kuhn typical. 2026 = 4th annual in SD. Confirmed alongside IQHQ, Healthpeak, BioMed.</td><td>Register early. Attend the 2-hr cocktail reception. Ask a smart question about SD VC pipeline or BMS expansion — not a pitch.</td><td><span class="ep ep1">🔴 Top Priority</span></td></tr>
+        <tr><td><strong>Bisnow SoCal Life Sciences Conference</strong></td><td>April annually · San Diego · Pacific Center</td><td>ARE confirmed 2025 alongside IQHQ, Healthpeak, BioMed, Oxford, Longfellow. Mix of development staff and executives.</td><td>Attend for ARE's SD development team contacts. Secondary: meet BioMed and IQHQ teams for market intelligence.</td><td><span class="ep ep1">🔴 Top Priority</span></td></tr>
+        <tr><td><strong>Biocom San Diego Events</strong></td><td>Year-round · San Diego · Multiple formats</td><td>Hallie Kuhn and ARE's SD team embedded in Biocom ecosystem. ARE is a primary real estate partner for SD biotech companies.</td><td>Join Biocom as affiliate or sponsor. Attend quarterly events. Most direct non-transactional access to ARE's SD team in the city.</td><td><span class="ep ep1">🔴 Top Priority</span></td></tr>
+        <tr><td><strong>ULI San Diego</strong></td><td>Year-round · San Diego · Chapters + committees</td><td>ARE SD development staff confirmed at ULI local chapter events. ARE active in product councils and committee work.</td><td>Join ULI SD. Volunteer for Life Sciences product council. Build working relationships over months — not transactional minutes at a cocktail hour.</td><td><span class="ep ep1">🔴 Top Priority</span></td></tr>
+        <tr><td><strong>NAIOP San Diego Chapter</strong></td><td>Year-round · Monthly lunches + events</td><td>ARE confirmed NAIOP SD participant. Also where Gensler SD and HDR attend — your prime architect targets are here.</td><td>NAIOP membership. Monthly luncheons. Critical for both ARE development contacts AND the prime architect relationships that get you on their project teams.</td><td><span class="ep ep2">🟡 High Value</span></td></tr>
+        <tr><td><strong>I2SL Annual Conference</strong></td><td>September · Rotating US cities</td><td>ARE sustainability team (Eleni Reed) attends. HOK S+T practice lead is a confirmed speaker. Lab building energy and LEED focus.</td><td>Build relationships with ARE sustainability team and LEED-focused architects (HOK, Flad) who get engaged on ARE projects. Bring a Labs2Zero question.</td><td><span class="ep ep2">🟡 High Value</span></td></tr>
+        <tr><td><strong>USGBC / GreenBuild</strong></td><td>Annual · Various US cities</td><td>ARE's 54% LEED revenue base = active USGBC community presence. Eleni Reed's team is active in LEED professional circles.</td><td>Connect with ARE sustainability contacts in shared LEED context. Frame around specific site credit delivery experience — not general sustainability messaging.</td><td><span class="ep ep3">🟢 Strategic</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-bottom:15px;">
+    <div class="card-hdr ch-green"><span class="ch-icon">📋</span><div><div class="ch-title">Engagement Checklist — Track Your Progress</div></div></div>
+    <div class="card-body">
+      <div class="g2" style="margin-bottom:0;">
+        <ul class="ckl">
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">ARE LinkedIn followed — company + Hallie Kuhn + Eleni Reed</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Gensler SD life science studio lead identified and connected</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">HDR San Diego lab architecture lead identified</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Biocom SD membership or event registration completed</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Bisnow ILS San Diego (September) registered</span></li>
+        </ul>
+        <ul class="ckl">
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">ULI San Diego chapter joined or first event attended</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">ARE Q4 earnings call listened to (free: investor.are.com)</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">2024 ARE Corporate Responsibility Report read (sustainability section)</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">First thoughtful LinkedIn comment on ARE post completed (not just a like)</span></li>
+          <li class="cki" onclick="ck(this)"><div class="ckb"></div><span class="ck-t">Internal team briefed on ARE — pipeline, language, contacts, gaps</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sn-sec">
+    
+    
+        
+      </div>
+      
+      <div class="takeaway"><div class="tka-icon">💡</div><div><div class="tka-lbl">Key Takeaway</div><div class="tka-txt">Show up where ARE shows up. Read what they publish. Engage with what they post. When you meet someone from ARE's SD team, you're not introducing yourself — you're continuing a conversation that's already been happening. That's the goal.</div></div></div>
+      
+    
+  
+
+    <!-- HOW TO ENGAGE -->
+  <div class="seclbl"><h3>How to Engage</h3><div class="ln"></div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 16px;">
+      <div style="font-size:12px;font-weight:600;color:var(--black);margin-bottom:8px;">🏗️ Subconsultant to Prime Architects</div>
+      <ul style="list-style:none;padding:0;font-size:11px;color:var(--mid);line-height:1.7;">
+        <li>· Target Flad Architects, FPBA, Gensler SD, HDR San Diego</li>
+        <li>· BMS and Novartis teams already assembled — build these relationships now</li>
+        <li>· One established relationship with a prime = path to every ARE project they win</li>
+      </ul>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 16px;">
+      <div style="font-size:12px;font-weight:600;color:var(--black);margin-bottom:8px;">🤝 Direct Development Team</div>
+      <ul style="list-style:none;padding:0;font-size:11px;color:var(--mid);line-height:1.7;">
+        <li>· Daniel Ryan — Co-President, San Diego</li>
+        <li>· Bret Gossett — EVP Co-Regional Market Director (since Jan 2026)</li>
+        <li>· Pasadena HQ accessible for SoCal firms · NAIOP SD · Biocom events</li>
+      </ul>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 16px;">
+      <div style="font-size:12px;font-weight:600;color:var(--black);margin-bottom:8px;">💡 Frame as Occupancy Strategy</div>
+      <ul style="list-style:none;padding:0;font-size:11px;color:var(--mid);line-height:1.7;">
+        <li>· ARE is offering free rent to attract tenants in a soft market</li>
+        <li>· Outdoor amenity = leasing tool, not landscaping</li>
+        <li>· "Our work reduces your free-rent period" is the message</li>
+      </ul>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 16px;">
+      <div style="font-size:12px;font-weight:600;color:var(--black);margin-bottom:8px;">📍 Start in San Diego — Now</div>
+      <ul style="list-style:none;padding:0;font-size:11px;color:var(--mid);line-height:1.7;">
+        <li>· 97.2% occupancy · two active build-to-suits under construction</li>
+        <li>· BMS landscape installation happening now</li>
+        <li>· Novartis groundbreaking February 2026 — team assembled</li>
+        <li>· No confirmed LA on any ARE San Diego project — gap is open</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONVERSATION STARTERS -->
+  <div class="seclbl" style="margin-top:8px;"><h3>Conversation Starters</h3><div class="ln"></div></div>
+  <div class="insight">
+    <div class="insight-title">Questions That Show You've Done Your Research</div>
+    <div class="insight-item">· "Your Q4 2025 call mentioned an intense focus on re-leasing vacant space — what role is the outdoor campus environment playing in your conversations with prospective tenants right now?"</div>
+    <div class="insight-item">· "With the Novartis build-to-suit breaking ground in February and the BMS expansion delivering this year, how are you thinking about outdoor connectivity between the two projects and the existing Campus Point campus?"</div>
+    <div class="insight-item">· "We've delivered LEED Gold site credits on several life science campuses — is that conversation happening early enough on your current projects?"</div>
+    <div class="insight-item">· "With 20M RSF of entitled future development on existing Megacampus sites, are there submarkets where framework planning is underway now — where a landscape architect would be engaged before the architect?"</div>
+  </div>
+</main>
+
+<footer>
+  <div>Life Sciences Market · Alexandria Real Estate Case Study · ASLA 2026</div>
+  <div>Source: ARE 10-K FY2025 · Q4 2025 Earnings Call · CBRE Q1 2026</div>
+</footer>
+
+<script>
+function ck(item) {
+  item.classList.toggle('done');
+  try {
+    var done = [];
+    document.querySelectorAll('.cki.done').forEach(function(el){
+      done.push(el.querySelector('.ck-t') ? el.querySelector('.ck-t').textContent.trim().slice(0,50) : '');
+    });
+    sessionStorage.setItem('ls_ck_en', JSON.stringify(done));
+  } catch(e){}
+}
+window.addEventListener('load', function(){
+  try {
+    var saved = JSON.parse(sessionStorage.getItem('ls_ck_en') || '[]');
+    document.querySelectorAll('.cki').forEach(function(el){
+      var t = el.querySelector('.ck-t');
+      if (t && saved.indexOf(t.textContent.trim().slice(0,50)) !== -1) el.classList.add('done');
+    });
+  } catch(e){}
+});
+</script>
+
+</body></html>

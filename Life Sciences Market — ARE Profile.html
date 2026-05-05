@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/tgala/Downloads/LS-ARE-Profile%20(2).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Sciences Market — ARE Profile</title>
+<link href="file:///C:/Users/tgala/Downloads/Life%20Sciences%20Market%20%E2%80%94%20ARE%20Profile_files/css2" rel="stylesheet">
+<style>
+
+:root {
+  --green: #81BC00;
+  --green-mid: #6A9C00;
+  --green-dark: #4A7A00;
+  --green-pale: #EBF5D0;
+  --black: #1A1A1A;
+  --mid: #3D3D3D;
+  --light: #6B6B6B;
+  --border: #DDDDDD;
+  --bg: #FFFFFF;
+  --surface: #F7F7F7;
+  --navy: #1A3A5C;
+  --red: #C0392B;
+  --amber: #E67E22;
+  --blue: #2471A3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--black); }
+
+/* ── HEADER ── */
+header {
+  background: var(--green);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--black);
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+}
+header h1 em { font-style: normal; color: #fff; }
+.h-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--black);
+  padding: 0 48px;
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab:hover { color: rgba(255,255,255,0.7); }
+.tab.on { color: #fff; border-bottom-color: var(--green); }
+.tab-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.tab.on .tab-num { background: var(--green); color: var(--black); }
+
+/* ── MAIN ── */
+main { padding: 28px 48px 64px; max-width: 1380px; margin: 0 auto; }
+.pnl { display: none; }
+.pnl.on { display: block; }
+.pnl.on { display: block; }
+
+/* ── SECTION LABEL ── */
+.seclbl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 16px;
+}
+.seclbl:first-child { margin-top: 0; }
+.seclbl h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
+}
+.seclbl .ln { flex: 1; height: 1px; background: var(--border); }
+
+/* ── PHASE HERO ── */
+.phero {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.phero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.phero-desc {
+  font-size: 12px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+/* ── KPI STRIP ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.kpi-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.kpi-box.hi { border-color: var(--green); background: var(--green-pale); }
+.kpi-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+}
+.kpi-v.g { color: var(--green-dark); }
+.kpi-v.r { color: var(--red); }
+.kpi-l { font-size: 10px; color: var(--light); margin-top: 5px; line-height: 1.4; }
+
+/* ── GRID ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.card-hdr {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ch-green { background: var(--green); }
+.ch-black { background: var(--black); }
+.ch-navy { background: var(--navy); }
+.ch-red { background: var(--red); }
+.ch-amber { background: var(--amber); }
+.ch-mid { background: var(--mid); }
+.ch-blue { background: var(--blue); }
+.ch-icon { font-size: 15px; }
+.ch-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: #fff; }
+.card-body { padding: 18px; }
+
+/* ── TIMELINE ── */
+.timeline { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.tl-card { border-radius: 7px; padding: 16px 18px; border: 1px solid var(--border); }
+.tl-card.dn { border-left: 4px solid var(--red); background: #FDF4F4; }
+.tl-card.md { border-left: 4px solid var(--amber); background: #FEF9E7; }
+.tl-card.up { border-left: 4px solid var(--green); background: var(--green-pale); }
+.tl-yr { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.tl-card.dn .tl-yr { color: var(--red); }
+.tl-card.md .tl-yr { color: var(--amber); }
+.tl-card.up .tl-yr { color: var(--green-dark); }
+.tl-h { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+.tl-b { font-size: 11px; color: var(--mid); line-height: 1.7; }
+
+/* ── REVENUE CHART ── */
+.rchart { padding: 16px 18px; }
+.rchart-lbl { font-size: 11px; color: var(--light); margin-bottom: 12px; }
+.rbars { display: flex; align-items: flex-end; gap: 8px; height: 120px; }
+.rbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.rbar-val { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600; }
+.rbar-val.dv { color: var(--red); }
+.rbar-val.fl { color: var(--amber); }
+.rbar-val.pj { color: var(--green-dark); }
+.rbar { width: 100%; border-radius: 3px 3px 0 0; }
+.rbar.curr { background: var(--green); }
+.rbar.dw { background: var(--red); }
+.rbar.fl { background: var(--amber); }
+.rbar.pj { background: var(--green); opacity: 0.6; }
+.rbar-yr { font-size: 9px; color: var(--light); text-align: center; line-height: 1.4; margin-top: 4px; }
+.rleg { display: flex; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+.rleg-i { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--light); }
+.rleg-d { width: 10px; height: 10px; border-radius: 2px; }
+
+/* ── DEVELOPER TABLE ── */
+.dev-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.dev-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.dev-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.dev-table tr:hover td { background: var(--surface); }
+.dev-table tr:last-child td { border-bottom: none; }
+.dev-pri { font-weight: 600; color: var(--black); }
+.status-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.06em; }
+.sb-hi { background: var(--green-pale); color: var(--green-dark); }
+.sb-med { background: #FEF9E7; color: #7D5010; }
+.sb-lo { background: var(--surface); color: var(--light); }
+
+/* ── CALLOUT ── */
+.callout {
+  background: var(--surface);
+  border-left: 3px solid var(--green);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.callout strong { color: var(--black); }
+
+/* ── INSIGHT BOX ── */
+.insight {
+  background: var(--black);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.insight-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.insight-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 10px;
+}
+.insight-item:last-child { border-bottom: none; }
+.insight-item::before { content: '→'; color: var(--green); flex-shrink: 0; }
+
+/* ── CONTACT CARDS ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cc-name { font-weight: 600; font-size: 13px; color: var(--black); margin-bottom: 3px; }
+.cc-role { font-size: 10px; color: var(--green-dark); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; margin-bottom: 8px; }
+.cc-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+.cc-tags { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+.cc-tag { font-family: 'DM Mono', monospace; font-size: 9px; background: var(--green-pale); color: var(--green-dark); padding: 2px 7px; border-radius: 2px; }
+
+/* ── RISK ITEMS ── */
+.risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.risk-item { border-radius: 6px; padding: 13px 15px; }
+.risk-item.hi { background: #FDF4F4; border: 1px solid #E8D0D0; border-left: 4px solid var(--red); }
+.risk-item.am { background: #FEF9E7; border: 1px solid #E8D5B0; border-left: 4px solid var(--amber); }
+.risk-item.bl { background: #EBF5FB; border: 1px solid #B0CADF; border-left: 4px solid var(--blue); }
+.risk-item.gn { background: var(--green-pale); border: 1px solid var(--border); border-left: 4px solid var(--green); }
+.ri-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 2px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+.rb-hi { background: #FDEDEC; color: var(--red); }
+.rb-am { background: #FEF9E7; color: var(--amber); }
+.rb-bl { background: #EBF5FB; color: var(--blue); }
+.rb-gn { background: var(--green-pale); color: var(--green-dark); }
+.ri-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.ri-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── TENANT GRID ── */
+.tenant-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.tenant-card { background: var(--surface); border-radius: 5px; padding: 10px 12px; border: 1px solid var(--border); }
+.tc-name { font-size: 11px; font-weight: 600; color: var(--black); margin-bottom: 3px; line-height: 1.3; }
+.tc-pct { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--green-dark); font-weight: 600; }
+.tc-rating { font-size: 10px; color: var(--light); margin-top: 2px; }
+
+/* ── OPP CARDS ── */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+/* ── PIPELINE TABLE ── */
+.pip-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.pip-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.pip-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); vertical-align: middle; color: var(--mid); }
+.pip-table tr:last-child td { border-bottom: none; }
+.pip-stage { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; border-radius: 2px; letter-spacing: 0.05em; }
+.stg-now { background: var(--green-pale); color: var(--green-dark); }
+.stg-next { background: #FEF9E7; color: #7D5010; }
+.stg-fut { background: var(--surface); color: var(--light); }
+
+/* ── MARKET OCC TABLE ── */
+.mkt-table { width: 100%; border-collapse: collapse; }
+.mkt-table th { padding: 8px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-align: left; background: var(--green-pale); color: var(--green-dark); border-bottom: 1px solid var(--border); font-family: 'DM Mono', monospace; }
+.mkt-table td { padding: 9px 12px; border-bottom: 1px dashed var(--border); font-size: 12px; vertical-align: middle; }
+.mkt-table tr:last-child td { border-bottom: none; font-weight: 600; background: var(--green-pale); }
+.occ-bar { display: flex; align-items: center; gap: 8px; }
+.occ-track { flex: 1; height: 7px; background: var(--surface); border-radius: 4px; overflow: hidden; min-width: 60px; }
+.occ-fill { height: 100%; background: var(--green); border-radius: 4px; }
+.occ-fill.lo { background: var(--amber); }
+.occ-fill.vlo { background: var(--red); }
+.occ-txt { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--light); width: 38px; flex-shrink: 0; }
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li input[type="checkbox"] { margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+
+/* ── SOCIAL MEDIA CARDS ── */
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.sc-platform { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.sc-type { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.sc-quote { font-size: 11px; color: var(--mid); line-height: 1.6; font-style: italic; margin-bottom: 8px; padding: 8px 12px; background: var(--bg); border-radius: 4px; border-left: 3px solid var(--green); }
+.sc-action { font-size: 11px; color: var(--light); line-height: 1.6; }
+.sc-action strong { color: var(--green-dark); }
+
+/* ── EVENTS TABLE ── */
+.evt-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.evt-table th { padding: 8px 12px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.evt-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.evt-table tr:last-child td { border-bottom: none; }
+.evt-pri { font-size: 10px; font-weight: 700; }
+.pri-hi { color: var(--red); }
+.pri-med { color: var(--amber); }
+.pri-lo { color: var(--green-dark); }
+
+/* ── COMPETITIVE TABLE ── */
+.comp-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.comp-table th { padding: 8px 12px; text-align: left; background: var(--black); color: rgba(255,255,255,0.55); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.comp-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--mid); line-height: 1.5; }
+.comp-table tr:hover td { background: var(--surface); }
+.comp-table tr:last-child td { border-bottom: none; }
+
+/* ── WIN STATEMENT ── */
+.win-stmt { background: var(--black); border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; }
+.win-stmt-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+.win-stmt-txt { font-family: 'Playfair Display', serif; font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; font-style: italic; }
+
+/* ── LANG CARD ── */
+.lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.lang-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.lang-quote { font-size: 12px; color: var(--black); line-height: 1.65; padding: 14px 16px; font-style: italic; border-left: 3px solid var(--green); background: var(--bg); }
+.lang-src { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); padding: 6px 16px; background: var(--green-pale); display: block; }
+.lang-use { padding: 12px 16px; font-size: 11px; color: var(--mid); line-height: 1.65; }
+.lang-use strong { color: var(--black); display: block; margin-bottom: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); }
+
+/* ── LEED GRID ── */
+.leed-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.leed-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.leed-credit { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+.leed-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.leed-body { font-size: 11px; color: var(--light); line-height: 1.6; }
+
+/* ── CALENDAR ── */
+.cal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.cal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.cal-month { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.cal-title { font-weight: 600; font-size: 12px; color: var(--black); margin-bottom: 6px; }
+.cal-body { font-size: 11px; color: var(--light); line-height: 1.65; }
+
+/* ── TAKEAWAY ── */
+.takeaway {
+  background: var(--green);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 20px;
+}
+.tka-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(0,0,0,0.45); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.tka-txt { font-size: 13px; color: var(--black); line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  padding: 14px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer div { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+@media(max-width:900px){
+  header, main, footer, nav { padding-left: 20px; padding-right: 20px; }
+  .g2,.g3,.kpi-strip,.timeline,.opp-grid,.lang-grid,.leed-grid,.risk-grid,.contact-grid,.social-grid,.cal-grid { grid-template-columns: 1fr; }
+  .tenant-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-strip { grid-template-columns: 1fr 1fr; }
+}
+
+/* Numbered list items */
+.tpi-list { list-style: none; padding: 0; margin: 0; }
+.tpi { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.tpi:last-child { border-bottom: none; }
+.tpn { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.tpt { font-size: 12px; color: var(--mid); line-height: 1.7; }
+.tpt strong { color: var(--black); }
+/* Insight items with arrow */
+.sn-body-i { display: flex; gap: 10px; font-size: 12px; color: var(--mid); line-height: 1.7; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.sn-body-i:last-child { border-bottom: none; }
+/* Transition cue - remove display */
+.tr-cue { display: none; }
+/* Note content blocks - remove display */  
+.ncb { display: none; }
+/* Old chart classes compatibility */
+.rw { padding: 16px 18px; }
+
+
+/* Developer table */
+.dtbl { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
+.dtbl th { padding: 9px 14px; text-align: left; background: var(--green-pale); color: var(--green-dark); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid var(--border); font-weight: 600; }
+.dtbl td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 12px; color: var(--mid); line-height: 1.6; }
+.dtbl td strong { font-size: 12px; color: var(--black); font-weight: 600; display: inline; }
+.dtbl tr:last-child td { border-bottom: none; }
+.dtbl tr:hover td { background: var(--surface); }
+/* Activity bar */
+.abr { display: flex; flex-direction: column; gap: 4px; }
+.abt { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.abf { height: 100%; border-radius: 3px; }
+.abf.h { background: var(--green); }
+.abf.m { background: var(--amber); }
+.abf.l { background: var(--border); }
+/* Developer badges */
+.dbadge { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 3px; font-weight: 500; }
+.db-act { background: var(--green-pale); color: var(--green-dark); }
+.db-sel { background: #FEF9E7; color: #7D5010; }
+.db-pau { background: var(--surface); color: var(--light); }
+
+
+/* LA Opportunity Box */
+.la-box { background: var(--black); border-radius: 8px; padding: 22px 24px; margin-bottom: 20px; }
+.la-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.la-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 18px; line-height: 1.6; }
+.la-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.la-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 14px 16px; }
+.la-item-title { font-size: 12px; font-weight: 600; color: var(--green); margin-bottom: 6px; }
+.la-item-body { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+/* Contractual precedent cards */
+.prec-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.prec-card { background: var(--navy); border-radius: 8px; padding: 16px 18px; }
+.pc-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.pc-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 7px; }
+.pc-body { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.pc-firm { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.9); background: rgba(129,188,0,0.2); border: 1px solid rgba(129,188,0,0.3); padding: 2px 7px; border-radius: 2px; }
+
+/* Opp grid for engage section */
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.opp-card { background: var(--green-pale); border: 1px solid var(--border); border-radius: 6px; padding: 16px; border-top: 3px solid var(--green); }
+.opp-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+.opp-title { font-size: 13px; font-weight: 600; color: var(--green-dark); margin-bottom: 6px; }
+.opp-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+.opp-tag { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--green-dark); background: rgba(129,188,0,0.15); padding: 2px 7px; border-radius: 2px; }
+
+
+/* Scout Q&A lists */
+.ql { list-style: none; padding: 0; margin: 0; }
+.qi { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.qi:last-child { border-bottom: none; }
+.qdot { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; color: var(--green-dark); background: var(--green-pale); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.qi:not(.ans) .qdot { background: #FEF9E7; color: var(--amber); }
+.qt { flex: 1; font-size: 12px; color: var(--black); line-height: 1.6; }
+.qt strong { display: block; margin-bottom: 3px; }
+.qa { font-size: 11px; color: var(--mid); line-height: 1.65; margin-top: 3px; }
+.qa.amber { color: #7D5010; }
+
+/* Card header pale variant */
+.ch-pale { background: var(--surface); border-bottom: 1px solid var(--border); }
+.ch-pale .ch-title { color: var(--black); }
+.ch-pale .ch-sub { color: var(--light); }
+.ch-pale .ch-icon { font-size: 15px; }
+
+/* Checklist */
+.ckl { list-style: none; padding: 0; margin: 0; }
+.cki { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--mid); line-height: 1.5; cursor: pointer; }
+.cki:last-child { border-bottom: none; }
+.ckb { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; margin-top: 1px; transition: all 0.15s; }
+.cki.done .ckb { background: var(--green); border-color: var(--green); }
+.cki.done .ckb::after { content: '✓'; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.cki.done { color: var(--light); text-decoration: line-through; }
+.ck-t { flex: 1; }
+.ckbg { font-family: 'DM Mono', monospace; font-size: 9px; padding: 1px 6px; border-radius: 2px; margin-left: 6px; white-space: nowrap; }
+.ckbg-ok { background: var(--green-pale); color: var(--green-dark); }
+.ckbg-gap { background: #FEF9E7; color: #7D5010; }
+.ckbg-risk { background: #FDEDEC; color: var(--red); }
+
+/* Assessment go/no-go */
+.gnogo { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.gnogo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+.gnogo-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.gnogo-title { font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.gnogo-body { font-size: 11px; color: var(--mid); line-height: 1.65; }
+
+
+/* Nav links */
+nav a { text-decoration: none; color: inherit; }
+.tab { cursor: pointer; }
+
+.sp-sub { list-style: none; padding: 0; margin: 4px 0 0 0; }
+.sp-sub li { font-size: 11px; color: var(--mid); padding: 2px 0 2px 12px; position: relative; line-height: 1.55; }
+.sp-sub li::before { content: "·"; position: absolute; left: 0; color: var(--green-dark); font-weight: 700; }
+.ri-bullets { list-style: none; padding: 0; margin: 4px 0 0 0; }
+.ri-bullets li { font-size: 11px; color: var(--mid); padding: 2px 0 2px 12px; position: relative; line-height: 1.55; }
+.ri-bullets li::before { content: "·"; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+.risk-item.am .ri-bullets li::before { color: var(--amber); }
+.risk-item.bl .ri-bullets li::before { color: var(--blue); }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;color:rgba(0,0,0,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">ASLA BD Workshop · 2026</div>
+    <h1>Life Sciences <em>Market</em></h1>
+  </div>
+  <div class="h-meta">
+    National Lab Vacancy &nbsp;·&nbsp; 21.4% (CBRE Q1 2026)<br>
+    San Diego Occupancy &nbsp;·&nbsp; 97.2% &nbsp;·&nbsp; Strongest Market Nationally<br>
+    Live Case Study &nbsp;·&nbsp; Alexandria Real Estate Equities
+  </div>
+</header>
+
+<nav>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Market.html" class="tab"><span class="tab-num">⊕</span>Market</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-ARE-Profile.html" class="tab on"><span class="tab-num">★</span>ARE Profile</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Scout.html" class="tab"><span class="tab-num">1</span>Scout</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Engage.html" class="tab"><span class="tab-num">2</span>Engage</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Position.html" class="tab"><span class="tab-num">3</span>Position</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Capture.html" class="tab"><span class="tab-num">4</span>Capture</a>
+  <a href="file:///C:/Users/tgala/Downloads/LS-Retain.html" class="tab"><span class="tab-num">5</span>Retain</a>
+</nav>
+
+
+<main>
+<div style="background:#1A3A5C;border-radius:8px;padding:20px 24px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:9px;color:#81BC00;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:5px;">Live Case Study</div>
+      <div style="font-family:&#39;Playfair Display&#39;,serif;font-size:20px;font-weight:700;color:#fff;">Alexandria Real Estate Equities</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:3px;">Only S&amp;P 500 REIT focused exclusively on life science campuses · NYSE: ARE</div>
+    </div>
+    <div style="display:flex;gap:12px;">
+      <div style="text-align:center;padding:12px 16px;background:rgba(129,188,0,0.12);border:1px solid rgba(129,188,0,0.25);border-radius:6px;"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:20px;font-weight:700;color:#81BC00;">97.2%</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;">SD Occupancy</div></div>
+      <div style="text-align:center;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:20px;font-weight:700;color:#fff;">$6.35B</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;">Active Pipeline</div></div>
+      <div style="text-align:center;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:20px;font-weight:700;color:#fff;">19.9M</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;">RSF Future Pipeline</div></div>
+    </div>
+  </div>
+  
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hdr ch-navy"><span class="ch-icon">🏢</span><div><div class="ch-title">Who They Are</div></div></div>
+      <div class="card-body">
+        <div style="font-size:12px;color:var(--mid);line-height:1.8;margin-bottom:14px;">Alexandria pioneered the life science real estate niche in 1994. They are the <strong>only S&amp;P 500 REIT</strong> focused exclusively on laboratory and life science space, owning, operating, and developing what they call <strong>Megacampus™ ecosystems</strong> — large, collaborative science districts that house biopharma companies, research institutions, government agencies, and venture capital firms in close proximity.</div>
+        <div style="font-size:11px;color:var(--light);line-height:1.7;margin-bottom:10px;">Their model is built on the thesis that <em>clustering</em> the world's leading life science companies in purpose-built campuses drives tenant success — and therefore drives Alexandria's long-term value.</div>
+        <div style="font-size:11px;font-family:&#39;DM Mono&#39;,monospace;color:var(--green-dark);background:var(--green-pale);padding:8px 12px;border-radius:4px;">HQ: 26 N. Euclid Ave, Pasadena, CA 91101 · (626) 578-0777 · are.com</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-bk"><span class="ch-icon">🎯</span><div><div class="ch-title">Strategic Priorities</div></div></div>
+      <div class="card-body">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 18px;margin-bottom:0;">
+          <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:9px;color:var(--green-dark);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);">Q4 2025 Earnings Call — Strategic Shift</div>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--black);line-height:1.5;display:flex;gap:10px;"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0;">→</span><div><strong>Capital discipline over growth</strong><ul class="sp-sub"><li>$1.5B in dispositions completed Q4 2025 across 26 transactions</li><li>Non-income-producing assets: reducing from 20% → 11–16% of gross assets</li><li>Fewer new ground-up RFPs expected near term</li></ul></div></li>
+            <li style="padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--black);line-height:1.5;display:flex;gap:10px;"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0;">→</span><div><strong>Pipeline contraction</strong><ul class="sp-sub"><li>4 major projects under audit — pause, sell, or proceed</li><li>CapEx cut by $300M+ through exiting redevelopment projects</li></ul></div></li>
+            <li style="padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--black);line-height:1.5;display:flex;gap:10px;"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0;">→</span><div><strong>Exiting weak submarkets</strong><ul class="sp-sub"><li>South San Francisco Gateway campus — fully exited</li><li>88 Bluxome Street (SoMa) — sold</li><li>Greater Boston land parcels — disposed, targeting residential developers</li></ul></div></li>
+            <li style="padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--black);line-height:1.5;display:flex;gap:10px;"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0;">→</span><div><strong>Megacampus doubling down</strong><ul class="sp-sub"><li>78% of rental revenue from Megacampuses — outperforming market by 19%</li><li>Boston 401 Park reverted to office to avoid lab oversupply</li></ul></div></li>
+            <li style="padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--black);line-height:1.5;display:flex;gap:10px;"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0;">→</span><div><strong>TI and re-leasing as near-term priority</strong><ul class="sp-sub"><li>"Intense focus" on re-leasing vacant space</li><li>Free rent (not price cuts) used as primary incentive to attract tenants</li></ul></div></li>
+            <li style="padding:7px 0;font-size:12px;color:var(--black);line-height:1.5;display:flex;gap:10px;"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0;">→</span><div><strong>Biotech capital caution</strong><ul class="sp-sub"><li>Public biotech leasing "very small" in Q4 2025</li><li>VC funds at decade-low for LP capital raises</li><li>Tenants favoring shorter-term commitments over expansion</li></ul></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TENANT MIX -->
+  <div class="seclbl"><h3>Tenant Mix</h3><div class="ln"></div></div>
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-hdr ch-black"><span class="ch-icon">📊</span><div><div class="ch-title">Revenue Concentration — Top Tenants &amp; Sector Mix</div></div></div>
+    <div class="card-body" style="padding:14px 18px;">
+
+      <!-- Top tenant % strip -->
+      <div style="display:flex;align-items:center;gap:0;margin-bottom:14px;border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+        <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:9px;color:var(--light);letter-spacing:0.1em;text-transform:uppercase;padding:8px 12px;background:var(--surface);flex-shrink:0;border-right:1px solid var(--border);">Top 8 Tenants</div>
+        <div style="display:flex;flex:1;overflow-x:auto;">
+          <div style="flex:1;text-align:center;padding:8px 6px;border-right:1px solid var(--border);min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--green-dark);">6.1%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Pharma</div></div>
+          <div style="flex:1;text-align:center;padding:8px 6px;border-right:1px solid var(--border);min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--green-dark);">4.5%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Pharma</div></div>
+          <div style="flex:1;text-align:center;padding:8px 6px;border-right:1px solid var(--border);min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--green-dark);">3.8%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Biotech</div></div>
+          <div style="flex:1;text-align:center;padding:8px 6px;border-right:1px solid var(--border);min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--green-dark);">2.5%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Pharma</div></div>
+          <div style="flex:1;text-align:center;padding:8px 6px;border-right:1px solid var(--border);min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--green-dark);">2.1%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Pharma</div></div>
+          <div style="flex:1;text-align:center;padding:8px 6px;border-right:1px solid var(--border);min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--mid);">1.6%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Device</div></div>
+          <div style="flex:1;text-align:center;padding:8px 6px;border-right:1px solid var(--border);min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--mid);">1.5%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Tech</div></div>
+          <div style="flex:1;text-align:center;padding:8px 6px;min-width:52px;"><div style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;font-weight:700;color:var(--mid);">1.5%</div><div style="font-size:9px;color:var(--light);margin-top:1px;">Gov</div></div>
+        </div>
+      </div>
+
+      <!-- Sector mix compact -->
+      <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:8px;">
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">24%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">LS Products &amp; Devices</div></div>
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">18%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">Multinational Pharma</div></div>
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">13%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">Biomedical Institutions</div></div>
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">13%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">Biotech Pre/Clinical</div></div>
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">11%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">Advanced Technologies</div></div>
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">10%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">Gov / Research</div></div>
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">9%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">Public Biotech</div></div>
+        <div style="text-align:center;padding:8px 4px;background:var(--surface);border-radius:4px;border:1px solid var(--border);"><div style="font-family:&#39;Playfair Display&#39;,serif;font-size:16px;font-weight:700;color:var(--black);">12%</div><div style="font-size:9px;color:var(--light);margin-top:2px;line-height:1.3;">Other</div></div>
+      </div>
+      <div style="margin-top:10px;font-size:10px;color:var(--light);font-style:italic;">53% of revenue from investment-grade or publicly traded large-cap tenants · Top 20 tenants = 38.4% of total revenue</div>
+    </div>
+  </div>
+
+
+  
+
+  <div class="callout"><strong>Development Pipeline — The Shift You Need to Know</strong>ARE's pipeline is contracting. After years of aggressive development, the Q4 2025 earnings call signaled a deliberate reduction in ground-up starts and CapEx. The $6.35B in active development continues — but the pipeline beyond 2026 is being aggressively pruned. For AEC firms, this means fewer new project RFPs in the near term, and a shift toward TI, campus refresh, and asset repositioning work.</div>
+
+  <div style="background:#FEF9E7;border:1px solid #E8D5B0;border-left:3px solid #D4920A;border-radius:5px;padding:13px 16px;margin-bottom:18px;">
+    <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:9px;font-weight:700;color:#7D5010;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">⚠ Q4 2025 Pipeline Contraction — AEC Impact</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="font-size:11px;color:#5A3A10;line-height:1.7;"><strong>What changed:</strong> ARE is auditing 4 major projects under construction to determine whether to pause, sell, or proceed. CapEx already cut by $300M+ by exiting specific redevelopment projects. Expect fewer new ground-up RFPs through 2026.</div>
+      <div style="font-size:11px;color:#5A3A10;line-height:1.7;"><strong>Where opportunity shifts:</strong> Tenant improvements (TIs), exterior campus refreshes for re-leasing, residential conversion of disposed land parcels, and "activation" of land-banked sites. The BMS Campus Point expansion and Novartis build-to-suit remain mission-critical and proceed.</div>
+    </div>
+  </div>
+
+  <div class="g3">
+    <div class="card">
+      <div class="card-hdr ch-g"><span class="ch-icon">🏗️</span><div><div class="ch-title">2026 Stabilizations</div></div></div>
+      <div class="card-body">
+        <div class="kpi-v" style="font-family:&#39;Playfair Display&#39;,serif;font-size:28px;font-weight:700;color:var(--black);margin-bottom:4px;">699,933 <span style="font-size:14px;color:var(--light);">RSF</span></div>
+        <div style="font-size:11px;color:var(--light);margin-bottom:12px;">Active under construction, stabilizing 2026</div>
+        <div style="font-size:12px;color:var(--mid);line-height:1.7;">Includes the 466,598 RSF pre-leased build-to-suit expansion at Campus Point by Alexandria (San Diego) — a single-tenant BMS expansion. Completion of tenant improvements underway in Boston, SF Bay Area, and Seattle markets.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-am"><span class="ch-icon">📐</span><div><div class="ch-title">2027–2028 Stabilizations</div></div></div>
+      <div class="card-body">
+        <div class="kpi-v" style="font-family:&#39;Playfair Display&#39;,serif;font-size:28px;font-weight:700;color:var(--black);margin-bottom:4px;">1,562,374 <span style="font-size:14px;color:var(--light);">RSF</span></div>
+        <div style="font-size:11px;color:var(--light);margin-bottom:12px;">Under construction or in pre-construction</div>
+        <div style="font-size:12px;color:var(--mid);line-height:1.7;">Seven leases aggregating 531,984 RSF ($42.3M annual revenue) will relocate from expiring space into these projects, expanding their footprint by over 41%. Primarily in Greater Boston, SF Bay Area, and San Diego.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr ch-navy"><span class="ch-icon">🔭</span><div><div class="ch-title">Future Pipeline</div></div></div>
+      <div class="card-body">
+        <div class="kpi-v" style="font-family:&#39;Playfair Display&#39;,serif;font-size:28px;font-weight:700;color:var(--black);margin-bottom:4px;">19.9M <span style="font-size:14px;color:var(--light);">RSF</span></div>
+        <div style="font-size:11px;color:var(--light);margin-bottom:12px;">Future development entitled land in their pipeline</div>
+        <div style="font-size:12px;color:var(--mid);line-height:1.7;">Alexandria holds entitled land for nearly 20 million additional RSF of future Megacampus development. This is their long-term growth runway — primarily in existing Megacampus locations across all seven AAA cluster markets.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIPELINE TABLE -->
+  <div class="card">
+    <div class="card-hdr ch-bk"><span class="ch-icon">📋</span><div><div class="ch-title">Active Development Pipeline by Market</div></div></div>
+    <div class="card-body" style="padding:0;">
+      <div style="overflow-x:auto;">
+        <table class="pip-table">
+          <thead><tr><th>Market / Submarket</th><th>Campus / Project</th><th>RSF (Dev)</th><th>Stage</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>San Diego</strong> · University Town Center</td><td>Campus Point by Alexandria — Expansion</td><td>893,525</td><td><span class="pip-stage stg-now">2026 Delivery</span></td><td>100% pre-leased build-to-suit for BMS · 466K RSF new + 427K RSF existing</td></tr>
+            <tr><td><strong>Greater Boston</strong> · Cambridge</td><td>Alexandria Center® at Kendall Square</td><td>583,407</td><td><span class="pip-stage stg-next">2027–28</span></td><td>Core Cambridge campus expansion · Highest rent/RSF market</td></tr>
+            <tr><td><strong>Greater Boston</strong> · Fenway + Seaport</td><td>Various Megacampus expansions</td><td>~400K</td><td><span class="pip-stage stg-next">2027–28</span></td><td>Seaport District and Fenway campuses · addressing Boston occupancy decline</td></tr>
+            <tr><td><strong>San Francisco Bay Area</strong> · South San Francisco</td><td>Alexandria Center® Advanced Tech — SSF</td><td>212,796</td><td><span class="pip-stage stg-next">2027–28</span></td><td>107,250 RSF redevelopment component · Existing campus expansion</td></tr>
+            <tr><td><strong>Greater Boston</strong> · Route 128</td><td>Alexandria Center® — Waltham expansion</td><td>~200K</td><td><span class="pip-stage stg-next">2027–28</span></td><td>Suburban campus growth</td></tr>
+            <tr><td><strong>San Diego</strong> · Torrey Pines</td><td>One Alexandria Square pipeline</td><td>~150K</td><td><span class="pip-stage stg-next">2027–28</span></td><td>Adjacent to flagship SD campus</td></tr>
+            <tr><td><strong>All Markets</strong></td><td>Future Megacampus development (entitled)</td><td>19,907,130</td><td><span class="pip-stage stg-fut">Future / Long Term</span></td><td>All seven AAA cluster markets · Primarily on existing Megacampus land</td></tr>
+            <tr><td><strong>Various</strong></td><td>Stanford Life Science District strategy</td><td>~1.0M</td><td><span class="pip-stage stg-fut">Under Evaluation</span></td><td>3160–3460 Hillview Ave + adjacent · Business strategy being assessed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="seclbl"><h3>High-Priority Risks</h3><div class="ln"></div></div>
+  <div class="risk-grid">
+    <div class="risk-item hi">
+      <div class="ri-badge rb-hi">High Priority</div>
+      <div class="ri-title">Greater Boston Occupancy Decline</div>
+      <ul class="ri-bullets"><li>Dropped from 94.8% (2024) → 86.4% (2025)</li><li>62 properties · $709M in revenue at risk</li><li>Linked to Kendall Square vacancies · re-leasing pressure intense</li></ul>
+    </div>
+    <div class="risk-item hi">
+      <div class="ri-badge rb-hi">High Priority</div>
+      <div class="ri-title">Life Science Industry Funding Contraction</div>
+      <ul class="ri-bullets"><li>Biotech/pharma unable to raise → may downsize or default on leases</li><li>53% revenue from investment-grade tenants provides some protection</li><li>Preclinical/clinical biotech (10%+ revenue) acutely vulnerable</li></ul>
+    </div>
+    <div class="risk-item hi">
+      <div class="ri-badge rb-hi">High Priority</div>
+      <div class="ri-title">$6.35B Development Pipeline Execution Risk</div>
+      <ul class="ri-bullets"><li>Cost overruns, permitting delays, labor shortages all in play</li><li>Inability to pre-lease completed space = cash flow risk</li><li>Non-income-producing assets targeted: 20% → 11–16% of gross assets</li></ul>
+    </div>
+    <div class="risk-item hi">
+      <div class="ri-badge rb-hi">High Priority</div>
+      <div class="ri-title">2026–2027 Lease Expiration Wave</div>
+      <ul class="ri-bullets"><li>$71M expiring 2026 · $72M expiring 2027</li><li>Expected downtime: 6–24 months per vacancy</li><li>Stanford Life Science District + One Alexandria Square are key risks</li></ul>
+    </div>
+    <div class="risk-item am">
+      <div class="ri-badge rb-am">Medium Priority</div>
+      <div class="ri-title">Seismic and Natural Disaster Exposure</div>
+      <ul class="ri-bullets"><li>Portfolio in seismic zones: SF Bay Area, San Diego, Seattle</li><li>All-risk insurance: $2.0B per-occurrence limit</li><li>Wildfire risk (NorCal/PG&amp;E) — additional exposure</li></ul>
+    </div>
+    <div class="risk-item am">
+      <div class="ri-badge rb-am">Medium Priority</div>
+      <div class="ri-title">Ground Lease Exposure</div>
+      <ul class="ri-bullets"><li>31 properties (9%) on ground leases: 19 SF Bay Area · 8 Boston · 2 NYC</li><li>Default or unfavorable renewal = significant asset loss risk</li><li>Ground lease expense: 1.6% of NOI in 2025</li></ul>
+    </div>
+    <div class="risk-item am">
+      <div class="ri-badge rb-am">Medium Priority</div>
+      <div class="ri-title">Texas Market Underperformance</div>
+      <ul class="ri-bullets"><li>79.9% occupancy — lowest in the portfolio</li><li>$28.02/RSF — lowest rent of any market</li><li>Woodlands campus hasn't achieved Megacampus ecosystem density</li></ul>
+    </div>
+    <div class="risk-item am">
+      <div class="ri-badge rb-am">Medium Priority</div>
+      <div class="ri-title">Tenant Concentration — Top 10 = 38.4% of Revenue</div>
+      <ul class="ri-bullets"><li>Top tenant = 6.1% of total revenue — significant concentration</li><li>M&amp;A, restructuring, or AI-driven lab changes could trigger vacancy</li><li>Largest single commitment is at Campus Point, San Diego</li></ul>
+    </div>
+    <div class="risk-item bl">
+      <div class="ri-badge rb-bl">External Pressure</div>
+      <div class="ri-title">Biotech Capital Contraction — "Wait-and-See" Leasing</div>
+      <ul class="ri-bullets"><li>VC funds: lowest LP capital raised in a decade</li><li>Public biotech leasing "very small" in Q4 2025</li><li>Tenants favoring shorter terms, staying in existing footprints</li></ul>
+    </div>
+    <div class="risk-item bl">
+      <div class="ri-badge rb-bl">External Pressure</div>
+      <div class="ri-title">U.S. Government / NIH Funding Uncertainty</div>
+      <ul class="ri-bullets"><li>US Gov = 9th largest tenant · 1.5% of revenue (NIH/GSA)</li><li>Budget cuts or continuing resolutions directly reduce demand</li><li>NIH funding underpins the entire biopharma ecosystem</li></ul>
+    </div>
+  </div>
+
+  
+  <!-- SOURCES -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 18px;margin-top:4px;">
+    <div style="font-family:&#39;DM Mono&#39;,monospace;font-size:10px;color:var(--green-dark);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Source Documentation</div>
+    <div style="font-size:11px;color:var(--light);line-height:1.8;">All data sourced from: Alexandria Real Estate Equities, Inc. — Annual Report on Form 10-K for Fiscal Year Ended December 31, 2025 · Q4 2025 Earnings Call (January 27, 2026) · ARE Q4 2025 Supplemental Information · Landscape Institute "Landscape-Led Development" · ASLA Industry Report 2024/2025. Filed with the U.S. Securities and Exchange Commission. NYSE: ARE. This profile is prepared for educational and business development purposes for ASLA workshop participants and does not constitute investment advice.</div>
+  </div>
+</main>
+
+<footer>
+  <div>Life Sciences Market · Alexandria Real Estate Case Study · ASLA 2026</div>
+  <div>Source: ARE 10-K FY2025 · Q4 2025 Earnings Call · CBRE Q1 2026</div>
+</footer>
+
+<script>
+function ck(item) {
+  item.classList.toggle('done');
+  try {
+    var done = [];
+    document.querySelectorAll('.cki.done').forEach(function(el){
+      done.push(el.querySelector('.ck-t') ? el.querySelector('.ck-t').textContent.trim().slice(0,50) : '');
+    });
+    sessionStorage.setItem('ls_ck_cp', JSON.stringify(done));
+  } catch(e){}
+}
+window.addEventListener('load', function(){
+  try {
+    var saved = JSON.parse(sessionStorage.getItem('ls_ck_cp') || '[]');
+    document.querySelectorAll('.cki').forEach(function(el){
+      var t = el.querySelector('.ck-t');
+      if (t && saved.indexOf(t.textContent.trim().slice(0,50)) !== -1) el.classList.add('done');
+    });
+  } catch(e){}
+});
+</script>
+
+</body></html>
