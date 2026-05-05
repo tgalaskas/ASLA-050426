@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASLA BD Workshop — Access</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; font-family:'DM Sans',sans-serif; background:#FFFFFF; }
+body { display:flex; align-items:center; justify-content:center; min-height:100vh; }
+
+.card {
+  width:100%;
+  max-width:440px;
+  padding:48px 40px;
+  border:1px solid #DDDDDD;
+  border-top:4px solid #81BC00;
+  border-radius:4px;
+  margin:20px;
+}
+
+.badge {
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:#81BC00;
+  margin-bottom:12px;
+}
+
+h1 {
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  font-weight:700;
+  color:#1A1A1A;
+  line-height:1.2;
+  margin-bottom:8px;
+}
+
+.sub {
+  font-size:12px;
+  color:#888888;
+  margin-bottom:32px;
+  line-height:1.6;
+}
+
+label {
+  display:block;
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:#6B6B6B;
+  margin-bottom:8px;
+}
+
+input {
+  width:100%;
+  padding:12px 16px;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  border:1px solid #DDDDDD;
+  border-radius:3px;
+  outline:none;
+  margin-bottom:12px;
+  transition:border-color 0.2s;
+}
+input:focus { border-color:#81BC00; }
+input.error { border-color:#C0392B; background:#FDF4F4; }
+
+button {
+  width:100%;
+  padding:12px;
+  background:#81BC00;
+  color:#1A1A1A;
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  border:none;
+  border-radius:3px;
+  cursor:pointer;
+  transition:background 0.2s;
+}
+button:hover { background:#6A9C00; }
+
+.error-msg {
+  font-size:11px;
+  color:#C0392B;
+  margin-top:8px;
+  display:none;
+}
+.error-msg.show { display:block; }
+
+.footer-note {
+  font-size:11px;
+  color:#AAAAAA;
+  text-align:center;
+  margin-top:24px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="badge">ASLA BD Workshop · May 2026</div>
+  <h1>Marketing &amp; Business<br>Development Session</h1>
+  <p class="sub">Enter the access code provided by your workshop facilitator to continue.</p>
+
+  <label for="pw">Access Code</label>
+  <input type="password" id="pw" placeholder="Enter access code" onkeydown="if(event.key==='Enter') go()">
+  <div class="error-msg" id="err">Incorrect access code. Please try again.</div>
+  <button onclick="go()" id="btn">Enter Session →</button>
+
+  <div class="footer-note">ASLA · Southern California · 2026</div>
+</div>
+
+<script>
+var CODE = 'asla2026';
+
+function go() {
+  var val = document.getElementById('pw').value.trim().toLowerCase();
+  var input = document.getElementById('pw');
+  var err = document.getElementById('err');
+  var btn = document.getElementById('btn');
+
+  if (val === CODE) {
+    btn.textContent = 'Loading...';
+    btn.style.background = '#4A7A00';
+    sessionStorage.setItem('asla_access', 'granted');
+    window.location.href = 'index.html';
+  } else {
+    input.classList.add('error');
+    err.classList.add('show');
+    input.value = '';
+    input.focus();
+    setTimeout(function(){ input.classList.remove('error'); }, 1500);
+  }
+}
+</script>
+</body>
+</html>
