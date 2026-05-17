@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- saved from url=(0093)file:///C:/Users/tgala/Downloads/ASLA%20%E2%80%94%204-Year%20Pipeline%20Projection%20(3).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -33,13 +34,13 @@
   .h-left { flex-shrink:0; }
   .h-left p { font-size:11px; color:var(--light-grey); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px; }
   .h-left h1 { font-family:'Playfair Display',serif; font-size:24px; color:#fff; font-weight:700; line-height:1.2; }
-  .h-left h1 span { color:var(--gold); }
+  .h-left h1 span { color:#fff; }
   .h-right { max-width:390px; }
   .h-tag { display:inline-block; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); padding:3px 10px; border-radius:2px; font-family:'DM Mono',monospace; font-size:10px; color:var(--gold); letter-spacing:0.08em; margin-bottom:10px; }
   .cost-list { list-style:none; }
   .cost-list li { font-size:10.5px; color:rgba(255,255,255,0.72); line-height:1.55; padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; gap:8px; align-items:baseline; }
   .cost-list li:last-child { border-bottom:none; }
-  .cost-list .bul { color:var(--gold); flex-shrink:0; font-size:8px; }
+  .cost-list .bul { color:#81BC00; flex-shrink:0; font-size:8px; }
   .cost-list strong { color:#fff; }
   .cost-list .src { color:rgba(255,255,255,0.3); font-size:9px; font-style:italic; margin-left:3px; }
 
@@ -62,19 +63,19 @@
 
   .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:8px; }
   .stat-card { background:var(--dark); border-radius:8px; padding:20px 22px; }
-  .stat-card .num { font-family:'Playfair Display',serif; font-size:30px; color:#fff; line-height:1; }
-  .stat-card .num span { font-size:14px; color:var(--gold); }
+  .stat-card .num { font-family:'Playfair Display',serif; font-size:30px; color:#1A1A1Aff; line-height:1; }
+  .stat-card .num span { font-size:14px; color:rgba(0,0,0,0.6); }
   .stat-card .lbl { font-size:11px; color:var(--light-grey); margin-top:5px; text-transform:uppercase; letter-spacing:0.08em; opacity:0.7; }
   .stat-card.hl { background:var(--gold); }
-  .stat-card.hl .num { color:var(--dark); }
-  .stat-card.hl .num span { color:var(--dark); opacity:0.7; }
-  .stat-card.hl .lbl { color:var(--dark); opacity:0.6; }
+  .stat-card.hl .num { color:#ffffff; }
+  .stat-card.hl .num span { color:#ffffff; opacity:0.7; }
+  .stat-card.hl .lbl { color:#ffffff; opacity:0.7; }
 
   .year-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
   .yr-card { background:#fff; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
   .yr-hdr { padding:14px 18px; background:var(--dark); }
   .yr-hdr .yr { font-family:'Playfair Display',serif; font-size:20px; color:#fff; font-weight:700; }
-  .yr-hdr .ph { font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-top:2px; }
+  .yr-hdr .ph { font-size:11px; color:rgba(0,0,0,0.6); text-transform:uppercase; letter-spacing:0.1em; margin-top:2px; }
   .yr-body { padding:14px 18px; }
   .yr-focus { font-size:11px; color:var(--text-light); font-style:italic; margin-bottom:12px; line-height:1.5; }
   .sec-row { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
@@ -150,21 +151,21 @@
 <div class="scenario-bar">
   <span class="scen-label">Scenario:</span>
   <div class="scen-btns">
-    <button class="scen-btn act-con" id="btn-con" onclick="setScenario(&#39;con&#39;)">Conservative</button>
+    <button class="scen-btn" id="btn-con" onclick="setScenario(&#39;con&#39;)">Conservative</button>
     <button class="scen-btn" id="btn-opt" onclick="setScenario(&#39;opt&#39;)">Optimistic</button>
-    <button class="scen-btn" id="btn-both" onclick="setScenario(&#39;both&#39;)">Show Both</button>
+    <button class="scen-btn act-both" id="btn-both" onclick="setScenario(&#39;both&#39;)">Show Both</button>
   </div>
-  <span class="scen-note" id="scen-desc">Conservative: Measured entry, selective bidding, relationship-first approach</span>
+  <span class="scen-note" id="scen-desc">Both scenarios shown — use as a range for session discussion</span>
 </div>
 
 <main>
 
   <div class="sec-lbl"><h2>4-Year Totals at a Glance</h2><div class="ln"></div><div class="bdg">2026–2029</div></div>
   <div class="stats-grid">
-    <div class="stat-card"><div class="num" id="s-proj">24<span>–56</span></div><div class="lbl">Total Projects (4 Yrs)</div></div>
-    <div class="stat-card"><div class="num" id="s-fee">$4.2M<span>–$8.4M</span></div><div class="lbl">Est. Fee Revenue</div></div>
+    <div class="stat-card"><div class="num" id="s-proj">24<span>–104</span></div><div class="lbl">Total Projects (4 Yrs)</div></div>
+    <div class="stat-card"><div class="num" id="s-fee">$4.2M<span>–$22M</span></div><div class="lbl">Est. Fee Revenue</div></div>
     <div class="stat-card"><div class="num">8<span> sectors</span></div><div class="lbl">Active Sectors by Yr 4</div></div>
-    <div class="stat-card hl"><div class="num" id="s-cli">18<span>–25</span></div><div class="lbl">Client Relationships Built</div></div>
+    <div class="stat-card hl"><div class="num" id="s-cli">18<span>–72</span></div><div class="lbl">Client Relationships Built</div></div>
   </div>
 
   <div class="sec-lbl"><h2>Year-by-Year Phase Breakdown</h2><div class="ln"></div><div class="bdg">Phase Cards</div></div>
@@ -174,14 +175,14 @@
       <div class="yr-hdr"><div class="yr">2026</div><div class="ph">Foundation Year</div></div>
       <div class="yr-body">
         <div class="yr-focus">Establish credibility. Prequalify with districts and municipalities. Win first anchor projects.</div>
-        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–4 projects">1–2 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–3 projects">1–2 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🎓</span><span class="sec-nm">Colleges</span><span class="pbadge p-con" data-con="0–1 projects" data-opt="1–2 projects">0–1 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🤝</span><span class="sec-nm">Non-Profits</span><span class="pbadge p-con" data-con="1 project" data-opt="1–2 projects">1 project</span></div>
+        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–4 projects">1–2 projects / 2–4 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–3 projects">1–2 projects / 2–3 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🎓</span><span class="sec-nm">Colleges</span><span class="pbadge p-con" data-con="0–1 projects" data-opt="1–2 projects">0–1 projects / 1–2 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🤝</span><span class="sec-nm">Non-Profits</span><span class="pbadge p-con" data-con="1 project" data-opt="1–2 projects">1 project / 1–2 projects</span></div>
         <div class="yr-tots">
-          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="3–6" data-opt="6–11">3–6</span></div>
-          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$450K–$900K" data-opt="$900K–$1.8M">$450K–$900K</span></div>
-          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="3–5" data-opt="5–9">3–5</span></div>
+          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="3–6" data-opt="6–11">3–6 / 6–11</span></div>
+          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$450K–$900K" data-opt="$900K–$1.8M">$450K–$900K / $900K–$1.8M</span></div>
+          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="3–5" data-opt="5–9">3–5 / 5–9</span></div>
         </div>
         <div class="ms-list"><div class="ms-ttl">Key Milestones</div>
           <div class="ms-item">Prequalify with LBUSD + LACCD</div>
@@ -192,26 +193,26 @@
     </div>
 
     <div class="yr-card" style="border-top:3px solid var(--gold);">
-      <div class="yr-hdr" style="background:#2a2000;"><div class="yr">2027</div><div class="ph" style="color:var(--gold-light);">⚡ Market Shift Year</div></div>
+      <div class="yr-hdr" style="background:#2a2000;"><div class="yr" style="color:#fff;">2027</div><div class="ph" style="color:rgba(255,255,255,0.75);">⚡ Market Shift Year</div></div>
       <div class="yr-body">
-        <div style="font-size:11px;color:#8a6d1e;background:#fffbe6;padding:8px 10px;border-radius:4px;border-left:3px solid var(--gold);margin-bottom:12px;"><strong>Pivot:</strong> Higher Ed budgets tighten. Corporate accelerates. Redirect BD accordingly.</div>
-        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–5 projects">2–3 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–4 projects">2–3 projects</span></div>
+        <div style="font-size:11px;color:#5a4a00;background:#fffbe6;padding:8px 10px;border-radius:4px;border-left:3px solid var(--gold);margin-bottom:12px;"><strong>Pivot:</strong> Higher Ed budgets tighten. Corporate accelerates. Redirect BD accordingly.</div>
+        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–5 projects">2–3 projects / 3–5 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–4 projects">2–3 projects / 3–4 projects</span></div>
         <div class="sec-row" style="opacity:0.5;">
           <span class="sec-ic">🎓</span><span class="sec-nm" style="text-decoration:line-through;color:#aaa;">Colleges</span>
-          <span class="pbadge p-con" style="background:#f5f5f5;color:#aaa;border:1px solid #ddd;" data-con="0–1 ↓" data-opt="1 ↓">0–1 ↓</span>
+          <span class="pbadge p-con" style="background:#f5f5f5;color:#aaa;border:1px solid #ddd;" data-con="0–1 ↓" data-opt="1 ↓">0–1 ↓ / 1 ↓</span>
           <span style="font-size:9px;color:#c0392b;font-weight:700;margin-left:4px;">SOFT</span>
         </div>
         <div class="sec-row" style="background:#f0faf4;border-radius:4px;padding:2px 4px;">
           <span class="sec-ic">🏙️</span><span class="sec-nm" style="color:var(--opt);font-weight:700;">Corporate</span>
-          <span class="pbadge p-con" style="background:#e0f5e9;color:var(--opt);border:1px solid #a8dab5;" data-con="1–2 ↑" data-opt="2–4 ↑">1–2 ↑</span>
+          <span class="pbadge p-con" style="background:#e0f5e9;color:var(--opt);border:1px solid #a8dab5;" data-con="1–2 ↑" data-opt="2–4 ↑">1–2 ↑ / 2–4 ↑</span>
           <span style="font-size:9px;color:var(--opt);font-weight:700;margin-left:4px;">SURGE</span>
         </div>
-        <div class="sec-row"><span class="sec-ic">🏢</span><span class="sec-nm">Institutional</span><span class="pbadge p-con" data-con="0–1 projects" data-opt="1–2 projects">0–1 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🏢</span><span class="sec-nm">Institutional</span><span class="pbadge p-con" data-con="0–1 projects" data-opt="1–2 projects">0–1 projects / 1–2 projects</span></div>
         <div class="yr-tots">
-          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="5–10" data-opt="10–16">5–10</span></div>
-          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$850K–$1.7M" data-opt="$1.7M–$3.1M">$850K–$1.7M</span></div>
-          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="4–7" data-opt="7–12">4–7</span></div>
+          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="5–10" data-opt="10–16">5–10 / 10–16</span></div>
+          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$850K–$1.7M" data-opt="$1.7M–$3.1M">$850K–$1.7M / $1.7M–$3.1M</span></div>
+          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="4–7" data-opt="7–12">4–7 / 7–12</span></div>
         </div>
         <div class="ms-list"><div class="ms-ttl">Key Milestones</div>
           <div class="ms-item">First corporate campus project — South Bay</div>
@@ -225,15 +226,15 @@
       <div class="yr-hdr"><div class="yr">2028</div><div class="ph">Market Expansion</div></div>
       <div class="yr-body">
         <div class="yr-focus">All sectors activating. County-level pursuit begins. Referral network producing. First hire threshold.</div>
-        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="2–4 projects" data-opt="4–6 projects">2–4 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="2–4 projects" data-opt="4–5 projects">2–4 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🎓</span><span class="sec-nm">Colleges</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–4 projects">1–2 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🏢</span><span class="sec-nm">Institutional</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–3 projects">1–2 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🏙️</span><span class="sec-nm">Corporate</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–3 projects">1–2 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="2–4 projects" data-opt="4–6 projects">2–4 projects / 4–6 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="2–4 projects" data-opt="4–5 projects">2–4 projects / 4–5 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🎓</span><span class="sec-nm">Colleges</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–4 projects">1–2 projects / 2–4 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🏢</span><span class="sec-nm">Institutional</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–3 projects">1–2 projects / 2–3 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🏙️</span><span class="sec-nm">Corporate</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–3 projects">1–2 projects / 2–3 projects</span></div>
         <div class="yr-tots">
-          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="7–14" data-opt="14–21">7–14</span></div>
-          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$1.1M–$2.4M" data-opt="$2.4M–$3.8M">$1.1M–$2.4M</span></div>
-          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="5–9" data-opt="9–15">5–9</span></div>
+          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="7–14" data-opt="14–21">7–14 / 14–21</span></div>
+          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$1.1M–$2.4M" data-opt="$2.4M–$3.8M">$1.1M–$2.4M / $2.4M–$3.8M</span></div>
+          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="5–9" data-opt="9–15">5–9 / 9–15</span></div>
         </div>
         <div class="ms-list"><div class="ms-ttl">Key Milestones</div>
           <div class="ms-item">County-level RFQ (LA County Parks)</div>
@@ -247,15 +248,15 @@
       <div class="yr-hdr"><div class="yr">2029</div><div class="ph">Scale &amp; Diversify</div></div>
       <div class="yr-body">
         <div class="yr-focus">All 8 sectors active. County projects flowing. State-level positioning. 7–8 person team.</div>
-        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="3–5 projects" data-opt="5–7 projects">3–5 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="3–5 projects" data-opt="5–7 projects">3–5 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🎓</span><span class="sec-nm">Colleges</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–5 projects">2–3 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🏙️</span><span class="sec-nm">Corporate</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–4 projects">2–3 projects</span></div>
-        <div class="sec-row"><span class="sec-ic">🏗️</span><span class="sec-nm">Developer</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–4 projects">1–2 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🏫</span><span class="sec-nm">K–12 Schools</span><span class="pbadge p-con" data-con="3–5 projects" data-opt="5–7 projects">3–5 projects / 5–7 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🌳</span><span class="sec-nm">Parks &amp; Rec</span><span class="pbadge p-con" data-con="3–5 projects" data-opt="5–7 projects">3–5 projects / 5–7 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🎓</span><span class="sec-nm">Colleges</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–5 projects">2–3 projects / 3–5 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🏙️</span><span class="sec-nm">Corporate</span><span class="pbadge p-con" data-con="2–3 projects" data-opt="3–4 projects">2–3 projects / 3–4 projects</span></div>
+        <div class="sec-row"><span class="sec-ic">🏗️</span><span class="sec-nm">Developer</span><span class="pbadge p-con" data-con="1–2 projects" data-opt="2–4 projects">1–2 projects / 2–4 projects</span></div>
         <div class="yr-tots">
-          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="11–20" data-opt="20–32">11–20</span></div>
-          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$1.9M–$3.8M" data-opt="$3.8M–$7.0M">$1.9M–$3.8M</span></div>
-          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="6–12" data-opt="12–20">6–12</span></div>
+          <div class="tot-row"><span class="tot-lbl">Projects</span><span class="tot-val v-con" data-con="11–20" data-opt="20–32">11–20 / 20–32</span></div>
+          <div class="tot-row"><span class="tot-lbl">Est. Fees</span><span class="tot-val v-con" data-con="$1.9M–$3.8M" data-opt="$3.8M–$7.0M">$1.9M–$3.8M / $3.8M–$7.0M</span></div>
+          <div class="tot-row"><span class="tot-lbl">New Clients</span><span class="tot-val v-con" data-con="6–12" data-opt="12–20">6–12 / 12–20</span></div>
         </div>
         <div class="ms-list"><div class="ms-ttl">Key Milestones</div>
           <div class="ms-item">All 8 sectors have active/completed work</div>
